@@ -1,0 +1,254 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #b3cbd1;
+}
+
+/* Structure */
+
+#header {
+	margin-top: 40px;
+	height: 100px;
+}
+
+#nav-bar {
+	height: 50px;
+	background: white;
+	position: relative;
+}
+
+#nav-left {
+	float: left;
+	padding-left: 20px;
+}
+
+#nav-right {
+	float: right;
+	padding-right: 20px;
+}
+
+#logo {
+	width: 200px;
+	height: 100px;
+	top: -25px;
+	background-color: lightGrey;
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+
+}
+
+#content {
+	width: 960px;
+	margin: 20px auto 40px;
+
+}
+
+#map-canvas {
+	width: 100%;
+	background: white;
+	height: 400px;
+	position: relative;
+	margin-bottom: 50px;
+}
+
+#map-overlay {
+	width: 320px;
+	height: 400px;
+	position: absolute;
+	right: 0px;
+	background: lightGrey;
+}
+
+#search-results {
+	width: 640px;
+	background: white;
+	height: 400px;
+	float: left;
+}
+
+#favorites {
+	width: 320px;
+	background: lightGrey;
+	height: 400px;
+	float: left;
+}
+
+#footer {
+	height: 300px;
+	background: lightGrey;
+
+}
+
+.clear {
+	clear: both;
+}
+
+/* End Structure */
+
+/* Typography */
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: inherit;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	display: inline;
+}
+
+#nav-bar ul {
+	
+}
+
+#nav-bar ul li {
+	height: 50px;
+}
+
+#nav-bar ul li a {
+	font: normal 12px Helvetica, Arial;
+	line-height: 50px;
+	padding: 0 15px;
+}
+
+#nav-bar ul li a:hover {
+	background: gray;
+}
+
+/* End Typography */
+
+
+
+
+
+
+
+/* Buttons */
+
+.button {
+	position: relative;
+}
+
+.button:active {
+	top:1px;
+}
+
+a.button, input.button {
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-box-shadow:0px 0px 2px rgba(0,0,0,0.4);
+	-webkit-box-shadow:0px 0px 2px rgba(0,0,0,0.4);
+	font-family: Arial, Helvetica, sans-serif;	
+	border:1px solid rgba(0,0,0,0.5); 
+	padding:5px 5px 5px 5px;
+	margin: 5px 10px 0px 10px;
+	text-decoration: none;
+}
+
+input.bluebutton {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C8EAFB), to(#5DB3E0));
+	background:-moz-linear-gradient(top,#C8EAFB,#5DB3E0);
+	background-color: #C8EAFB;
+	color:#152832;
+	text-shadow:1px 1px 0px rgba(223,244,255,0.8);	
+}
+
+input.bluebutton:hover {
+	background:rgba(223,244,255,1);
+	color:#152832;
+	background-color: #dff4ff;
+	
+}
+ 
+input.bluebutton:active, input.bluebutton:focus {
+	background:-webkit-gradient(linear,0% 100%,0% 0%,from(#C8EAFB), to(#5DB3E0));
+	background:-moz-linear-gradient(bottom,#C8EAFB,#5DB3E0);
+}
+
+a.bluebutton {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C8EAFB), to(#5DB3E0));
+	background:-moz-linear-gradient(top,#C8EAFB,#5DB3E0);
+	background-color: #C8EAFB;
+	color:#152832;
+	text-shadow:1px 1px 0px rgba(223,244,255,0.8);	
+}
+
+a.bluebutton:hover {
+	background:rgba(223,244,255,1);
+	color:#152832;
+	background-color: #dff4ff;
+	
+}
+ 
+a.bluebutton:active, a.bluebutton:focus {
+	background:-webkit-gradient(linear,0% 100%,0% 0%,from(#C8EAFB), to(#5DB3E0));
+	background:-moz-linear-gradient(bottom,#C8EAFB,#5DB3E0);
+}
+
+a.button:disabled {
+	color:rgba(0,0,0,0.4);
+	text-shadow:1px 1px 0px rgba(255,255,255,0.5);
+	background:rgba(220,220,220,1);
+}
+ 
+a.orangebutton {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffe19f), to(#fabe3b));
+	background:-moz-linear-gradient(top,#ffe19f,#fabe3b);
+	background-color: #7b480c;
+	color:#7b480c;
+	text-shadow:0px 1px 0px #ffe1be;	
+}
+
+a.orangebutton:hover {
+	color:#7b480c;
+	background: #ffe1be;
+	
+}
+ 
+a.orangebutton:active, a.orangebutton:focus {
+	background:-webkit-gradient(linear,0% 100%,0% 0%,from(#ffe19f), to(#fabe3b));
+	background:-moz-linear-gradient(bottom,#ffe19f,#fabe3b);
+}
+
+
+a.redbutton {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffcfd5), to(#bf3445));
+	background:-moz-linear-gradient(top,#ffcfd5,#bf3445);
+	background-color: #ffcfd5;
+	color:#492428;
+	text-shadow:1px 1px 0px rgba(255,189,197,.8);	
+}
+
+a.redbutton:hover {
+	background:rgba(255,189,197,1);
+	color:#492428;
+	background-color: #ffbdc5;
+	
+}
+ 
+a.redbutton:active, a.redbutton:focus {
+	background: -webkit-gradient(linear, 0% 100%, 0% 100%, from(#ffcfd5), to(#bf3445));
+	background:-moz-linear-gradient(bottom,#ffcfd5,#bf3445);
+}
+
+
+
+.medium {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.register_now {
+	display: inline;
+}
+
+/* End Buttons */
