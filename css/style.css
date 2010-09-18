@@ -107,9 +107,10 @@ body {
 }
 
 #favorites {
-	width: 300px;
+	width: 260px;
 	margin-left: 30px;
 	background: #d8e6ea;
+	padding: 20px;
 	border-radius:10px; 
 	-moz-border-radius: 10px; 
 	-khtml-border-radius: 10px; 
@@ -154,8 +155,12 @@ div.hovering:hover {
 }
 
 .house-favorite {
-	height: 70px;
+	padding: 5px 0 0 10px;
+	height: 50px;
+}
 
+.house-favorite:hover {
+	background: #e9f2f5;
 }
 
 .house-thumb {
@@ -163,12 +168,16 @@ div.hovering:hover {
 	margin: 10px;
 }
 
+.house-thumb-favorite{
+	float: left;
+	margin: 5px 10px 5px 0;
+}
+
 .house-favorite-meta {
 	float: left;
 }
 
 .house-favorite-ranking {
-	
 }
 
 #slider {
@@ -200,7 +209,6 @@ div.hovering:hover {
 	margin-bottom: 30px;
 	background: #d8e6ea;
 	float: left;
-	height: 350px;
 	border-radius:10px; 
 	-moz-border-radius: 10px; 
 	-khtml-border-radius: 10px; 
@@ -213,7 +221,6 @@ div.hovering:hover {
 	padding: 20px;
 	background: #d8e6ea;
 	margin-bottom: 30px;
-	height: 350px;
 	float: left;
 	border-radius:10px; 
 	-moz-border-radius: 10px; 
@@ -318,7 +325,7 @@ h1 {
 	text-align: center;
 }
 
-.col-330 h1, .col-630 h1 {
+.col-330 h1, .col-630 h1, #favorites h1 {
 	line-height: 49px;
 	background: url(../img/nav.png) repeat-x;
 	position: relative;
@@ -339,15 +346,27 @@ h1 {
 
 
 .house-favorite-meta h2 {
-	font: normal 15px Georgia, serif;
-	margin-bottom: 5px;
+	font: bold 14px 'Lucida Grande', 'Lucida Sans Unicode', serif;
 }
 
 .house-favorite-avg-rent {
 	font: normal 11px Georgia, serif;
+	float: left;
+	margin-right: 10px;
 }
 
 .house-favorite-avg-rent span {
+	font: normal 8px 'Lucida Grande', 'Lucida Sans Unicode', serif;
+	text-transform: uppercase;
+}
+
+.house-favorite-rooms {
+	font: normal 11px Georgia, serif;
+	float: left;
+	margin-right: 10px;
+}
+
+.house-favorite-rooms span {
 	font: normal 8px 'Lucida Grande', 'Lucida Sans Unicode', serif;
 	text-transform: uppercase;
 }
@@ -371,7 +390,9 @@ h1 {
 }
 
 .house-favorite-rank {
-	font: normal 13px Georgia, serif;
+	font: normal 11px Georgia, serif;
+	float: left;
+	margin-right: 10px;
 }
 
 .house-favorite-rank span {
@@ -398,8 +419,8 @@ h1 {
 }
 
 hr.custom-rule {
-	border-top: 1px solid lightGrey;
-	border-bottom: 1px solid darkGrey;
+	border-bottom: 1px solid #e9f0f2;
+	border-top: 1px solid #c6cfd2;
 
 }
 
