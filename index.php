@@ -3,9 +3,7 @@
 	include_once("functions.php");
 	getHeader("HOME","Home");
 	
-	
 ?>
-
 
 
 	<script type="text/javascript" src="js/jquery.easySlider-kf.js"></script>
@@ -49,7 +47,7 @@
 		</div>
 		
 		<div class="widget">
-			<h1>Find Housemates</h1>
+			<h1>Students on opennhouse</h1>
 		
 		</div>
 	
@@ -58,9 +56,15 @@
 	
 	
 	
+<<<<<<< HEAD
 	</div>
 				
 			
 
+=======
+	</div>
+		
+		
+>>>>>>> 6c2d7a363f8cff6e9950094e4f8ad4e0340211f9
 		
 		<?php getFooter(); ?>

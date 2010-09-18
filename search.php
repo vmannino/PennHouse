@@ -36,9 +36,15 @@ else{
 
 $searchResultMap=array();
 while ($rowArray=mysql_fetch_array($result,MYSQL_ASSOC)){
-$searchResultMap=$rowArray;
+	
+	$imgArray=explode(',',$rowArray['images']);
+	foreach($imgArray as $filename){
+		$rowArray['imgFileName'][]=$filename;	
+	}
+	$searchResultMap[]=$rowArray;
+
 }
-return json_encode($searchResultMap);
+echo json_encode($searchResultMap);
 
 }
 }

@@ -17,7 +17,7 @@
 					</ul>
 					
 					<div id="filters">
-						<h1>This is where Filters would go.</h1>
+						<h1>Filters</h1>
 
 						<form>
 						<input type="text" class="numInput" name="avgRentMin">
@@ -42,7 +42,7 @@
 
 				</div>
 				
-				<div id="globe"><img src="img/globe.gif" alt="globe" title="Loading..."/></div>
+				<div id="globe" style="display:none;"><img src="img/globe.gif" alt="globe" title="Loading..."/></div>
 				<div id="map-canvas">
 			
 					
@@ -56,7 +56,6 @@
 						<li><a href="#results">Search Results</a></li>
 						<li><a href="#compare">Compare Houses</a></li>
 					</ul>
-					
 					<div id="results">
 						<h1>Search Results:</h1>
 						<hr class="custom-rule" />
@@ -64,16 +63,16 @@
 							<img src="img/houses/thumb/example.jpg" class="house-thumb" />
 							<div class="house-result-meta">
 								<h2>4211 Spruce Street</h2>
-								<h3>10 Occupants | $6,500/month</h3>
+								<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
 							</div>
 							
 							<div class="house-result-ranking">
-								<div class="avg-rent">$540
-									<span>AVG RENT/PERSON</span>
+								<div class="house-result-avg-rent">$540<br/>
+									<span>AVG RENT/ROOM</span>
 								</div>
 								
 								
-								<div class="rank">4.5 
+								<div class="house-result-rank">4.5 <br/>
 									<span>STARS</span>
 								</div>
 							</div>
@@ -84,7 +83,7 @@
 						
 						
 						
-						
+				
 					</div>
 					
 					<div id="compare">
