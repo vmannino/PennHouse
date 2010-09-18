@@ -1,7 +1,6 @@
 <?php
 //functions.php
 
-
 function sanitize($string){
 	$string=strip_tags($string);
 	$string=htmlentities($string);
@@ -54,8 +53,8 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 		<!-- Begin JavaScript -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" ></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js" ></script>
-		<script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
-		<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+		<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+		<script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
 		
 		<script type="text/javascript" src="js/functions.js"></script>
 		
@@ -70,6 +69,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 			 
 	</head>
 	<body onload="initialize()">
+
     <?php if ($cookie) { ?>
       Your user ID is <?php echo $cookie['uid']; }
 	  else{
@@ -80,6 +80,18 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
     
     <p><fb:login-button perms="email" autologoutlink="true"></fb:login-button></p>
     <p><fb:like></fb:like></p>
+
+	
+		<a id="various1" href="#inline1" title="Lorem ipsum dolor sit amet">Inline - auto detect width / height</a>
+		<div style="display: none">
+			<div id="inline1"> 
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mi eu elit tempor facilisis id et neque. Nulla sit amet sem sapien. Vestibulum imperdiet porta ante ac ornare. Nulla et lorem eu nibh adipiscing ultricies nec at lacus. Cras laoreet ultricies sem, at blandit mi eleifend aliquam. Nunc enim ipsum, vehicula non pretium varius, cursus ac tortor. Vivamus fringilla congue laoreet. Quisque ultrices sodales orci, quis rhoncus justo auctor in. Phasellus dui eros, bibendum eu feugiat ornare, faucibus eu mi. Nunc aliquet tempus sem, id aliquam diam varius ac. Maecenas nisl nunc, molestie vitae eleifend vel, iaculis sed magna. Aenean tempus lacus vitae orci posuere porttitor eget non felis. Donec lectus elit, aliquam nec eleifend sit amet, vestibulum sed nunc.
+			</div>
+		</div>
+	
+		<p><fb:login-button autologoutlink="true"></fb:login-button></p>
+		<p><fb:like></fb:like></p>
+
 
     <div id="fb-root"></div>
     <script>
@@ -97,8 +109,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
       }());
     </script>
 
-		
-		
+
 		<div id="header"> 
 			<div id="nav-bar"> 
 				<div id="nav-left"> 
