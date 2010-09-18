@@ -47,12 +47,20 @@ body {
 
 }
 
-#map-canvas {
+#map-wrapper {
 	width: 100%;
 	background: white;
 	height: 400px;
 	position: relative;
 	margin-bottom: 50px;
+}
+
+#map-canvas {
+	width: 100%;
+	background: white;
+	height: 400px;
+	z-index: 1;
+	
 }
 
 #map-overlay {
@@ -61,6 +69,7 @@ body {
 	position: absolute;
 	right: 0px;
 	background: lightGrey;
+	z-index: 100;
 }
 
 #search-results {
@@ -68,6 +77,11 @@ body {
 	background: white;
 	height: 400px;
 	float: left;
+	position: relative;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
 }
 
 #favorites {
@@ -112,12 +126,15 @@ li {
 
 #nav-bar ul li {
 	height: 50px;
+	display: inline;
+	float: left;
 }
 
 #nav-bar ul li a {
-	font: normal 12px Helvetica, Arial;
+	font: normal 13px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial;
 	line-height: 50px;
 	padding: 0 15px;
+	display: block;
 }
 
 #nav-bar ul li a:hover {

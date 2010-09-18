@@ -7,9 +7,15 @@
 		
 		<!-- Begin Stylesheets -->
 			<link href="css/style.css" rel="stylesheet" type="text/css" />
+			<link href="css/cupertino/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css" />
+			
 		<!-- End Stylesheets -->
 		
 		<!-- Begin JavaScript -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" ></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js" ></script>
+	
+		
 		<script type="text/javascript"
 			src="http://maps.google.com/maps/api/js?sensor=true">
 		</script>
@@ -27,6 +33,14 @@
 			<!-- Needed later for translating adresses to LatLngs -->
 			var geocoder = new google.maps.Geocoder();
 		}
+		
+		$(document).ready(function(){
+			// Tabs
+			$('#search-results').tabs();
+			$('#map-overlay').tabs();
+		});	
+		
+		
 		</script>
 		<!-- End JavaScript -->
 			 
@@ -71,27 +85,56 @@
 		<div id="content"> 
 
 			
-			
-			<div id="map-canvas">
-		
-				<div>
-				</div>
-		
+			<div id="map-wrapper">
 				<div id="map-overlay"> 
+					<ul>
+						<li><a href="#filters">Filters</a></li>
+						<li><a href="#saved-searches">Saved Searches</a></li>
+					</ul>
 					
+					<div id="filters">
+						<h1>This is where detailed results would go.</h1>
+						
+					</div>
+					
+					<div id="saved-searches">
+						<h1>This is where saved searches would go.</h1>
+						
+					</div>
 
 				</div>
+				<div id="map-canvas">
+			
+					
+				</div>
 			</div>
+			
 		
 			<div id="search-results"> 
-		
+			
+					<ul>
+						<li><a href="#results">Search Results</a></li>
+						<li><a href="#compare">Compare Houses</a></li>
+					</ul>
+					
+					<div id="results">
+						<h1>This is where detailed results would go.</h1>
+						
+					</div>
+					
+					<div id="compare">
+						<h1>This is where comparisons would go.</h1>
+						
+					</div>
 
 		
 				
 			</div>
 		
-			<div id="favorites"> 
-		
+			<div id="favorites" class="tabs"> 
+				<ul>
+					<li><a href="#tabs-1">Favorites</a></li>
+				</ul>
 
 		
 				
