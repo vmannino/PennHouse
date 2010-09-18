@@ -1,6 +1,7 @@
 <?php
 //functions.php
 
+
 function sanitize($string){
 	$string=strip_tags($string);
 	$string=htmlentities($string);
@@ -26,11 +27,14 @@ function get_facebook_cookie($app_id, $application_secret) {
 
 function getHeader($page, $title) {
 	
+	include_once("config.php");
 ?>
 
-<?php 
-	//$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
+<?php
+
+	$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 	if ($cookie) { ?>
+	
 		Your user ID is <?= $cookie['uid'] ?>
 <?php } else { ?>
 	<fb:login-button></fb:login-button>
@@ -63,6 +67,9 @@ function getHeader($page, $title) {
 		<script type="text/javascript"
 			src="http://maps.google.com/maps/api/js?sensor=true">
 		</script>
+		
+		
+		
 		<!-- End JavaScript -->
 		
 			 
@@ -89,7 +96,18 @@ function getHeader($page, $title) {
 			</div>
 		</div>
 
-
+		<div id="fb-root"></div>
+		<script src="http://connect.facebook.net/en_US/all.js"></script>
+		<script>
+			FB.init({appId: 'FACEBOOK_APP_ID, status: true, cookie: true, xfbml: true});
+			FB.Event.subscribe('auth.sessionChange', function(response) {
+				if (response.session) {
+					// A user has logged in, and a new cookie has been saved
+				} else {
+					// The user has logged out, and the cookie has been cleared
+				}
+			});
+		</script>
 <?php
 
 
@@ -99,7 +117,11 @@ function getFooter() {
 
 ?>
 
-		<div id="footer"> </div>	
+		<div id="footer"> </div>
+
+
+		
+		
 	</body>
 </html>
 
