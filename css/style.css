@@ -150,10 +150,22 @@ li {
 #nav-bar ul li a:hover {
 	background: gray;
 }
+
+
 .numInput{
-	display: block;
-	width: 10px;
+		
+	background-color: #abc4cc;
+	width: 160px;
 	height: 10px;
+	padding: 10px;
+	margin: 10px;
+	color: #4B5F63;
+	font-style: bold;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+	border: none;
 }
 
 /* End Typography */
