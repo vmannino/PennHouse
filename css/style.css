@@ -114,6 +114,16 @@ body {
 /* End Structure */
 
 /* Typography */
+@font-face {
+	font-family: 'AdelleBasicBold';
+	src: url('adellebasic_bold-webfont.eot');
+	src: local('☺'), url('adellebasic_bold-webfont.woff') format('woff'), url('adellebasic_bold-webfont.ttf') format('truetype'), url('adellebasic_bold-webfont.svg#webfonti5NnZvPI') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
 a {
 	text-decoration: none;
 }
@@ -141,21 +151,37 @@ li {
 }
 
 #nav-bar ul li a {
-	font: normal 13px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial;
+	color: #4B5F63;
+	font-style: normal;
+	line-height:normal;
+	font-size: 15px;
+	font-family: 'AdelleBasicBold', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+	font-size-adjust: 0.52;
 	line-height: 49px;
 	padding: 0 15px;
 	display: block;
+	text-transform: lowercase;
 }
 
 #nav-bar ul li a:hover {
-	background: gray;
+	background: #CCCCCC;
+	color: white;
+}
+
+h1 {
+	color: #4B5F63;
+	font-style: normal;
+	line-height:normal;
+	font-family: 'AdelleBasicBold', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+	font-size-adjust: 0.52;
+
 }
 
 
 .numInput{
 		
 	background-color: #abc4cc;
-	width: 160px;
+	width: 20px;
 	height: 10px;
 	padding: 10px;
 	margin: 10px;

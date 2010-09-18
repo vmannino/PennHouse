@@ -86,11 +86,11 @@ function placeHouse(lat,lng,name) {
       title: name
 	});  
 }
-		
 
-$(document).ready(function(){
-	// Tabs
-	$('#search-results').tabs();
-	$('#map-overlay').tabs();
-});	
+		$(document).ready(function(){
+			// Tabs
+			$('#search-results').tabs();
+			$('#map-overlay').tabs();
+			$('#filter-button').click(function(){filterResults();});
+		});	
 
