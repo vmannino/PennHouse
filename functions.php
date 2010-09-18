@@ -37,7 +37,8 @@ function getHeader($page, $title) {
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<title>opennhouse | <?php echo $title; ?></title>
@@ -47,13 +48,15 @@ function getHeader($page, $title) {
 			<link href="css/style.css" rel="stylesheet" type="text/css" />
 			<link href="css/easyslider.css" rel="stylesheet" type="text/css" />
 			<link href="css/cupertino/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css" />
-			
+			<link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.1.css" type="text/css" media="screen" />
 		<!-- End Stylesheets -->
 		
 		<!-- Begin JavaScript -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" ></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js" ></script>
-
+		<script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+		<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+		
 		<script type="text/javascript" src="js/functions.js"></script>
 		
 		<script type="text/javascript"
@@ -72,6 +75,7 @@ function getHeader($page, $title) {
 		<?php } else { ?>
 			<fb:login-button>Login using Facebook</fb:login-button>
 		<?php } ?>
+		
 		<div id="header"> 
 			<div id="nav-bar"> 
 				<div id="nav-left"> 
@@ -109,8 +113,9 @@ function getFooter() {
 		<div id="fb-root"></div>
 		<script src="http://connect.facebook.net/en_US/all.js"></script>
 		<script>
-			FB.init({appId: 'your app id', status: true, cookie: true, xfbml: true});
+			FB.init({appId: 'FACEBOOK_APP_ID', status: true, cookie: true, xfbml: true});
 			FB.Event.subscribe('auth.sessionChange', function(response) {
+				window.location.reload();
 				if (response.session) {
 					// A user has logged in, and a new cookie has been saved
 				} else {
