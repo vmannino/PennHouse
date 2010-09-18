@@ -103,6 +103,7 @@ function placeHouse(lat,lng,name) {
 			
 			$('#filter-button').click(function(){$('#search-results').tabs('select', 0);filterResults();});
 
+			$('#filter-button').click(function(){filterResults();});
 		});	
 		
 function filterResults(){
@@ -203,4 +204,6 @@ function compareResults(){
 	  $('#compare').append(cmpTable);
 	  $('#globe').hide();
 		}
-}
+}	
+
+
