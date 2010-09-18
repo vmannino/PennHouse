@@ -17,7 +17,7 @@
 					</ul>
 					
 					<div id="filters">
-						<h1>This is where Filters would go.</h1>
+						<h1>Filters</h1>
 
 						<form>
 						<input type="text" class="numInput" name="avgRentMin">
@@ -67,12 +67,12 @@
 							</div>
 							
 							<div class="house-result-ranking">
-								<div class="avg-rent">$540
-									<span>AVG RENT/PERSON</span>
+								<div class="house-result-avg-rent">$540<br/>
+									<span>AVG RENT/ROOM</span>
 								</div>
 								
 								
-								<div class="rank">4.5 
+								<div class="house-result-rank">4.5 <br/>
 									<span>STARS</span>
 								</div>
 							</div>

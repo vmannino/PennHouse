@@ -91,8 +91,10 @@ function placeHouse(lat,lng,name) {
 			// Tabs
 			$('#search-results').tabs();
 			$('#map-overlay').tabs();
-			$('#filter-button').click(function(){filterResults();});
 			
+			$('#dashboard-main').tabs();
+			
+			$('#filter-button').click(function(){filterResults();});
 
 		});	
 		

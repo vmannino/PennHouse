@@ -65,12 +65,12 @@ body {
 }
 
 #map-overlay {
-	width: 280px;
+	width: 260px;
 	padding: 20px;
 	height: 360px;
 	position: absolute;
 	right: 0px;
-	background: lightGrey;
+	background: #d8e6ea;
 	z-index: 100;
 }
 
@@ -79,8 +79,8 @@ body {
 }
 
 #search-results {
-	width: 600px;
-	background: white;
+	width: 590px;
+	background: #d8e6ea;
 	height: 360px;
 	padding: 20px;
 	float: left;
@@ -108,21 +108,31 @@ body {
 }
 
 #favorites {
-	width: 320px;
-	background: lightGrey;
+	width: 300px;
+	margin-left: 30px;
+	background: #d8e6ea;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
 	height: 400px;
 	float: left;
 }
 
 #footer {
-	height: 300px;
-	background: lightGrey;
+	height: 150px;
+	background: url(../img/footer.png) repeat-x;
 
 }
 
 .house-result {
 	height: 100px;
+	padding: 10px 0;
+}
 
+.house-result:hover {
+	background: #e9f2f5;
+	cursor: pointer;
 }
 
 .house-thumb {
@@ -137,6 +147,24 @@ body {
 .house-result-ranking {
 	float: right;
 	width: 150px;
+}
+
+.house-favorite {
+	height: 70px;
+
+}
+
+.house-thumb {
+	float: left;
+	margin: 10px;
+}
+
+.house-favorite-meta {
+	float: left;
+}
+
+.house-favorite-ranking {
+	
 }
 
 #slider {
@@ -159,6 +187,36 @@ body {
 
 .space {
 	margin-right: 30px;
+}
+
+.col-330 {
+	width: 260px;
+	padding: 20px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	background: #d8e6ea;
+	float: left;
+	height: 350px;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+
+}
+
+.col-630 {
+	width: 590px;
+	padding: 20px;
+	background: #d8e6ea;
+	margin-bottom: 30px;
+	height: 350px;
+	float: left;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+	
+
 }
 
 
@@ -256,6 +314,17 @@ h1 {
 	text-align: center;
 }
 
+.col-330 h1, .col-630 h1 {
+	line-height: 49px;
+	background: url(../img/nav.png) repeat-x;
+	position: relative;
+	left: -20px;
+	width: 100%;
+	padding: 0 20px;
+	font-size: 22px;
+	text-align: center;
+}
+
 .house-result-meta h3 {
 	font: normal 13px 'Lucida Grande', 'Lucida Sans Unicode', serif;
 }
@@ -264,21 +333,45 @@ h1 {
 	font: normal 22px Georgia, serif;
 }
 
-.avg-rent {
+
+.house-favorite-meta h2 {
+	font: normal 15px Georgia, serif;
+	margin-bottom: 5px;
+}
+
+.house-favorite-avg-rent {
+	font: normal 11px Georgia, serif;
+}
+
+.house-favorite-avg-rent span {
+	font: normal 8px 'Lucida Grande', 'Lucida Sans Unicode', serif;
+	text-transform: uppercase;
+}
+
+.house-result-avg-rent {
 	font: normal 30px Georgia, serif;
 }
 
-.avg-rent span {
+.house-result-avg-rent span {
 	font: normal 10px 'Lucida Grande', 'Lucida Sans Unicode', serif;
 	text-transform: uppercase;
 }
 
-.rank {
+.house-result-rank {
 	font: normal 30px Georgia, serif;
 }
 
-.rank span {
+.house-result-rank span {
 	font: normal 10px 'Lucida Grande', 'Lucida Sans Unicode', serif;
+	text-transform: uppercase;
+}
+
+.house-favorite-rank {
+	font: normal 13px Georgia, serif;
+}
+
+.house-favorite-rank span {
+	font: normal 8px 'Lucida Grande', 'Lucida Sans Unicode', serif;
 	text-transform: uppercase;
 }
 
@@ -303,7 +396,6 @@ h1 {
 hr.custom-rule {
 	border-top: 1px solid lightGrey;
 	border-bottom: 1px solid darkGrey;
-	margin: 25px 0;
 
 }
 
@@ -429,6 +521,11 @@ a.redbutton:active, a.redbutton:focus {
 .medium {
 	font-weight: bold;
 	font-size: 15px;
+}
+
+.small {
+	font-weight: bold;
+	font-size: 12px;
 }
 
 .register_now {
