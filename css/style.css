@@ -10,12 +10,12 @@ body {
 /* Structure */
 
 #header {
-	margin-top: 40px;
+	margin-top: 60px;
 	height: 100px;
 }
 
 #nav-bar {
-	height: 41px;
+	height: 49px;
 	background: url(../img/nav.png) repeat-x;
 	position: relative;
 }
@@ -31,13 +31,13 @@ body {
 }
 
 #logo {
-	width: 200px;
-	height: 100px;
-	top: -25px;
-	background-color: darkGrey;
+	width: 261px;
+	height: 124px;
+	top: -45px;
+	background: url(../img/logo.png);
 	position: absolute;
 	left: 50%;
-	margin-left: -100px;
+	margin-left: -130px;
 
 }
 
@@ -135,14 +135,14 @@ li {
 }
 
 #nav-bar ul li {
-	height: 41px;
+	height: 49px;
 	display: inline;
 	float: left;
 }
 
 #nav-bar ul li a {
 	font: normal 13px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial;
-	line-height: 41px;
+	line-height: 49px;
 	padding: 0 15px;
 	display: block;
 }
@@ -150,9 +150,14 @@ li {
 #nav-bar ul li a:hover {
 	background: gray;
 }
+.numInput{
+	display: block;
+	width: 10px;
+	height: 10px;
+}
 
 /* End Typography */
-
+ 
 
 
 

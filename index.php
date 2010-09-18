@@ -14,7 +14,7 @@
 		<!-- Begin JavaScript -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" ></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js" ></script>
-		
+
 		<script type="text/javascript" src="js/functions.js"></script>
 		
 		<script type="text/javascript"
@@ -72,7 +72,19 @@
 					
 					<div id="filters">
 						<h1>This is where Filters would go.</h1>
-						
+
+						<form>
+						<input type="text" class="numInput" name="avgRentMin">
+						<input type="text" name="avgRentMax">
+						<input type="text" name="ttlRentMin">
+						<input type="text" name="ttlRentMax">
+						<input type="text" name="llRtngMin">
+						<input type="text" name="llRtngMax">
+						<input type="text" name="hsRtngMin">
+						<input type="text" name="hsRtngMax">
+						<input type="text" name="bdrmMin">
+						<input type="text" name="bdrmMax">
+						</form>
 						
 						<a id="filter-button" class="button bluebutton medium">Filter Results</a>
 					</div>
@@ -115,9 +127,8 @@
 				<ul>
 					<li><a href="#tabs-1">Favorites</a></li>
 				</ul>
-
-		
 				
+		
 			</div>
 			<div class="clear"></div>
 		
