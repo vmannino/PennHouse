@@ -47,7 +47,7 @@
 		</div>
 		
 		<div class="widget">
-			<h1>Find Housemates</h1>
+			<h1>Students on opennhouse</h1>
 		
 		</div>
 	
