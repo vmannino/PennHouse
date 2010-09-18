@@ -27,7 +27,7 @@ function get_facebook_cookie($app_id, $application_secret) {
 function getHeader($page, $title) {
 	
 ?>
-
+<!--
 <?php 
 	//$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 	if ($cookie) { ?>
@@ -35,6 +35,7 @@ function getHeader($page, $title) {
 <?php } else { ?>
 	<fb:login-button></fb:login-button>
 <?php } ?>
+-->
 
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
@@ -50,6 +51,7 @@ function getHeader($page, $title) {
 		
 		<!-- Begin Stylesheets -->
 			<link href="css/style.css" rel="stylesheet" type="text/css" />
+			<link href="css/easyslider.css" rel="stylesheet" type="text/css" />
 			<link href="css/cupertino/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css" />
 			
 		<!-- End Stylesheets -->
