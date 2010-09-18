@@ -160,9 +160,10 @@ dataType: 'json'
 }
 
 function compareResults(){
+	hasResults=false;
 	compareArray=new Array();
 	$('input.house-compare').each(function(index,value){
-		hasResults='true';
+		hasResults=true;
 		if (value.checked){
 			compareArray.push(filterResults[value.name]);
 		}
