@@ -141,15 +141,19 @@ body {
 
 #slider {
 	
-	background: #eee;
+	background: #d8e6ea;
 }
 
 .widget {
 	width: 260px;
 	height: 300px;
 	padding: 20px;
-	background: #fafafa;
+	background: #d8e6ea;
 	float: left;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
 	
 }
 
