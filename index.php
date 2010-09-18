@@ -1,23 +1,63 @@
 <?php 
-	include_once("config.php");
+	//include_once("config.php");
 	include_once("functions.php");
 	getHeader("HOME","Home");
 	
-	$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
- if ($cookie) { ?>
-      Your user ID is <?= $cookie['uid'] ?>
-    <?php } else { ?>
-      <fb:login-button></fb:login-button>
-    <?php } ?>
+?>
 
-    <div id="fb-root"></div>
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
 
+	<script type="text/javascript" src="js/jquery.easySlider-kf.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){	
+			$("#slider").easySlider({
+				auto: true, 
+				continuous: true,
+				numeric: true
+			});
+		});	
+	</script>
+	
+	<div id="easyslider_wrapper">
 		
-		<div id="content"> 
-
-			
+		<div id="slider">
+			<ul>				
+				<li><img src="img/slider1.png" alt="slider1" class="slider-img"/></li>
+				<li><img src="img/slider2.png" alt="slider2" class="slider-img"/></li>
+				<li><img src="img/slider3.png" alt="slider3" class="slider-img"/></li>
+				<li><img src="img/slider4.png" alt="slider4" class="slider-img"/></li>
+					
+			</ul>
 		</div>
+
+	</div>
+	<div id="content">
+	
+		
+	
+	
+	
+		<div class="widget space">
+			<h1>Find Houses</h1>
+		
+		</div>
+		
+		<div class="widget space">
+			<h1>Find Landlords</h1>
+		
+		</div>
+		
+		<div class="widget">
+			<h1>Find Housemates</h1>
+		
+		</div>
+	
+		<div class="clear"></div>
+	
+	
+	
+	
+	</div>
+		
 		
 		
 		<?php getFooter(); ?>

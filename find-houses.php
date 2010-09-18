@@ -41,6 +41,8 @@
 					</div>
 
 				</div>
+				
+				<div id="globe"><img src="img/globe.gif" alt="globe" title="Loading..."/></div>
 				<div id="map-canvas">
 			
 					
@@ -55,8 +57,8 @@
 						<li><a href="#compare">Compare Houses</a></li>
 					</ul>
 					<div id="results">
-						<h1>This is where detailed results would go.</h1>
-						
+						<h1>Search Results:</h1>
+						<hr class="custom-rule" />
 						<div class="house-result">
 							<img src="img/houses/thumb/example.jpg" class="house-thumb" />
 							<div class="house-result-meta">
