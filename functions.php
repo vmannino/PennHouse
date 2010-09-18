@@ -9,40 +9,8 @@ function sanitize($string){
 	return mysql_real_escape_string($string);
 }
 
-function get_facebook_cookie($app_id, $application_secret) {
-  $args = array();
-  parse_str(trim($_COOKIE['fbs_' . $app_id], '\\"'), $args);
-  ksort($args);
-  $payload = '';
-  foreach ($args as $key => $value) {
-    if ($key != 'sig') {
-      $payload .= $key . '=' . $value;
-    }
-  }
-  if (md5($payload . $application_secret) != $args['sig']) {
-    return null;
-  }
-  return $args;
-}
-
 function getHeader($page, $title) {
-	
-	include_once("config.php");
 ?>
-
-<?php
-
-	$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
-	if ($cookie) { ?>
-	
-		Your user ID is <?= $cookie['uid'] ?>
-<?php } else { ?>
-	<fb:login-button></fb:login-button>
-<?php } ?>
-
-<div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -54,6 +22,7 @@ function getHeader($page, $title) {
 		
 		<!-- Begin Stylesheets -->
 			<link href="css/style.css" rel="stylesheet" type="text/css" />
+			<link href="css/easyslider.css" rel="stylesheet" type="text/css" />
 			<link href="css/cupertino/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css" />
 			
 		<!-- End Stylesheets -->
@@ -96,18 +65,7 @@ function getHeader($page, $title) {
 			</div>
 		</div>
 
-		<div id="fb-root"></div>
-		<script src="http://connect.facebook.net/en_US/all.js"></script>
-		<script>
-			FB.init({appId: 'FACEBOOK_APP_ID, status: true, cookie: true, xfbml: true});
-			FB.Event.subscribe('auth.sessionChange', function(response) {
-				if (response.session) {
-					// A user has logged in, and a new cookie has been saved
-				} else {
-					// The user has logged out, and the cookie has been cleared
-				}
-			});
-		</script>
+		
 <?php
 
 
@@ -118,9 +76,6 @@ function getFooter() {
 ?>
 
 		<div id="footer"> </div>
-
-
-		
 		
 	</body>
 </html>
