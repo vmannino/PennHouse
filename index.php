@@ -72,7 +72,18 @@
 					
 					<div id="filters">
 						<h1>This is where detailed results would go.</h1>
-						
+						<form>
+						<input type="text" name="avgRentMin">
+						<input type="text" name="avgRentMax">
+						<input type="text" name="ttlRentMin">
+						<input type="text" name="ttlRentMax">
+						<input type="text" name="llRtngMin">
+						<input type="text" name="llRtngMax">
+						<input type="text" name="hsRtngMin">
+						<input type="text" name="hsRtngMax">
+						<input type="text" name="bdrmMin">
+						<input type="text" name="bdrmMax">
+						</form>
 						
 						<a id="filter-button" class="button bluebutton medium">Filter Results</a>
 					</div>

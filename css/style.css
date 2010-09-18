@@ -150,9 +150,14 @@ li {
 #nav-bar ul li a:hover {
 	background: gray;
 }
+.numInput{
+	display: block;
+	width: 10px;
+	height: 10px;
+}
 
 /* End Typography */
-
+ 
 
 
 
