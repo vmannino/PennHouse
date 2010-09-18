@@ -69,6 +69,10 @@
 			
 			<div class="col-630">
 				<h1>Compare Favorites</h1>
+				
+				
+				
+				
 			
 			
 			</div>
