@@ -71,7 +71,8 @@
 					</ul>
 					
 					<div id="filters">
-						<h1>This is where detailed results would go.</h1>
+						<h1>This is where Filters would go.</h1>
+
 						<form>
 						<input type="text" class="numInput" name="avgRentMin">
 						<input type="text" name="avgRentMax">

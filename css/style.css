@@ -10,12 +10,12 @@ body {
 /* Structure */
 
 #header {
-	margin-top: 40px;
+	margin-top: 60px;
 	height: 100px;
 }
 
 #nav-bar {
-	height: 41px;
+	height: 49px;
 	background: url(../img/nav.png) repeat-x;
 	position: relative;
 }
@@ -31,13 +31,13 @@ body {
 }
 
 #logo {
-	width: 200px;
-	height: 100px;
-	top: -25px;
-	background-color: darkGrey;
+	width: 261px;
+	height: 124px;
+	top: -45px;
+	background: url(../img/logo.png);
 	position: absolute;
 	left: 50%;
-	margin-left: -100px;
+	margin-left: -130px;
 
 }
 
@@ -74,7 +74,7 @@ body {
 }
 
 #map-overlay ul.ui-tabs-nav {
-	right: -100px;
+	right: -70px;
 }
 
 #search-results {
@@ -135,14 +135,14 @@ li {
 }
 
 #nav-bar ul li {
-	height: 41px;
+	height: 49px;
 	display: inline;
 	float: left;
 }
 
 #nav-bar ul li a {
 	font: normal 13px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial;
-	line-height: 41px;
+	line-height: 49px;
 	padding: 0 15px;
 	display: block;
 }
@@ -150,10 +150,22 @@ li {
 #nav-bar ul li a:hover {
 	background: gray;
 }
+
+
 .numInput{
-	display: block;
-	width: 10px;
+		
+	background-color: #abc4cc;
+	width: 160px;
 	height: 10px;
+	padding: 10px;
+	margin: 10px;
+	color: #4B5F63;
+	font-style: bold;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+	border: none;
 }
 
 /* End Typography */
@@ -184,7 +196,7 @@ a.button, input.button {
 	padding:5px 5px 5px 5px;
 	margin: 5px 10px 0px 10px;
 	text-decoration: none;
-	cursor: 
+	cursor: pointer;
 }
 
 input.bluebutton {

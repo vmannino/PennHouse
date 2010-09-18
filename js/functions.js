@@ -30,9 +30,10 @@ function getLatLng(address) {
     });
 }
 		
-$(document).ready(function(){
-	// Tabs
-	$('#search-results').tabs();
-	$('#map-overlay').tabs();
-});
+
+		$(document).ready(function(){
+			// Tabs
+			$('#search-results').tabs();
+			$('#map-overlay').tabs();
+		});	
 
