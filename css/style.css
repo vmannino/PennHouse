@@ -64,24 +64,34 @@ body {
 }
 
 #map-overlay {
-	width: 320px;
-	height: 400px;
+	width: 280px;
+	padding: 20px;
+	height: 360px;
 	position: absolute;
 	right: 0px;
 	background: lightGrey;
 	z-index: 100;
 }
 
+#map-overlay ul.ui-tabs-nav {
+	right: -100px;
+}
+
 #search-results {
-	width: 640px;
+	width: 600px;
 	background: white;
-	height: 400px;
+	height: 360px;
+	padding: 20px;
 	float: left;
 	position: relative;
 	border-radius:10px; 
 	-moz-border-radius: 10px; 
 	-khtml-border-radius: 10px; 
 	-webkit-border-radius: 10px;
+}
+
+#search-results ul.ui-tabs-nav {
+	padding-left: 40px;
 }
 
 #favorites {

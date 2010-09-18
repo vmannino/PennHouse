@@ -73,6 +73,8 @@
 					<div id="filters">
 						<h1>This is where detailed results would go.</h1>
 						
+						
+						<a id="filter-button" class="button bluebutton medium">Filter Results</a>
 					</div>
 					
 					<div id="saved-searches">
