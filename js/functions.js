@@ -107,26 +107,50 @@ $.ajax({
 	  $('#results').html('');
 	  $('#results').append($('<hr>',{className:"custom-rule"}));
 	  for (result in data){
+		  summaryDiv=$('<div>',{className:'house-summary'});
+		  summaryDiv.hide();
+		  summaryDiv.append($('<div>Lots of extra stuff about this house<br/>Can go here<br/>Well leave the images for a nice fancybox<br/></div>'));
+		  resultDiv=$('<div>',{className:"house-result hovering"});
+		  resultMin=$('<button>',{className:"house-min"});
+		  resultMin.hide();
+		  resultMin.click(function(){
+			  $('.house-summary').slideUp();
+			  $('.house-result').addClass('hovering');
+			  $('.house-min').hide();
+			  setTimeout(function(){$('.house-result').one('click',function(){
+			  $('.house-min').show();
+			  $('.house-summary').slideDown();
+			  $('.house-result').removeClass('hovering');
+			  });},1);//1 ms delay so click events dont conflict
+			  });
+		  resultImg=$('<img>',{className:"house-thumb", src:'img/houses/thumb/'+data[result].imgFileName[0]});
+		  resultMetaDiv=$('<div>',{className:"house-result-meta"});
+		  resultMetaDiv.append($('<h2>',{text: data[result].title}));
+		  resultMetaDiv.append($('<h3>',{text: data[result].bedrooms+' bedrooms | '+data[result].total_rent+'/month'}));
+		  resultRankDiv=$('<div>',{className:"house-result-ranking"});
+		  resultRentDiv=$('<div>',{className:"avg-rent", text:'$'+data[result].avg_rent});
+		  rentSpan=$('<span>', {text:'AVG RENT/PERSON'});
+		  resultRentDiv.append(rentSpan);
+		  resultRankDiv.append(resultRentDiv);
+		  resultRank=$('<div>',{className:"rank", text:data[result].avg_rating});
+		  rankSpan=$('<span>',{text:'STARS'});
+		  resultRank.append(rankSpan);
+		  resultRankDiv.append(resultRank);
+		  compareBox=$('input',{type:'checkbox', className:'house-compare'});
+		  resultDiv.append(resultMin);
+		  resultDiv.append(resultImg);
+		  resultDiv.append(resultMetaDiv);
+		  resultDiv.append(resultRankDiv);
+		  resultDiv.append(compareBox);
 		  
-	  resultDiv=$('<div>',{className:"house-result"});
-	  resultImg=$('<img>',{className:"house-thumb", src:'img/houses/thumb/'+data[result].imgFileName[0]});
-	  resultMetaDiv=$('<div>',{className:"house-result-meta"});
-	  resultMetaDiv.append($('<h2>',{text: data[result].title}));
-	  resultMetaDiv.append($('<h3>',{text: data[result].bedrooms+' bedrooms | '+data[result].total_rent+'/month'}));
-	  resultRankDiv=$('<div>',{className:"house-result-ranking"});
-	  resultRentDiv=$('<div>',{className:"avg-rent", text:'$'+data[result].avg_rent});
-	  rentSpan=$('<span>', {text:'AVG RENT/PERSON'});
-	  resultRentDiv.append(rentSpan);
-	  resultRankDiv.append(resultRentDiv);
-	  resultRank=$('<div>',{className:"rank", text:data[result].avg_rating});
-	  rankSpan=$('<span>',{text:'STARS'});
-	  resultRank.append(rankSpan);
-	  resultRankDiv.append(resultRank);
-	  resultDiv.append(resultImg);
-	  resultDiv.append(resultMetaDiv);
-	  resultDiv.append(resultRankDiv);
-	  $('#results').append(resultDiv);
-	  $('#results').append($('<hr>',{className:"custom-rule"}));
+		  resultDiv.one('click',function(){
+			  $('.house-min').show();
+			  $('.house-summary').slideDown();
+			  $('.house-result').removeClass('hovering');
+			  });
+		  $('#results').append(resultDiv);
+		  $('#results').append(summaryDiv);
+		  $('#results').append($('<hr>',{className:"custom-rule"}));
 	  }
 	$('#globe').hide();
   },
@@ -138,4 +162,22 @@ $.ajax({
 },
 dataType: 'json'
 });
+}
+
+function compareResults(){
+	compareArray=new Array();
+	$('input.house-compare').each(function(index,value){
+		if (value.checked){
+			compareArray.push(value);
+		}
+		});
+		$('#globe').show();
+	  $('#results').html('');
+	  $('#results').append($('<hr>',{className:"custom-rule"}));
+	  for (compare in compareArray){
+		  
+		  
+	  }
+	  
+	
 }

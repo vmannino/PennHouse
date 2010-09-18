@@ -130,11 +130,13 @@ body {
 	padding: 10px 0;
 }
 
-.house-result:hover {
+.hovering:hover {
 	background: #e9f2f5;
 	cursor: pointer;
 }
-
+.house-min{
+	float:left;
+}
 .house-thumb {
 	float: left;
 	margin: 10px;
