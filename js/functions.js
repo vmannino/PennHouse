@@ -35,5 +35,6 @@ function getLatLng(address) {
 			// Tabs
 			$('#search-results').tabs();
 			$('#map-overlay').tabs();
+			$('#filter-button').click(function(){filterResults();});
 		});	
 

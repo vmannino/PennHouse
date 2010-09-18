@@ -16,7 +16,8 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js" ></script>
 
 		<script type="text/javascript" src="js/functions.js"></script>
-		
+        
+		<script type="text/javascript" src="js/ajaxResults.js"></script>
 		<script type="text/javascript"
 			src="http://maps.google.com/maps/api/js?sensor=true">
 		</script>
