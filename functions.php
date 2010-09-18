@@ -1,6 +1,26 @@
 <?php
 //functions.php
 
+define('FACEBOOK_APP_ID', 'your application id');
+define('FACEBOOK_SECRET', 'your application secret');
+
+function get_facebook_cookie($app_id, $application_secret) {
+  $args = array();
+  parse_str(trim($_COOKIE['fbs_' . $app_id], '\\"'), $args);
+  ksort($args);
+  $payload = '';
+  foreach ($args as $key => $value) {
+    if ($key != 'sig') {
+      $payload .= $key . '=' . $value;
+    }
+  }
+  if (md5($payload . $application_secret) != $args['sig']) {
+    return null;
+  }
+  return $args;
+}
+
+$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 
 function sanitize($string){
 	$string=strip_tags($string);
@@ -10,6 +30,9 @@ function sanitize($string){
 }
 
 function getHeader($page, $title) {
+
+
+
 ?>
 
 
@@ -44,6 +67,13 @@ function getHeader($page, $title) {
 			 
 	</head>
 	<body onload="initialize()">
+		<?php if ($cookie) { ?>
+			Your user ID is <?= $cookie['uid'] ?>
+		<?php } else { ?>
+			<fb:login-button></fb:login-button>
+			<?php echo $app_id; ?> <br/>
+			<?php echo $application_secret;?> <br/>
+		<?php } ?>
 		<div id="header"> 
 			<div id="nav-bar"> 
 				<div id="nav-left"> 
@@ -63,6 +93,8 @@ function getHeader($page, $title) {
 					</ul>
 				</div>
 			</div>
+			
+			
 		</div>
 
 		
@@ -76,7 +108,18 @@ function getFooter() {
 ?>
 
 		<div id="footer"> </div>
-		
+		<div id="fb-root"></div>
+		<script src="http://connect.facebook.net/en_US/all.js"></script>
+		<script>
+			FB.init({appId: 'your app id', status: true, cookie: true, xfbml: true});
+			FB.Event.subscribe('auth.sessionChange', function(response) {
+				if (response.session) {
+					// A user has logged in, and a new cookie has been saved
+				} else {
+					// The user has logged out, and the cookie has been cleared
+				}
+			});
+		</script>
 	</body>
 </html>
 

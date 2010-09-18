@@ -53,18 +53,7 @@
 	
 		<div class="clear"></div>
 	
-	
-	
-	
-<<<<<<< HEAD
 	</div>
-				
 			
-
-=======
-	</div>
-		
-		
->>>>>>> 6c2d7a363f8cff6e9950094e4f8ad4e0340211f9
 		
 		<?php getFooter(); ?>
