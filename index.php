@@ -3,9 +3,7 @@
 	include_once("functions.php");
 	getHeader("HOME","Home");
 	
-	
 ?>
-
 
 
 	<script type="text/javascript" src="js/jquery.easySlider-kf.js"></script>

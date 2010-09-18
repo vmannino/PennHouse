@@ -56,7 +56,6 @@
 						<li><a href="#results">Search Results</a></li>
 						<li><a href="#compare">Compare Houses</a></li>
 					</ul>
-					
 					<div id="results">
 						<h1>Search Results:</h1>
 						<hr class="custom-rule" />
@@ -64,7 +63,7 @@
 							<img src="img/houses/thumb/example.jpg" class="house-thumb" />
 							<div class="house-result-meta">
 								<h2>4211 Spruce Street</h2>
-								<h3>10 Occupants | $6,500/month</h3>
+								<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
 							</div>
 							
 							<div class="house-result-ranking">
@@ -84,7 +83,7 @@
 						
 						
 						
-						
+				
 					</div>
 					
 					<div id="compare">

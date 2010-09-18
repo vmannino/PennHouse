@@ -95,14 +95,45 @@ function placeHouse(lat,lng,name) {
 			$('#dashboard-main').tabs();
 			
 			$('#filter-button').click(function(){filterResults();});
-			FB.init({appId: '109805322414148', status: true, cookie: true, xfbml: true});
-			FB.Event.subscribe('auth.sessionChange', function(response) {
-			if (response.session) {
-			  // A user has logged in, and a new cookie has been saved
-			} else {
-			  // The user has logged out, and the cookie has been cleared
-			}
-			});
 
 		});	
+		
+function filterResults(){
+$.ajax({
+  url: 'search.php',
+  data: ({ avgRentMin : $('input[name=avgRentMin]').val(), avgRentMax : $('input[name=avgRentMax]').val(), ttlRentMin : $('input[name=ttlRentMin]').val(), ttlRentMax : $('input[name=ttlRentMax]').val(),llRtngMin : $('input[name=llRtngMin]').val(), llRtngMax : $('input[name=llRtngMax]').val(), hsRtngMin : $('input[name=hsRtngMin]').val(), hsRtngMax : $('input[name=hsRtngMax]').val(), bdrmMin : $('input[name=bdrmMin]').val(), bdrmMax : $('input[name=bdrmMax]').val()}),
+  success: function(data){
+	  $('#results').html('');
+	  for (result in data){
 
+	  resultDiv=$('<div>',{className:"house-result"});
+	  resultImg=$('<img>',{className:"house-thumb", src:'img/houses/thumb/'+data[result].imgFileName[0]});
+	  resultMetaDiv=$('<div>',{className:"house-result-meta"});
+	  resultMetaDiv.append($('<h2>',{text: data[result].title}));
+	  resultMetaDiv.append($('<h3>',{text: data[result].bedrooms+' bedrooms | '+data[result].total_rent+'/month'}));
+	  resultRankDiv=$('<div>',{className:"house-result-ranking"});
+	  resultRentDiv=$('<div>',{className:"avg-rent", text:'$'+data[result].avg_rent});
+	  rentSpan=$('<span>', {text:'AVG RENT/PERSON'});
+	  resultRentDiv.append(rentSpan);
+	  resultRankDiv.append(resultRentDiv);
+	  resultRank=$('<div>',{className:"rank", text:data[result].avg_rating});
+	  rankSpan=$('<span>',{text:'STARS'});
+	  resultRank.append(rankSpan);
+	  resultRankDiv.append(resultRank);
+	  resultDiv.append(resultImg);
+	  resultDiv.append(resultMetaDiv);
+	  resultDiv.append(resultRankDiv);
+	  $('#results').append(resultDiv);
+	  $('#results').append($('<hr>',{className:"custom-rule"}));alert('dd');
+	  }
+	
+  },
+  error:function(xhr,err){
+	
+    alert("readyState: "+xhr.readyState+"\nstatus: "+xhr.status);
+    alert("responseText: "+xhr.responseText);
+	
+},
+dataType: 'json'
+});
+}
