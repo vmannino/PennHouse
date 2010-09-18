@@ -59,7 +59,7 @@
 					<div id="results">
 						<h1>Search Results:</h1>
 						<hr class="custom-rule" />
-						<div class="house-result">
+						<div class="house-result hovering">
 							<img src="img/houses/thumb/example.jpg" class="house-thumb" />
 							<div class="house-result-meta">
 								<h2>4211 Spruce Street</h2>
