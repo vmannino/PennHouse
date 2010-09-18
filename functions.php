@@ -1,26 +1,6 @@
 <?php
 //functions.php
 
-define('FACEBOOK_APP_ID', 'your application id');
-define('FACEBOOK_SECRET', 'your application secret');
-
-function get_facebook_cookie($app_id, $application_secret) {
-  $args = array();
-  parse_str(trim($_COOKIE['fbs_' . $app_id], '\\"'), $args);
-  ksort($args);
-  $payload = '';
-  foreach ($args as $key => $value) {
-    if ($key != 'sig') {
-      $payload .= $key . '=' . $value;
-    }
-  }
-  if (md5($payload . $application_secret) != $args['sig']) {
-    return null;
-  }
-  return $args;
-}
-
-$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 
 function sanitize($string){
 	$string=strip_tags($string);
@@ -54,8 +34,8 @@ function getHeader($page, $title) {
 		<!-- Begin JavaScript -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" ></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js" ></script>
-		<script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
-		<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+		<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+		<script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
 		
 		<script type="text/javascript" src="js/functions.js"></script>
 		
@@ -70,12 +50,33 @@ function getHeader($page, $title) {
 			 
 	</head>
 	<body onload="initialize()">
-		<?php if ($cookie) { ?>
-			Your user ID is <?= $cookie['uid'] ?>
-		<?php } else { ?>
-			<fb:login-button>Login using Facebook</fb:login-button>
-		<?php } ?>
-		
+	
+		<a id="various1" href="#inline1" title="Lorem ipsum dolor sit amet">Inline - auto detect width / height</a>
+		<div style="display: none">
+			<div id="inline1"> 
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mi eu elit tempor facilisis id et neque. Nulla sit amet sem sapien. Vestibulum imperdiet porta ante ac ornare. Nulla et lorem eu nibh adipiscing ultricies nec at lacus. Cras laoreet ultricies sem, at blandit mi eleifend aliquam. Nunc enim ipsum, vehicula non pretium varius, cursus ac tortor. Vivamus fringilla congue laoreet. Quisque ultrices sodales orci, quis rhoncus justo auctor in. Phasellus dui eros, bibendum eu feugiat ornare, faucibus eu mi. Nunc aliquet tempus sem, id aliquam diam varius ac. Maecenas nisl nunc, molestie vitae eleifend vel, iaculis sed magna. Aenean tempus lacus vitae orci posuere porttitor eget non felis. Donec lectus elit, aliquam nec eleifend sit amet, vestibulum sed nunc.
+			</div>
+		</div>
+	
+		<p><fb:login-button autologoutlink="true"></fb:login-button></p>
+		<p><fb:like></fb:like></p>
+
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({appId: '102871766442464', status: true, cookie: true,
+                 xfbml: true});
+      };
+      (function() {
+        var e = document.createElement('script');
+        e.type = 'text/javascript';
+        e.src = document.location.protocol +
+          '//connect.facebook.net/en_US/all.js';
+        e.async = true;
+        document.getElementById('fb-root').appendChild(e);
+      }());
+    </script>
+
 		<div id="header"> 
 			<div id="nav-bar"> 
 				<div id="nav-left"> 
@@ -110,19 +111,8 @@ function getFooter() {
 ?>
 
 		<div id="footer"> </div>
-		<div id="fb-root"></div>
-		<script src="http://connect.facebook.net/en_US/all.js"></script>
-		<script>
-			FB.init({appId: 'FACEBOOK_APP_ID', status: true, cookie: true, xfbml: true});
-			FB.Event.subscribe('auth.sessionChange', function(response) {
-				window.location.reload();
-				if (response.session) {
-					// A user has logged in, and a new cookie has been saved
-				} else {
-					// The user has logged out, and the cookie has been cleared
-				}
-			});
-		</script>
+		
+
 	</body>
 </html>
 
