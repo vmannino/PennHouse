@@ -87,12 +87,110 @@
 					</div>
 					
 					<div id="compare">
-						<h1>This is where comparisons would go.</h1>
-						
+						<!-- Table markup-->  
+  
+						<table id="compare-table" summary="Comparison of Houses">
+						<thead>
+							<tr>
+								<th scope="col">Thumbnail</th>
+								<th scope="col">Address</th>
+								<th scope="col">Rank</th>
+								<th scope="col">Avg R/R</th>
+								<th scope="col">Rooms</th>
+								<th scope="col">Rent</th>
+								<th scope="col">Landlord</th>
+								<th scope="col">Landlord Rank</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="odd">
+								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
+								<td>4211 Spruce St.</td>
+								<td>4.5</td>
+								<td>$540</td>
+								<td>12</td>
+								<td>$6500</td>
+								<td>Off-Campus Management</td>
+								<td>4.8</td>
+							</tr>
+							<tr>
+								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
+								<td>4211 Spruce St.</td>
+								<td>4.5</td>
+								<td>$540</td>
+								<td>12</td>
+								<td>$6500</td>
+								<td>Off-Campus Management</td>
+								<td>4.8</td>
+							</tr>
+							<tr class="odd">
+								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
+								<td>4211 Spruce St.</td>
+								<td>4.5</td>
+								<td>$540</td>
+								<td>12</td>
+								<td>$6500</td>
+								<td>Off-Campus Management</td>
+								<td>4.8</td>
+							</tr>
+							<tr>
+								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
+								<td>4211 Spruce St.</td>
+								<td>4.5</td>
+								<td>$540</td>
+								<td>12</td>
+								<td>$6500</td>
+								<td>Off-Campus Management</td>
+								<td>4.8</td>
+							</tr>
+							<tr class="odd">
+								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
+								<td>4211 Spruce St.</td>
+								<td>4.5</td>
+								<td>$540</td>
+								<td>12</td>
+								<td>$6500</td>
+								<td>Off-Campus Management</td>
+								<td>4.8</td>
+							</tr>
+							<tr>
+								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
+								<td>4211 Spruce St.</td>
+								<td>4.5</td>
+								<td>$540</td>
+								<td>12</td>
+								<td>$6500</td>
+								<td>Off-Campus Management</td>
+								<td>4.8</td>
+							</tr>
+							<tr class="odd">
+								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
+								<td>4211 Spruce St.</td>
+								<td>4.5</td>
+								<td>$540</td>
+								<td>12</td>
+								<td>$6500</td>
+								<td>Off-Campus Management</td>
+								<td>4.8</td>
+							</tr>
+							<tr class="last">
+								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
+								<td>4211 Spruce St.</td>
+								<td>4.5</td>
+								<td>$540</td>
+								<td>12</td>
+								<td>$6500</td>
+								<td>Off-Campus Management</td>
+								<td>4.8</td>
+							</tr>
+						</tbody>
+					</table> 
+					
+					
+					
+						<div class="clear"></div>
+					
 					</div>
-
-		
-				
 			</div>
 		
 			<div id="favorites" class="tabs"> 

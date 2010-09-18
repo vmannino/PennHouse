@@ -81,7 +81,6 @@ body {
 #search-results {
 	width: 590px;
 	background: #d8e6ea;
-	height: 360px;
 	padding: 20px;
 	float: left;
 	position: relative;
@@ -408,6 +407,52 @@ hr.custom-rule {
  
 
 
+ /* Tables */
+ #compare-table
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	line-height: 1.6em;
+	text-align: left;
+	border-collapse: collapse;
+	border: 1px solid #4B5F63;
+}
+#compare-table th
+{
+	font: italic normal 14px Georgia, serif;
+	padding: 10px 8px;
+	color: #fff;
+	background: #4B5F63;
+}
+#compare-table th:hover
+{
+	background: #7c8f93;
+	cursor: pointer;
+}
+
+
+#compare-table tr
+{
+	background: #e8eaf4;
+	border-bottom: 1px solid #D8E6EA;	
+}
+
+#compare-table tr.last
+{
+	border-bottom: 1px solid #4B5F63;	
+}
+
+#compare-table .odd
+{
+	background: #e8edff; 
+}
+
+#compare-table tr:hover td
+{
+	background: #d7dae4;
+}
+ 
+ /* End Tables */
 
 
 
