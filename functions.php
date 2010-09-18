@@ -45,7 +45,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 			<link href="css/style.css" rel="stylesheet" type="text/css" />
 			<link href="css/easyslider.css" rel="stylesheet" type="text/css" />
 			<link href="css/cupertino/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css" />
-			<link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.1.css" type="text/css" media="screen" />
+			<link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.1.css" type="text/css" media="screen" />
 		<!-- End Stylesheets -->
 		
 		<!-- Begin JavaScript -->
