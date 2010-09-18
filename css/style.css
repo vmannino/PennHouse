@@ -15,8 +15,8 @@ body {
 }
 
 #nav-bar {
-	height: 50px;
-	background: white;
+	height: 41px;
+	background: url(../img/nav.png) repeat-x;
 	position: relative;
 }
 
@@ -34,7 +34,7 @@ body {
 	width: 200px;
 	height: 100px;
 	top: -25px;
-	background-color: lightGrey;
+	background-color: darkGrey;
 	position: absolute;
 	left: 50%;
 	margin-left: -100px;
@@ -135,14 +135,14 @@ li {
 }
 
 #nav-bar ul li {
-	height: 50px;
+	height: 41px;
 	display: inline;
 	float: left;
 }
 
 #nav-bar ul li a {
 	font: normal 13px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial;
-	line-height: 50px;
+	line-height: 41px;
 	padding: 0 15px;
 	display: block;
 }
@@ -179,6 +179,7 @@ a.button, input.button {
 	padding:5px 5px 5px 5px;
 	margin: 5px 10px 0px 10px;
 	text-decoration: none;
+	cursor: 
 }
 
 input.bluebutton {
