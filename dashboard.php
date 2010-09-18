@@ -47,9 +47,7 @@
 					<img src="img/houses/thumb/example_small.jpg" class="house-thumb" />
 					<div class="house-favorite-meta">
 						<h2>4211 Spruce Street</h2>
-					</div>
-					
-					<div class="house-favorite-ranking">
+						<div class="house-favorite-ranking">
 						<div class="house-favorite-avg-rent">$540<br/>
 							<span>AVG RENT/ROOM</span>
 						</div>
@@ -59,6 +57,9 @@
 							<span>STARS</span>
 						</div>
 					</div>
+					</div>
+					
+					
 				
 				
 				</div>

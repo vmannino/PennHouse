@@ -65,12 +65,12 @@ body {
 }
 
 #map-overlay {
-	width: 280px;
+	width: 260px;
 	padding: 20px;
 	height: 360px;
 	position: absolute;
 	right: 0px;
-	background: lightGrey;
+	background: #d8e6ea;
 	z-index: 100;
 }
 
@@ -79,8 +79,8 @@ body {
 }
 
 #search-results {
-	width: 600px;
-	background: white;
+	width: 590px;
+	background: #d8e6ea;
 	height: 360px;
 	padding: 20px;
 	float: left;
@@ -108,21 +108,31 @@ body {
 }
 
 #favorites {
-	width: 320px;
-	background: lightGrey;
+	width: 300px;
+	margin-left: 30px;
+	background: #d8e6ea;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
 	height: 400px;
 	float: left;
 }
 
 #footer {
-	height: 300px;
-	background: lightGrey;
+	height: 150px;
+	background: url(../img/footer.png) repeat-x;
 
 }
 
 .house-result {
 	height: 100px;
+	padding: 10px 0;
+}
 
+.house-result:hover {
+	background: #e9f2f5;
+	cursor: pointer;
 }
 
 .house-thumb {
@@ -326,10 +336,11 @@ h1 {
 
 .house-favorite-meta h2 {
 	font: normal 15px Georgia, serif;
+	margin-bottom: 5px;
 }
 
 .house-favorite-avg-rent {
-	font: normal 20px Georgia, serif;
+	font: normal 11px Georgia, serif;
 }
 
 .house-favorite-avg-rent span {
@@ -356,7 +367,7 @@ h1 {
 }
 
 .house-favorite-rank {
-	font: normal 20px Georgia, serif;
+	font: normal 13px Georgia, serif;
 }
 
 .house-favorite-rank span {
@@ -385,7 +396,6 @@ h1 {
 hr.custom-rule {
 	border-top: 1px solid lightGrey;
 	border-bottom: 1px solid darkGrey;
-	margin: 25px 0;
 
 }
 
