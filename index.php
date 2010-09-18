@@ -10,10 +10,28 @@
 		<!-- End Stylesheets -->
 		
 		<!-- Begin JavaScript -->
+		<script type="text/javascript"
+			src="http://maps.google.com/maps/api/js?sensor=true">
+		</script>
+		<script type="text/javascript">
+		function initialize() {
+			var latlng = new google.maps.LatLng(-34.397, 150.644);
+			var myOptions = {
+				zoom: 8,
+				center: latlng,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map(document.getElementById("map-canvas"),
+				myOptions);
+				
+			<!-- Needed later for translating adresses to LatLngs -->
+			var geocoder = new google.maps.Geocoder();
+		}
+		</script>
 		<!-- End JavaScript -->
 			 
 	</head>
-	<body>
+	<body onload="initialize()">
 	
 	
 		<div id="header"> 
@@ -54,9 +72,10 @@
 
 			
 			
-			<div id="map-canvas"> 
+			<div id="map-canvas">
 		
-
+				<div>
+				</div>
 		
 				<div id="map-overlay"> 
 					
