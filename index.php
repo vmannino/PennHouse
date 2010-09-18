@@ -73,7 +73,7 @@
 					<div id="filters">
 						<h1>This is where detailed results would go.</h1>
 						<form>
-						<input type="text" name="avgRentMin">
+						<input type="text" class="numInput" name="avgRentMin">
 						<input type="text" name="avgRentMax">
 						<input type="text" name="ttlRentMin">
 						<input type="text" name="ttlRentMax">
