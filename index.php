@@ -3,8 +3,6 @@
 	getHeader("HOME","Home");
 ?>
 
-
-
 		
 		<div id="content"> 
 
