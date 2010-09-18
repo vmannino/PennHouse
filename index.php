@@ -1,5 +1,5 @@
 <?php 
-	//include_once("config.php");
+	include_once("config.php");
 	include_once("functions.php");
 	getHeader("HOME","Home");
 	
@@ -53,11 +53,7 @@
 	
 		<div class="clear"></div>
 	
-	
-	
-	
 	</div>
-		
-		
+			
 		
 		<?php getFooter(); ?>

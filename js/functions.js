@@ -1,6 +1,6 @@
 var map;
 var geocoder;
-
+var filterResults;
 function initialize() {
 	var latlng = new google.maps.LatLng(39.9536322, -75.1988056);
 	var myOptions = {
@@ -89,13 +89,21 @@ function placeHouse(lat,lng,name) {
 
 		$(document).ready(function(){
 			// Tabs
-			$('#search-results').tabs();
+			$('#search-results').tabs({
+    select: function(event, ui) {
+		if (ui.index==1){
+			compareResults();
+			return true;
+		}
+    }
+});
 			$('#map-overlay').tabs();
 			
 			$('#dashboard-main').tabs();
 			
-			$('#filter-button').click(function(){filterResults();});
+			$('#filter-button').click(function(){$('#search-results').tabs('select', 0);filterResults();});
 
+			$('#filter-button').click(function(){filterResults();});
 		});	
 		
 function filterResults(){
@@ -106,6 +114,7 @@ $.ajax({
 	  $('#globe').show();
 	  $('#results').html('');
 	  $('#results').append($('<hr>',{className:"custom-rule"}));
+	  filterResults=data;
 	  for (result in data){
 		  summaryDiv=$('<div>',{className:'house-summary', id:'summary'+result});
 		  summaryDiv.hide();
@@ -126,7 +135,7 @@ $.ajax({
 		  rankSpan=$('<span>',{text:'STARS'});
 		  resultRank.append(rankSpan);
 		  resultRankDiv.append(resultRank);
-		  compareBox=$('<input>',{type:'checkbox', className:'house-compare'});
+		  compareBox=$('<input>',{type:'checkbox', className:'house-compare', name:result});
 		  resultDiv.append(resultMin);
 		  resultDiv.append(resultImg);
 		  resultDiv.append(resultMetaDiv);
@@ -153,17 +162,48 @@ dataType: 'json'
 function compareResults(){
 	compareArray=new Array();
 	$('input.house-compare').each(function(index,value){
+		hasResults='true';
 		if (value.checked){
-			compareArray.push(value);
+			compareArray.push(filterResults[value.name]);
 		}
 		});
+		if(!hasResults){
+		}
+		else{
+			
 		$('#globe').show();
-	  $('#results').html('');
-	  $('#results').append($('<hr>',{className:"custom-rule"}));
-	  for (compare in compareArray){
-		  
-		  
-	  }
+	  $('#compare').html('');
+	  cmpTable=$('<table>',{id:"compare-table"});
+	  tableHead=$('<thead>');
+	  tableHead.append($('<tr><th scope="col">Thumbnail</th><th scope="col">Address</th><th scope="col">Rank</th><th scope="col">Avg R/R</th><th scope="col">Rooms</th><th scope="col">Rent</th><th scope="col">Landlord</th><th scope="col">Landlord Rank</th></tr>'));
+	  tableBody=$('<tbody>');
 	  
-	
-}
+	    for (item in compareArray){
+			tableRow=$('<tr>',{className:'odd'});
+			td=$('<td>');
+			td.append($('<img>',{src:"img/houses/thumb/"+compareArray[item].imgFileName[0], class:"house-thumb"}));
+			tableRow.append(td);
+			td=$('<td>',{text:compareArray[item].title});
+			tableRow.append(td);
+		  	td=$('<td>',{text:compareArray[item].avg_rating});
+			tableRow.append(td);
+			td=$('<td>',{text:'$'+compareArray[item].avg_rent});
+			tableRow.append(td);
+			td=$('<td>',{text:compareArray[item].bedrooms});
+			tableRow.append(td);
+			td=$('<td>',{text:'$'+compareArray[item].total_rent});
+			tableRow.append(td);
+			td=$('<td>',{text:compareArray[item].ll_title});
+			tableRow.append(td);
+			td=$('<td>',{text:compareArray[item].ll_avg_rating});
+			tableRow.append(td);
+			tableBody.append(tableRow);
+	  }
+	  cmpTable.append(tableHead);
+	  cmpTable.append(tableBody);
+	  $('#compare').append(cmpTable);
+	  $('#globe').hide();
+		}
+}	
+
+

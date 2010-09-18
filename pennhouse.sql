@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 17, 2010 at 05:20 PM
+-- Generation Time: Sep 18, 2010 at 01:43 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -35,14 +35,21 @@ CREATE TABLE IF NOT EXISTS `houses` (
   `lid` int(11) NOT NULL,
   `images` text NOT NULL,
   `rid` int(11) NOT NULL,
-  `rating_avg` int(11) NOT NULL,
+  `avg_rating` int(11) NOT NULL,
+  `bedrooms` int(11) NOT NULL,
+  `avg_rent` int(11) NOT NULL,
+  `title` varchar(128) NOT NULL,
   PRIMARY KEY (`hid`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `houses`
 --
 
+INSERT INTO `houses` (`hid`, `address`, `sqr_ft`, `total_rent`, `amenities`, `availability`, `lid`, `images`, `rid`, `avg_rating`, `bedrooms`, `avg_rent`, `title`) VALUES
+(1, '4036 spruce street philadelphia pa 19104', 0, 6500, '', 0, 0, '200029004.jpg,example.jpg,GibsonHouse3.jpg,house-selling-1.jpg', 0, 4, 13, 640, '4036 Spruce St'),
+(2, '4109 pine street philadelphia pa 19104', 3000, 6500, '', 0, 0, 'example.jpg', 0, 2, 12, 540, '4109 Pine St'),
+(3, '3908 spruce street philadelphia pa', 4000, 5000, '', 0, 0, 'GibsonHouse3.jpg', 0, 3, 11, 620, '3908 Spruce St');
 
 -- --------------------------------------------------------
 
@@ -54,6 +61,7 @@ CREATE TABLE IF NOT EXISTS `landlords` (
   `lid` int(11) NOT NULL,
   `houses` text NOT NULL,
   `reviews` text NOT NULL,
+  `ll_avg_rating` int(11) NOT NULL,
   KEY `lid` (`lid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -160,6 +168,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `picture` text NOT NULL,
   `houses` text NOT NULL,
   `saved_searches` text NOT NULL,
+  `favorites` text NOT NULL,
   PRIMARY KEY (`uid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 

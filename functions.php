@@ -1,12 +1,8 @@
 <?php
 //functions.php
 
-function sanitize($string){
-	$string=strip_tags($string);
-	$string=htmlentities($string);
-	$string=stripslashes($string);
-	return mysql_real_escape_string($string);
-}
+define('FACEBOOK_APP_ID', 'your application id');
+define('FACEBOOK_SECRET', 'your application secret');
 
 function get_facebook_cookie($app_id, $application_secret) {
   $args = array();
@@ -24,22 +20,20 @@ function get_facebook_cookie($app_id, $application_secret) {
   return $args;
 }
 
+$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
+
+function sanitize($string){
+	$string=strip_tags($string);
+	$string=htmlentities($string);
+	$string=stripslashes($string);
+	return mysql_real_escape_string($string);
+}
+
 function getHeader($page, $title) {
-	
+
+
+
 ?>
-<!--
-<?php 
-	//$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
-	if ($cookie) { ?>
-		Your user ID is <?= $cookie['uid'] ?>
-<?php } else { ?>
-	<fb:login-button></fb:login-button>
-<?php } ?>
--->
-
-<div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -65,11 +59,19 @@ function getHeader($page, $title) {
 		<script type="text/javascript"
 			src="http://maps.google.com/maps/api/js?sensor=true">
 		</script>
+		
+		
+		
 		<!-- End JavaScript -->
 		
 			 
 	</head>
 	<body onload="initialize()">
+		<?php if ($cookie) { ?>
+			Your user ID is <?= $cookie['uid'] ?>
+		<?php } else { ?>
+			<fb:login-button>Login using Facebook</fb:login-button>
+		<?php } ?>
 		<div id="header"> 
 			<div id="nav-bar"> 
 				<div id="nav-left"> 
@@ -89,9 +91,11 @@ function getHeader($page, $title) {
 					</ul>
 				</div>
 			</div>
+			
+			
 		</div>
 
-
+		
 <?php
 
 
@@ -101,7 +105,19 @@ function getFooter() {
 
 ?>
 
-		<div id="footer"> </div>	
+		<div id="footer"> </div>
+		<div id="fb-root"></div>
+		<script src="http://connect.facebook.net/en_US/all.js"></script>
+		<script>
+			FB.init({appId: 'your app id', status: true, cookie: true, xfbml: true});
+			FB.Event.subscribe('auth.sessionChange', function(response) {
+				if (response.session) {
+					// A user has logged in, and a new cookie has been saved
+				} else {
+					// The user has logged out, and the cookie has been cleared
+				}
+			});
+		</script>
 	</body>
 </html>
 
