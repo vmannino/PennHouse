@@ -87,24 +87,29 @@ function placeHouse(lat,lng,name) {
 	});  
 }
 
-		$(document).ready(function(){
-			// Tabs
-			$('#search-results').tabs({
-    select: function(event, ui) {
-		if (ui.index==1){
-			compareResults();
-			return true;
-		}
-    }
-});
-			$('#map-overlay').tabs();
-			
-			$('#dashboard-main').tabs();
-			
-			$('#filter-button').click(function(){$('#search-results').tabs('select', 0);filterResults();});
+$(document).ready(function(){
+	/* Using custom settings */
+	
+	$("#inline1").fancybox({
+		'hideOnContentClick': false
+	});
 
-			$('#filter-button').click(function(){filterResults();});
-		});	
+	// Tabs
+	$('#search-results').tabs({
+		select: function(event, ui) {
+			if (ui.index==1){
+				compareResults();
+				return true;
+			}
+		}
+	});
+	$('#map-overlay').tabs();
+			
+	$('#dashboard-main').tabs();
+			
+	$('#filter-button').click(function(){$('#search-results').tabs('select', 0);filterResults();});
+	$('#filter-button').click(function(){filterResults();});
+});	
 		
 function filterResults(){
 $.ajax({
@@ -160,9 +165,10 @@ dataType: 'json'
 }
 
 function compareResults(){
+	hasResults=false;
 	compareArray=new Array();
 	$('input.house-compare').each(function(index,value){
-		hasResults='true';
+		hasResults=true;
 		if (value.checked){
 			compareArray.push(filterResults[value.name]);
 		}

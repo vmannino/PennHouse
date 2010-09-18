@@ -1,9 +1,12 @@
 <?php
 //functions.php
 
-define('FACEBOOK_APP_ID', 'your application id');
-define('FACEBOOK_SECRET', 'your application secret');
-
+function sanitize($string){
+	$string=strip_tags($string);
+	$string=htmlentities($string);
+	$string=stripslashes($string);
+	return mysql_real_escape_string($string);
+}
 function get_facebook_cookie($app_id, $application_secret) {
   $args = array();
   parse_str(trim($_COOKIE['fbs_' . $app_id], '\\"'), $args);
@@ -19,25 +22,20 @@ function get_facebook_cookie($app_id, $application_secret) {
   }
   return $args;
 }
-
-$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
-
-function sanitize($string){
-	$string=strip_tags($string);
-	$string=htmlentities($string);
-	$string=stripslashes($string);
-	return mysql_real_escape_string($string);
-}
-
 function getHeader($page, $title) {
 
 
+define('FACEBOOK_APP_ID', '102871766442464');
+define('FACEBOOK_SECRET', '981fef3ce9d8e664b9277072210dd88b');
+
+$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 
 ?>
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<title>opennhouse | <?php echo $title; ?></title>
@@ -47,13 +45,15 @@ function getHeader($page, $title) {
 			<link href="css/style.css" rel="stylesheet" type="text/css" />
 			<link href="css/easyslider.css" rel="stylesheet" type="text/css" />
 			<link href="css/cupertino/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css" />
-			
+			<link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.1.css" type="text/css" media="screen" />
 		<!-- End Stylesheets -->
 		
 		<!-- Begin JavaScript -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" ></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js" ></script>
-
+		<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+		<script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+		
 		<script type="text/javascript" src="js/functions.js"></script>
 		
 		<script type="text/javascript"
@@ -67,11 +67,34 @@ function getHeader($page, $title) {
 			 
 	</head>
 	<body onload="initialize()">
-		<?php if ($cookie) { ?>
-			Your user ID is <?= $cookie['uid'] ?>
-		<?php } else { ?>
-			<fb:login-button>Login using Facebook</fb:login-button>
-		<?php } ?>
+
+    <?php if ($cookie) { ?>
+      Your user ID is <?php echo $cookie['uid']; }
+	  else{
+		echo 'no cookie!';  
+	  }?>
+  
+
+    
+    <p><fb:login-button perms="email" autologoutlink="true"></fb:login-button></p>
+    <p><fb:like></fb:like></p>
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({appId: '102871766442464', status: true, cookie: true,
+                 xfbml: true});
+      };
+      (function() {
+        var e = document.createElement('script');
+        e.type = 'text/javascript';
+        e.src = document.location.protocol +
+          '//connect.facebook.net/en_US/all.js';
+        e.async = true;
+        document.getElementById('fb-root').appendChild(e);
+      }());
+    </script>
+
+
 		<div id="header"> 
 			<div id="nav-bar"> 
 				<div id="nav-left"> 
@@ -97,33 +120,13 @@ function getHeader($page, $title) {
 
 		
 <?php
-
-
 }
-
 function getFooter() {
-
 ?>
-
 		<div id="footer"> </div>
-		<div id="fb-root"></div>
-		<script src="http://connect.facebook.net/en_US/all.js"></script>
-		<script>
-			FB.init({appId: 'your app id', status: true, cookie: true, xfbml: true});
-			FB.Event.subscribe('auth.sessionChange', function(response) {
-				if (response.session) {
-					// A user has logged in, and a new cookie has been saved
-				} else {
-					// The user has logged out, and the cookie has been cleared
-				}
-			});
-		</script>
 	</body>
 </html>
-
 <?php
-
-
 }
 
 ?>
