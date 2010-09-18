@@ -1,4 +1,3 @@
-functions.js
 
 function initialize() {
 			var latlng = new google.maps.LatLng(-34.397, 150.644);
