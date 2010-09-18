@@ -115,9 +115,8 @@
 				<ul>
 					<li><a href="#tabs-1">Favorites</a></li>
 				</ul>
-
-		
 				
+		
 			</div>
 			<div class="clear"></div>
 		
