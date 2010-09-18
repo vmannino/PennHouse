@@ -70,7 +70,7 @@ function getHeader($page, $title) {
 		<?php if ($cookie) { ?>
 			Your user ID is <?= $cookie['uid'] ?>
 		<?php } else { ?>
-			<fb:login-button>Hi Broglie</fb:login-button>
+			<fb:login-button>Login using Facebook</fb:login-button>
 		<?php } ?>
 		<div id="header"> 
 			<div id="nav-bar"> 
