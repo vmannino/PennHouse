@@ -130,12 +130,15 @@ body {
 	padding: 10px 0;
 }
 
-.hovering:hover {
+div.hovering:hover {
 	background: #e9f2f5;
 	cursor: pointer;
 }
 .house-min{
 	float:left;
+}
+.house-compare{
+	float:right;
 }
 .house-thumb {
 	float: left;
