@@ -17,4 +17,5 @@ function initialize() {
 			// Tabs
 			$('#search-results').tabs();
 			$('#map-overlay').tabs();
+			$('#logo').text('Hello World!');
 		});	

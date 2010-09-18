@@ -74,7 +74,7 @@ body {
 }
 
 #map-overlay ul.ui-tabs-nav {
-	right: -100px;
+	right: -70px;
 }
 
 #search-results {
@@ -179,7 +179,7 @@ a.button, input.button {
 	padding:5px 5px 5px 5px;
 	margin: 5px 10px 0px 10px;
 	text-decoration: none;
-	cursor: 
+	cursor: pointer;
 }
 
 input.bluebutton {
