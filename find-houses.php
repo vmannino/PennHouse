@@ -42,7 +42,7 @@
 
 				</div>
 				
-				<div id="globe"><img src="img/globe.gif" alt="globe" title="Loading..."/></div>
+				<div id="globe" style="display:none;"><img src="img/globe.gif" alt="globe" title="Loading..."/></div>
 				<div id="map-canvas">
 			
 					

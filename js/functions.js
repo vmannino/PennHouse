@@ -101,9 +101,11 @@ $.ajax({
   url: 'search.php',
   data: ({ avgRentMin : $('input[name=avgRentMin]').val(), avgRentMax : $('input[name=avgRentMax]').val(), ttlRentMin : $('input[name=ttlRentMin]').val(), ttlRentMax : $('input[name=ttlRentMax]').val(),llRtngMin : $('input[name=llRtngMin]').val(), llRtngMax : $('input[name=llRtngMax]').val(), hsRtngMin : $('input[name=hsRtngMin]').val(), hsRtngMax : $('input[name=hsRtngMax]').val(), bdrmMin : $('input[name=bdrmMin]').val(), bdrmMax : $('input[name=bdrmMax]').val()}),
   success: function(data){
+	  $('#globe').show();
 	  $('#results').html('');
+	  $('#results').append($('<hr>',{className:"custom-rule"}));
 	  for (result in data){
-
+		  
 	  resultDiv=$('<div>',{className:"house-result"});
 	  resultImg=$('<img>',{className:"house-thumb", src:'img/houses/thumb/'+data[result].imgFileName[0]});
 	  resultMetaDiv=$('<div>',{className:"house-result-meta"});
@@ -122,9 +124,9 @@ $.ajax({
 	  resultDiv.append(resultMetaDiv);
 	  resultDiv.append(resultRankDiv);
 	  $('#results').append(resultDiv);
-	  $('#results').append($('<hr>',{className:"custom-rule"}));alert('dd');
+	  $('#results').append($('<hr>',{className:"custom-rule"}));
 	  }
-	
+	$('#globe').hide();
   },
   error:function(xhr,err){
 	
