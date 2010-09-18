@@ -18,6 +18,7 @@ body {
 	height: 49px;
 	background: url(../img/nav.png) repeat-x;
 	position: relative;
+	
 }
 
 #nav-left {
@@ -107,6 +108,25 @@ body {
 
 }
 
+.house-result {
+	height: 100px;
+
+}
+
+.house-thumb {
+	float: left;
+	margin: 10px;
+}
+
+.house-result-meta {
+	float: left;
+}
+
+.house-result-ranking {
+	float: right;
+	width: 150px;
+}
+
 .clear {
 	clear: both;
 }
@@ -121,8 +141,6 @@ body {
 	font-weight: normal;
 	font-style: normal;
 }
-
-
 
 a {
 	text-decoration: none;
@@ -141,13 +159,18 @@ li {
 }
 
 #nav-bar ul {
-	
+	overflow: visible;
 }
 
 #nav-bar ul li {
-	height: 49px;
+	height: 64px;
 	display: inline;
 	float: left;
+	overflow: visible;
+}
+
+#nav-bar ul li.current {
+	background: url(../img/arrow.png) no-repeat center bottom;
 }
 
 #nav-bar ul li a {
@@ -161,10 +184,21 @@ li {
 	padding: 0 15px;
 	display: block;
 	text-transform: lowercase;
+	overflow: visible;
+}
+
+#nav-bar ul li a.current {
+	background: #4B5F63;
+	color: white;
+}
+
+#nav-bar ul li a.current:hover{
+	background: #4B5F63;
+	color: white;
 }
 
 #nav-bar ul li a:hover {
-	background: #CCCCCC;
+	background: #6F7F82;
 	color: white;
 }
 
@@ -174,8 +208,34 @@ h1 {
 	line-height:normal;
 	font-family: 'AdelleBasicBold', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 	font-size-adjust: 0.52;
-
 }
+
+.house-result-meta h3 {
+	font: normal 13px 'Lucida Grande', 'Lucida Sans Unicode', serif;
+}
+
+.house-result-meta h2 {
+	font: normal 22px Georgia, serif;
+}
+
+.avg-rent {
+	font: normal 30px Georgia, serif;
+}
+
+.avg-rent span {
+	font: normal 10px 'Lucida Grande', 'Lucida Sans Unicode', serif;
+	text-transform: uppercase;
+}
+
+.rank {
+	font: normal 30px Georgia, serif;
+}
+
+.rank span {
+	font: normal 10px 'Lucida Grande', 'Lucida Sans Unicode', serif;
+	text-transform: uppercase;
+}
+
 
 
 .numInput{
@@ -192,6 +252,13 @@ h1 {
 	-khtml-border-radius: 10px; 
 	-webkit-border-radius: 10px;
 	border: none;
+}
+
+hr.custom-rule {
+	border-top: 1px solid lightGrey;
+	border-bottom: 1px solid darkGrey;
+	margin: 25px 0;
+
 }
 
 /* End Typography */

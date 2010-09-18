@@ -1,6 +1,6 @@
 <?php 
 	include_once("functions.php");
-	getHeader("HOME","Home");
+	getHeader("FIND-HOUSES","Find Houses");
 ?>
 
 
@@ -57,6 +57,31 @@
 					
 					<div id="results">
 						<h1>This is where detailed results would go.</h1>
+						
+						<div class="house-result">
+							<img src="img/houses/thumb/example.jpg" class="house-thumb" />
+							<div class="house-result-meta">
+								<h2>4211 Spruce Street</h2>
+								<h3>10 Occupants | $6,500/month</h3>
+							</div>
+							
+							<div class="house-result-ranking">
+								<div class="avg-rent">$540
+									<span>AVG RENT/PERSON</span>
+								</div>
+								
+								
+								<div class="rank">4.5 
+									<span>STARS</span>
+								</div>
+							</div>
+						
+						
+						</div>
+						<hr class="custom-rule" />
+						
+						
+						
 						
 					</div>
 					
