@@ -7,13 +7,6 @@ function sanitize($string){
 	$string=stripslashes($string);
 	return mysql_real_escape_string($string);
 }
-
-function getHeader($page, $title) {
-
-
-define('FACEBOOK_APP_ID', '102871766442464');
-define('FACEBOOK_SECRET', '981fef3ce9d8e664b9277072210dd88b');
-
 function get_facebook_cookie($app_id, $application_secret) {
   $args = array();
   parse_str(trim($_COOKIE['fbs_' . $app_id], '\\"'), $args);
@@ -29,6 +22,11 @@ function get_facebook_cookie($app_id, $application_secret) {
   }
   return $args;
 }
+function getHeader($page, $title) {
+
+
+define('FACEBOOK_APP_ID', '102871766442464');
+define('FACEBOOK_SECRET', '981fef3ce9d8e664b9277072210dd88b');
 
 $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 
@@ -80,19 +78,6 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
     
     <p><fb:login-button perms="email" autologoutlink="true"></fb:login-button></p>
     <p><fb:like></fb:like></p>
-
-	
-		<a id="various1" href="#inline1" title="Lorem ipsum dolor sit amet">Inline - auto detect width / height</a>
-		<div style="display: none">
-			<div id="inline1"> 
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mi eu elit tempor facilisis id et neque. Nulla sit amet sem sapien. Vestibulum imperdiet porta ante ac ornare. Nulla et lorem eu nibh adipiscing ultricies nec at lacus. Cras laoreet ultricies sem, at blandit mi eleifend aliquam. Nunc enim ipsum, vehicula non pretium varius, cursus ac tortor. Vivamus fringilla congue laoreet. Quisque ultrices sodales orci, quis rhoncus justo auctor in. Phasellus dui eros, bibendum eu feugiat ornare, faucibus eu mi. Nunc aliquet tempus sem, id aliquam diam varius ac. Maecenas nisl nunc, molestie vitae eleifend vel, iaculis sed magna. Aenean tempus lacus vitae orci posuere porttitor eget non felis. Donec lectus elit, aliquam nec eleifend sit amet, vestibulum sed nunc.
-			</div>
-		</div>
-	
-		<p><fb:login-button autologoutlink="true"></fb:login-button></p>
-		<p><fb:like></fb:like></p>
-
-
     <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
