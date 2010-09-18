@@ -7,14 +7,21 @@
 
 		
 		<div id="content"> 
-
+			
 			
 			<div class="col-330">
 				<h1>Welcome Vincent!</h1>
 				<img src="img/blank_profile.png" alt="profile" width="200" class="profile"/>
 				<h4>Justin Broglie</h4>
-				<a id="filter-button" class="button bluebutton small">Edit Privacy Settings</a>
-				<a id="filter-button" class="button bluebutton small">Logout</a>
+				<a id="privacy-settings-button" href="#privacy-settings" class="button bluebutton small">Edit Privacy Settings</a>
+				<a id="logout-button" class="button bluebutton small">Logout</a>
+				
+				
+				<div style="display: none;">
+					<div id="privacy-settings" class="fancybox-style" style="">
+						<h1>Privacy Settings</h1>
+					</div>
+				</div>
 			</div>
 			
 			<div id="dashboard-main">

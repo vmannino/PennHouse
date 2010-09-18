@@ -296,6 +296,10 @@ div.hovering:hover {
 	-webkit-border-radius: 10px;
 }
 
+.fancybox-style {
+	padding: 20px;
+}
+
 #dashboard-main {
 	width: 630px;
 	background: #d8e6ea;
@@ -447,13 +451,20 @@ h4 {
 	text-align: center;
 }
 
-.col-330 h1, .col-630 h1, #favorites h1 {
+.col-330 h1, .col-630 h1, #favorites h1{
 	line-height: 49px;
 	background: url(../img/nav.png) repeat-x;
 	position: relative;
 	left: -20px;
 	width: 100%;
 	padding: 0 20px;
+	font-size: 22px;
+	text-align: center;
+}
+
+.fancybox-style h1 {
+	line-height: 49px;
+	position: relative;
 	font-size: 22px;
 	text-align: center;
 }

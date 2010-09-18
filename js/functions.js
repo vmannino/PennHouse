@@ -93,6 +93,19 @@ $(document).ready(function(){
 	$("#inline1").fancybox({
 		'hideOnContentClick': false
 	});
+	
+	
+	
+	/* Dashboard Initializations */
+	
+	$("#privacy-settings-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
+	$('#dashboard-main').tabs();
+	
+	
+	/* End the Dashboard initializations */
 
 	// Tabs
 	$('#search-results').tabs({
@@ -105,7 +118,7 @@ $(document).ready(function(){
 	});
 	$('#map-overlay').tabs();
 			
-	$('#dashboard-main').tabs();
+	
 			
 	$('#filter-button').click(function(){$('#search-results').tabs('select', 0);filterResults();});
 	$('#filter-button').click(function(){filterResults();});
