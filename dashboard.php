@@ -11,12 +11,12 @@
 			
 			<div class="col-330">
 				
-				<img src="img/blank_profile.png" alt="profile" width="200"/>
+				<img src="img/blank_profile.png" alt="profile" width="200" class="profile"/>
 				<h4>Justin Broglie</h4>
-			
+				<a id="filter-button" class="button bluebutton small">Edit Privacy Settings</a>
 			</div>
 			
-			<div id="dashboard-main" class="col-630">
+			<div id="dashboard-main">
 				<ul>
 					<li><a href="#current-residence">Current Residence</a></li>
 					<li><a href="#past-residences">Past Residences</a></li>
@@ -28,10 +28,97 @@
 					<a id="filter-button" class="button bluebutton small">Edit My Review</a>
 					<a id="filter-button" class="button bluebutton small">Add Images</a>
 					<a id="filter-button" class="button bluebutton small">Edit My Landlord Review</a>
+					
+					
+					<div class="house-result">
+						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
+						<div class="house-result-meta">
+							<h2>4211 Spruce Street</h2>
+							<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
+						</div>
+						
+						<div class="house-result-ranking">
+							<div class="house-result-avg-rent">$540<br/>
+								<span>AVG RENT/ROOM</span>
+							</div>
+							
+							
+							<div class="house-result-rank">4.5 <br/>
+								<span>STARS</span>
+							</div>
+						</div>
+					
+					
+					</div>
+					
+					
 				</div>
 				
 				<div id="past-residences">
-					<h1>These are the past residences</h1>
+					<div class="house-result hovering">
+						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
+						<div class="house-result-meta">
+							<h2>4211 Spruce Street</h2>
+							<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
+						</div>
+						
+						<div class="house-result-ranking">
+							<div class="house-result-avg-rent">$540<br/>
+								<span>AVG RENT/ROOM</span>
+							</div>
+							
+							
+							<div class="house-result-rank">4.5 <br/>
+								<span>STARS</span>
+							</div>
+						</div>
+					
+					
+					</div>
+					<hr class="custom-rule" />
+					<div class="house-result hovering">
+						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
+						<div class="house-result-meta">
+							<h2>4211 Spruce Street</h2>
+							<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
+						</div>
+						
+						<div class="house-result-ranking">
+							<div class="house-result-avg-rent">$540<br/>
+								<span>AVG RENT/ROOM</span>
+							</div>
+							
+							
+							<div class="house-result-rank">4.5 <br/>
+								<span>STARS</span>
+							</div>
+						</div>
+					
+					
+					</div>
+					<hr class="custom-rule" />
+					<div class="house-result hovering">
+						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
+						<div class="house-result-meta">
+							<h2>4211 Spruce Street</h2>
+							<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
+						</div>
+						
+						<div class="house-result-ranking">
+							<div class="house-result-avg-rent">$540<br/>
+								<span>AVG RENT/ROOM</span>
+							</div>
+							
+							
+							<div class="house-result-rank">4.5 <br/>
+								<span>STARS</span>
+							</div>
+						</div>
+					
+					
+					</div>
+					<hr class="custom-rule" />
+				
 				
 				</div>
 			

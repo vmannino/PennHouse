@@ -65,13 +65,28 @@ body {
 }
 
 #map-overlay {
-	width: 260px;
-	padding: 20px;
-	height: 360px;
+	width: 300px;
+	height: 400px;
 	position: absolute;
 	right: 0px;
 	background: #d8e6ea;
 	z-index: 100;
+}
+
+#filters {
+	padding: 20px;
+	background: #d8e6ea;
+	position: absolute;
+	top: 0px;
+	z-index: 2;
+}
+
+#saved-searches {
+	padding: 20px;
+	background: #d8e6ea;
+	position: absolute;
+	top: 0px;
+	z-index: 2;
 }
 
 #map-overlay ul.ui-tabs-nav {
@@ -79,11 +94,36 @@ body {
 }
 
 #search-results {
+	width: 630px;
+	background: #d8e6ea;
+	float: left;
+	position: relative;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+}
+
+#results {
 	width: 590px;
 	background: #d8e6ea;
 	padding: 20px;
-	float: left;
-	position: relative;
+	position: absolute;
+	top: 0px;
+	z-index: 2;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+}
+
+#compare {
+	width: 590px;
+	background: #d8e6ea;
+	z-index: 2;
+	padding: 20px;
+	position: absolute;
+	top: 0px;
 	border-radius:10px; 
 	-moz-border-radius: 10px; 
 	-khtml-border-radius: 10px; 
@@ -102,7 +142,7 @@ body {
 	z-index: 100;
 }
 
-#search-results ul.ui-tabs-nav {
+#search-results ul.ui-tabs-nav, #dashboard-main ul.ui-tabs-nav  {
 	padding-left: 40px;
 }
 
@@ -226,8 +266,49 @@ div.hovering:hover {
 	-moz-border-radius: 10px; 
 	-khtml-border-radius: 10px; 
 	-webkit-border-radius: 10px;
-	
+}
 
+#dashboard-main {
+	width: 630px;
+	background: #d8e6ea;
+	margin-bottom: 30px;
+	float: left;
+	position: relative;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+}
+
+#current-residence {
+	position: absolute;
+	top: 0px;
+	padding: 20px;
+	width: 590px;
+	z-index: 2;
+	background: #d8e6ea;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+}
+
+#past-residences {
+	position: absolute;
+	top: 0px;
+	padding: 20px;
+	width: 590px;
+	z-index: 2;
+	background: #d8e6ea;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+}
+
+.profile {
+	margin-left: 30px;
+	border: 3px solid #4B5F63;
 }
 
 
@@ -312,6 +393,17 @@ h1 {
 	line-height:normal;
 	font-family: 'AdelleBasicBold', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 	font-size-adjust: 0.52;
+}
+
+h4 {
+	color: #4B5F63;
+	font-style: normal;
+	line-height:normal;
+	font-family: 'AdelleBasicBold', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+	font-size-adjust: 0.52;
+	font-size: 22px;
+	margin: 10px 0 20px;
+
 }
 
 .widget h1 {
@@ -502,43 +594,42 @@ a.button, input.button {
 }
 
 input.bluebutton {
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C8EAFB), to(#5DB3E0));
-	background:-moz-linear-gradient(top,#C8EAFB,#5DB3E0);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C8EAFB), to(#4B5F63));
+	background:-moz-linear-gradient(top,#C8EAFB,#4B5F63);
 	background-color: #C8EAFB;
-	color:#152832;
-	text-shadow:1px 1px 0px rgba(223,244,255,0.8);	
+	color:#fff;
+	text-shadow:1px -1px 0px #6c8992;		
 }
 
 input.bluebutton:hover {
 	background:rgba(223,244,255,1);
-	color:#152832;
+	color:#fff;
 	background-color: #dff4ff;
 	
 }
  
 input.bluebutton:active, input.bluebutton:focus {
-	background:-webkit-gradient(linear,0% 100%,0% 0%,from(#C8EAFB), to(#5DB3E0));
-	background:-moz-linear-gradient(bottom,#C8EAFB,#5DB3E0);
+	background:-webkit-gradient(linear,0% 100%,0% 0%,from(#C8EAFB), to(#4B5F63));
+	background:-moz-linear-gradient(bottom,#C8EAFB,#4B5F63);
 }
 
 a.bluebutton {
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C8EAFB), to(#5DB3E0));
-	background:-moz-linear-gradient(top,#C8EAFB,#5DB3E0);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C8EAFB), to(#4B5F63));
+	background:-moz-linear-gradient(top,#C8EAFB,#4B5F63);
 	background-color: #C8EAFB;
-	color:#152832;
-	text-shadow:1px 1px 0px rgba(223,244,255,0.8);	
+	color:#fff;
+	text-shadow:1px -1px 0px #6c8992;	
 }
 
 a.bluebutton:hover {
-	background:rgba(223,244,255,1);
-	color:#152832;
+	color:#fff;
 	background-color: #dff4ff;
 	
 }
  
 a.bluebutton:active, a.bluebutton:focus {
-	background:-webkit-gradient(linear,0% 100%,0% 0%,from(#C8EAFB), to(#5DB3E0));
-	background:-moz-linear-gradient(bottom,#C8EAFB,#5DB3E0);
+	background:-webkit-gradient(linear,0% 100%,0% 0%,from(#C8EAFB), to(#4B5F63));
+	background:-moz-linear-gradient(bottom,#C8EAFB,#4B5F63);
 }
 
 a.button:disabled {
