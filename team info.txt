@@ -1,2 +1,4 @@
-team name: opennhouse
-password: 7?8$uhM
+old team name: pennhouse
+old password: kTFLdZ7
+new team name: opennhouse
+new password: 7?8$uhM

@@ -7,16 +7,17 @@
 
 		
 		<div id="content"> 
-			
+
 			
 			<div class="col-330">
-				<h1>Welcome Vincent!</h1>
+				
 				<img src="img/blank_profile.png" alt="profile" width="200" class="profile"/>
 				<h4>Justin Broglie</h4>
 				<a id="privacy-settings-button" href="#privacy-settings" class="button bluebutton small">Edit Privacy Settings</a>
 				<a id="logout-button" href="#logout" class="button bluebutton small">Logout</a>
 				
 				
+
 			</div>
 			
 			<div id="dashboard-main">
@@ -32,11 +33,19 @@
 					<a id="edit-images-button" href="#edit-images" class="button bluebutton small">Edit Images</a>
 					<a id="edit-landlord-button" href="#edit-landlord" class="button bluebutton small">Edit My Landlord Review</a>
 					
-					<hr class="custom-rule vertical-space"/>
-					<div class="house-dashboard">
-						<img src="img/houses/thumb/example.jpg" class="house-thumb-large" />
-						<div class="house-dashboard-meta">
+					
+					
+					
+				</div>
+				
+				<div id="past-residences">
+					<div class="house-result hovering">
+						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
+						<div class="house-result-meta">
 							<h2>4211 Spruce Street</h2>
+<<<<<<< HEAD
+							<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
+=======
 							<span>Address</span>
 						</div>
 						<div class="house-dashboard-meta">4.5 <br/>
@@ -51,60 +60,23 @@
 						
 						<div class="house-dashboard-meta">4.5 <br/>
 							<span>MY LANDLORD RANK</span>
+>>>>>>> 161826410f99473a3edd346ff5c6f8886f36c9fe
 						</div>
 						
-						
-						<div class="clear"></div>
-						<div class="house-dashboard-details">
-							
-							<div class="house-dashboard-meta">$540<br/>
+						<div class="house-result-ranking">
+							<div class="house-result-avg-rent">$540<br/>
 								<span>AVG RENT/ROOM</span>
 							</div>
 							
 							
-							
-							
-							<div class="house-dashboard-meta">12<br/>
-								<span>ROOMS</span>
+							<div class="house-result-rank">4.5 <br/>
+								<span>STARS</span>
 							</div>
-							
-							<div class="house-dashboard-meta">$6,500<br/>
-								<span>TOTAL RENT</span>
-							</div>
-							<div class="clear"></div>
-						</div>
-						
-						<div class="house-dashboard-images">
-							<div class="house-dashboard-meta">
-								<img src="img/houses/thumb/small1.jpg" class="house-thumb-small" />
-								<img src="img/houses/thumb/small2.jpg" class="house-thumb-small" />
-								<img src="img/houses/thumb/small3.jpg" class="house-thumb-small" />
-								<div class="clear"></div>
-								<span>More Images</span>
-							</div>
-							
-						</div>
-						
-						<div class="house-dashboard-residents">
-							<div class="house-dashboard-meta">
-								<img src="img/blank_profile.png" alt="profile" width="50" class="house-thumb-small"/>
-								<img src="img/blank_profile.png" alt="profile" width="50" class="house-thumb-small"/>
-								<img src="img/blank_profile.png" alt="profile" width="50" class="house-thumb-small"/>
-								<img src="img/blank_profile.png" alt="profile" width="50" class="house-thumb-small"/>
-								<img src="img/blank_profile.png" alt="profile" width="50" class="house-thumb-small"/>
-								<div class="clear"></div>
-								<span>Current Residents</span>
-							</div>
-							
 						</div>
 					
 					
 					</div>
-					
-					
-				</div>
-				
-				<div id="past-residences">
+					<hr class="custom-rule" />
 					<div class="house-result hovering">
 						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
 						<div class="house-result-meta">
@@ -146,7 +118,7 @@
 					
 					
 					</div>
-					
+					<hr class="custom-rule" />
 				
 				
 				</div>
