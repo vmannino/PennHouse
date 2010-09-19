@@ -24,32 +24,12 @@
 				
 				<div id="current-residence">
 				
-					<a id="filter-button" class="button bluebutton small">Edit Current Residence</a>
-					<a id="filter-button" class="button bluebutton small">Edit My Review</a>
-					<a id="filter-button" class="button bluebutton small">Add Images</a>
-					<a id="filter-button" class="button bluebutton small">Edit My Landlord Review</a>
+					<a class="button bluebutton small">Edit Current Residence</a>
+					<a class="button bluebutton small">Edit My Review</a>
+					<a class="button bluebutton small">Add Images</a>
+					<a class="button bluebutton small">Edit My Landlord Review</a>
 					
 					
-					<div class="house-result">
-						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
-						<div class="house-result-meta">
-							<h2>4211 Spruce Street</h2>
-							<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
-						</div>
-						
-						<div class="house-result-ranking">
-							<div class="house-result-avg-rent">$540<br/>
-								<span>AVG RENT/ROOM</span>
-							</div>
-							
-							
-							<div class="house-result-rank">4.5 <br/>
-								<span>STARS</span>
-							</div>
-						</div>
-					
-					
-					</div>
 					
 					
 				</div>

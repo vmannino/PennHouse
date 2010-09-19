@@ -75,14 +75,23 @@ body {
 
 #filters {
 	padding: 20px;
+	width: 260px;
 	background: #d8e6ea;
 	position: absolute;
 	top: 0px;
 	z-index: 2;
 }
 
+.filter-element {
+	background: #fff;
+	margin-top: 15px;
+	width: 125px;
+	float: right;
+}
+
 #saved-searches {
 	padding: 20px;
+	width: 260px;
 	background: #d8e6ea;
 	position: absolute;
 	top: 0px;
@@ -316,6 +325,26 @@ div.hovering:hover {
 	clear: both;
 }
 
+#rank-house, #rank-landlord {
+	position: relative;
+}
+
+#rank-house-slider, #rank-landlord-slider  {
+	height: 25px;
+	z-index: 1;
+	background: url(../img/star-bg.png) repeat-x;
+	position: absolute;
+	top: 0;
+	max-width: 115px;
+}
+
+.star {
+	position: relative;
+	z-index: 2;
+}
+
+
+
 /* End Structure */
 
 /* Typography */
@@ -410,6 +439,7 @@ h4 {
 	line-height: 49px;
 	background: url(../img/nav.png) repeat-x;
 	position: relative;
+	margin-bottom: 15px;
 	left: -20px;
 	width: 100%;
 	padding: 0 20px;
@@ -417,11 +447,13 @@ h4 {
 	text-align: center;
 }
 
-.col-330 h1, .col-630 h1, #favorites h1 {
+.col-330 h1, .col-630 h1, #favorites h1, #filters h1, #results h1, #compare h1, #saved-searches h1{
+
 	line-height: 49px;
 	background: url(../img/nav.png) repeat-x;
 	position: relative;
 	left: -20px;
+	margin-bottom: 15px;
 	width: 100%;
 	padding: 0 20px;
 	font-size: 22px;
@@ -434,6 +466,14 @@ h4 {
 
 .house-result-meta h2 {
 	font: normal 22px Georgia, serif;
+}
+
+.house-dashboard-meta h2 {
+	font: normal normal 32px Georgia, serif;
+}
+
+.filter-meta h2 {
+	font: normal normal 18px Georgia, serif;
 }
 
 
@@ -492,6 +532,36 @@ h4 {
 	text-transform: uppercase;
 }
 
+.house-dashboard-meta {
+	font: italic normal 20px Georgia, serif;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+.filter-meta {
+	text-align: center;
+	padding: 5px;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.house-dashboard-meta  span {
+	font: normal normal 10px 'Lucida Grande', 'Lucida Sans Unicode', serif;
+	text-transform: uppercase;
+}
+
+.filter-meta  span {
+	font: normal normal 8px 'Lucida Grande', 'Lucida Sans Unicode', serif;
+	text-transform: uppercase;
+}
+
 
 
 .numInput{
@@ -516,6 +586,20 @@ hr.custom-rule {
 
 }
 
+hr.vertical-space {
+	margin: 15px 0 10px;
+}
+
+hr.vertical-space-small {
+	margin: 3px 0;
+}
+
+#filter-button-div {
+	width: 200px;
+	margin: 30px auto 0;
+	text-align: center;
+
+}
 /* End Typography */
  
 

@@ -19,24 +19,81 @@
 					<div id="filters">
 						<h1>Filters</h1>
 
-						<form>
-						<input type="text" class="numInput" name="avgRentMin">
-						<input type="text" name="avgRentMax">
-						<input type="text" name="ttlRentMin">
-						<input type="text" name="ttlRentMax">
-						<input type="text" name="llRtngMin">
-						<input type="text" name="llRtngMax">
-						<input type="text" name="hsRtngMin">
-						<input type="text" name="hsRtngMax">
-						<input type="text" name="bdrmMin">
-						<input type="text" name="bdrmMax">
-						</form>
 						
-						<a id="filter-button" class="button bluebutton medium">Filter Results</a>
+						<div class="filter-meta left">
+							<h2 id="avgRentMin">$300</h2>
+							<span>MIN AVG<br/>RENT</span>
+						</div>
+						
+						<div class="filter-meta left">
+							<h2 id="avgRentMax">$700</h2>
+							<span>MAX AVG<br/>RENT</span>
+						</div>
+						
+						
+						<div id="avg-rent-slider" class="filter-element"></div>
+						<div class="clear"></div>
+						<hr class="custom-rule vertical-space-small" />
+						
+						<div class="filter-meta left">
+							<h2 id="ttlRentMin">$1000</h2>
+							<span>MIN TOTAL<br/>RENT</span>
+						</div>
+						
+						<div class="filter-meta left">
+							<h2 id="ttlRentMax">$5000</h2>
+							<span>MAX TOTAL<br/>RENT</span>
+						</div>
+						
+						
+						<div id="total-rent-slider" class="filter-element"></div>
+						<div class="clear"></div>
+						<hr class="custom-rule vertical-space-small" />
+						
+						
+						<div class="filter-meta left">
+							<h2 style="display:none" id="llRtngMax">3.5</h2>
+							<div id="rank-landlord">
+								<img src="img/star.png" class="star" alt="star"/>
+								<div id="rank-landlord-slider"></div>
+							</div>
+							<span>MAX LANDLORD<br/>RANK</span>
+						</div>
+						
+						
+						<div class="filter-meta right">
+							<h2 style="display:none" id="hsRtngMax">3.5</h2>
+							<div id="rank-house">
+								<img src="img/star.png" class="star" alt="star"/>
+								<div id="rank-house-slider"></div>
+							</div>
+							<span>MAX HOUSE<br/>RANK</span>
+						</div>
+						
+						<div class="clear"></div>
+						
+						<hr class="custom-rule vertical-space-small" />
+						
+						<div class="filter-meta left">
+							<h2 id="bdrmMin">1</h2>
+							<span>MIN ROOMS</span>
+						</div>
+						
+						<div class="filter-meta left">
+							<h2 id="bdrmMax">6</h2>
+							<span>MAX ROOMS</span>
+						</div>
+						
+						
+						<div id="rooms-slider" class="filter-element"></div>
+						<div class="clear"></div>
+						<hr class="custom-rule vertical-space-small" />
+						<div id="filter-button-div"><a id="filter-button" class="button bluebutton medium">Filter Results</a></div>
+						
 					</div>
 					
 					<div id="saved-searches">
-						<h1>This is where saved searches would go.</h1>
+						<h1>My Saved Searches</h1>
 						
 					</div>
 
@@ -57,8 +114,7 @@
 						<li><a href="#compare">Compare Houses</a></li>
 					</ul>
 					<div id="results">
-						<h1>Search Results:</h1>
-						<hr class="custom-rule" />
+						<h1>Search Results</h1>
 						<div class="house-result hovering">
 							<img src="img/houses/thumb/example.jpg" class="house-thumb" />
 							<div class="house-result-meta">
@@ -87,6 +143,7 @@
 					</div>
 					
 					<div id="compare">
+						<h1>Compare Houses</h1>
 						<!-- Table markup-->  
   
 						<table id="compare-table" summary="Comparison of Houses">
