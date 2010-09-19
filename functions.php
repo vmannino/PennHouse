@@ -1,34 +1,17 @@
 <?php
 //functions.php
 
+
 function sanitize($string){
 	$string=strip_tags($string);
 	$string=htmlentities($string);
 	$string=stripslashes($string);
 	return mysql_real_escape_string($string);
 }
-function get_facebook_cookie($app_id, $application_secret) {
-  $args = array();
-  parse_str(trim($_COOKIE['fbs_' . $app_id], '\\"'), $args);
-  ksort($args);
-  $payload = '';
-  foreach ($args as $key => $value) {
-    if ($key != 'sig') {
-      $payload .= $key . '=' . $value;
-    }
-  }
-  if (md5($payload . $application_secret) != $args['sig']) {
-    return null;
-  }
-  return $args;
-}
+
 function getHeader($page, $title) {
 
 
-define('FACEBOOK_APP_ID', '102871766442464');
-define('FACEBOOK_SECRET', '981fef3ce9d8e664b9277072210dd88b');
-
-$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 
 ?>
 
@@ -45,7 +28,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 			<link href="css/style.css" rel="stylesheet" type="text/css" />
 			<link href="css/easyslider.css" rel="stylesheet" type="text/css" />
 			<link href="css/cupertino/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css" />
-			<link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.1.css" type="text/css" media="screen" />
+			<link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.1.css" type="text/css" media="screen" />
 		<!-- End Stylesheets -->
 		
 		<!-- Begin JavaScript -->
@@ -67,17 +50,11 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 			 
 	</head>
 	<body onload="initialize()">
+	
+	
+		<p><fb:login-button autologoutlink="true"></fb:login-button></p>
+		<p><fb:like></fb:like></p>
 
-    <?php if ($cookie) { ?>
-      Your user ID is <?php echo $cookie['uid']; }
-	  else{
-		echo 'no cookie!';  
-	  }?>
-  
-
-    
-    <p><fb:login-button perms="email" autologoutlink="true"></fb:login-button></p>
-    <p><fb:like></fb:like></p>
     <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
@@ -93,7 +70,6 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
         document.getElementById('fb-root').appendChild(e);
       }());
     </script>
-
 
 		<div id="header"> 
 			<div id="nav-bar"> 
@@ -120,13 +96,23 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 
 		
 <?php
+
+
 }
+
 function getFooter() {
+
 ?>
+
 		<div id="footer"> </div>
+		
+
 	</body>
 </html>
+
 <?php
+
+
 }
 
 ?>

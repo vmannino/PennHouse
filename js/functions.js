@@ -9,8 +9,9 @@ function initialize() {
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 		mapTypeControl: true,
 		mapTypeControlOptions: {
-			style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-			position: google.maps.ControlPosition.BOTTOM_LEFT
+			style: google.maps.MapTypeControlStyle.DEFAULT,
+			position: google.maps.ControlPosition.BOTTOM_LEFT,
+			mapTypeIds: [ google.maps.MapTypeId.SATELLITE, google.maps.MapTypeId.HYBRID, 'greys' ]
 		},
 		navigationControl: true,
 		navigationControlOptions: {
@@ -26,32 +27,68 @@ function initialize() {
 	
 	var mapStyles = [
     {
-      featureType: "road.highway",
-      elementType: "all",
-      stylers: [
-        { visibility: "on" }
-      ]
+		featureType: "road",
+		elementType: "geometry",
+		stylers: [
+			{ gamma: 1 },
+			{ hue: '#ffffff' },
+			{ lightness: -5 },
+			{ saturation: -100 }
+		]
     },
 	{
-      featureType: "road.arterial",
-      elementType: "labels",
-      stylers: [
-        { visibility: "on" }
-      ]
-    }
-  ];
+		featureType: "road.local",
+		elementType: "geometry",
+		stylers: [
+			{ gamma: 1 },
+			{ hue: '#ffffff' },
+			{ lightness: -23 },
+			{ saturation: -100 }
+		]
+    },
+	{
+		featureType: "road",
+		elementType: "labels",
+		stylers: [
+			{ gamma: 1 },
+			{ hue: '#ffffff' },
+			{ lightness: 30 },
+			{ saturation: -100 }
+		]
+    },
+    {
+		featureType: "administrative",
+		elementType: "all",
+		stylers: [
+			{ gamma: 1 },
+			{ hue: '#cccccc' },
+			{ lightness: 40 },
+			{ saturation: -100 }
+		]
+    },
+	{
+		featureType: "poi",
+		elementType: "all",
+		stylers: [
+			{ gamma: 1 },
+			{ hue: '#ffffff' },
+			{ lightness: 25 },
+			{ saturation: -100 }
+		]
+    },
+	];
 	
 	map = new google.maps.Map(document.getElementById("map-canvas"),myOptions);
 	
 	var styledMapOptions = {
-      name: "Clean-Neighborhood"
+      name: "Map"
   }
 
   var pennMapType = new google.maps.StyledMapType(
       mapStyles, styledMapOptions);
 
-  map.mapTypes.set('cleanMap', pennMapType);
-  map.setMapTypeId('cleanMap');
+  map.mapTypes.set('greys', pennMapType);
+  map.setMapTypeId('greys');
 }
 
 /* 
@@ -93,19 +130,6 @@ $(document).ready(function(){
 	$("#inline1").fancybox({
 		'hideOnContentClick': false
 	});
-	
-	
-	
-	/* Dashboard Initializations */
-	
-	$("#privacy-settings-button").fancybox({
-		'hideOnContentClick': false
-	});
-	
-	$('#dashboard-main').tabs();
-	
-	
-	/* End the Dashboard initializations */
 
 	// Tabs
 	$('#search-results').tabs({
@@ -118,7 +142,7 @@ $(document).ready(function(){
 	});
 	$('#map-overlay').tabs();
 			
-	
+	$('#dashboard-main').tabs();
 			
 	$('#filter-button').click(function(){$('#search-results').tabs('select', 0);filterResults();});
 	$('#filter-button').click(function(){filterResults();});
@@ -178,10 +202,9 @@ dataType: 'json'
 }
 
 function compareResults(){
-	hasResults=false;
 	compareArray=new Array();
 	$('input.house-compare').each(function(index,value){
-		hasResults=true;
+		hasResults='true';
 		if (value.checked){
 			compareArray.push(filterResults[value.name]);
 		}

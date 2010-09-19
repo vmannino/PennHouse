@@ -7,21 +7,13 @@
 
 		
 		<div id="content"> 
-			
+
 			
 			<div class="col-330">
-				<h1>Welcome Vincent!</h1>
+				
 				<img src="img/blank_profile.png" alt="profile" width="200" class="profile"/>
 				<h4>Justin Broglie</h4>
-				<a id="privacy-settings-button" href="#privacy-settings" class="button bluebutton small">Edit Privacy Settings</a>
-				<a id="logout-button" class="button bluebutton small">Logout</a>
-				
-				
-				<div style="display: none;">
-					<div id="privacy-settings" class="fancybox-style" style="">
-						<h1>Privacy Settings</h1>
-					</div>
-				</div>
+				<a id="filter-button" class="button bluebutton small">Edit Privacy Settings</a>
 			</div>
 			
 			<div id="dashboard-main">
@@ -37,67 +29,23 @@
 					<a id="filter-button" class="button bluebutton small">Add Images</a>
 					<a id="filter-button" class="button bluebutton small">Edit My Landlord Review</a>
 					
-					<hr class="custom-rule vertical-space"/>
-					<div class="house-dashboard">
-						<img src="img/houses/thumb/example.jpg" class="house-thumb-large" />
-						<div class="house-dashboard-meta">
+					
+					<div class="house-result">
+						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
+						<div class="house-result-meta">
 							<h2>4211 Spruce Street</h2>
-							<span>Address</span>
-						</div>
-						<div class="house-dashboard-meta">4.5 <br/>
-							<span>MY RANK</span>
-						</div>
-						<div class="house-dashboard-meta">
-							Off-Campus Management<br/>
-							<span>My Landlord</span>
-						</div>
-						<div class="house-dashboard-meta">4.5 <br/>
-							<span>MY LANDLORD RANK</span>
+							<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
 						</div>
 						
-						
-						<div class="clear"></div>
-						<div class="house-dashboard-details">
-							
-							<div class="house-dashboard-meta">$540<br/>
+						<div class="house-result-ranking">
+							<div class="house-result-avg-rent">$540<br/>
 								<span>AVG RENT/ROOM</span>
 							</div>
 							
 							
-							
-							
-							<div class="house-dashboard-meta">12<br/>
-								<span>ROOMS</span>
+							<div class="house-result-rank">4.5 <br/>
+								<span>STARS</span>
 							</div>
-							
-							<div class="house-dashboard-meta">$6,500<br/>
-								<span>TOTAL RENT</span>
-							</div>
-							<div class="clear"></div>
-						</div>
-						
-						<div class="house-dashboard-images">
-							<div class="house-dashboard-meta">
-								<img src="img/houses/thumb/small1.jpg" class="house-thumb-small" />
-								<img src="img/houses/thumb/small2.jpg" class="house-thumb-small" />
-								<img src="img/houses/thumb/small3.jpg" class="house-thumb-small" />
-								<div class="clear"></div>
-								<span>More Images</span>
-							</div>
-							
-						</div>
-						
-						<div class="house-dashboard-residents">
-							<div class="house-dashboard-meta">
-								<img src="img/blank_profile.png" alt="profile" width="50" class="house-thumb-small"/>
-								<img src="img/blank_profile.png" alt="profile" width="50" class="house-thumb-small"/>
-								<img src="img/blank_profile.png" alt="profile" width="50" class="house-thumb-small"/>
-								<img src="img/blank_profile.png" alt="profile" width="50" class="house-thumb-small"/>
-								<img src="img/blank_profile.png" alt="profile" width="50" class="house-thumb-small"/>
-								<div class="clear"></div>
-								<span>Current Residents</span>
-							</div>
-							
 						</div>
 					
 					
@@ -148,7 +96,28 @@
 					
 					
 					</div>
+					<hr class="custom-rule" />
+					<div class="house-result hovering">
+						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
+						<div class="house-result-meta">
+							<h2>4211 Spruce Street</h2>
+							<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
+						</div>
+						
+						<div class="house-result-ranking">
+							<div class="house-result-avg-rent">$540<br/>
+								<span>AVG RENT/ROOM</span>
+							</div>
+							
+							
+							<div class="house-result-rank">4.5 <br/>
+								<span>STARS</span>
+							</div>
+						</div>
 					
+					
+					</div>
+					<hr class="custom-rule" />
 				
 				
 				</div>
