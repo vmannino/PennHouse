@@ -50,11 +50,13 @@
 			<h1>Students on oPennHouse</h1>
 			<ul>
 			<?php
+
 				/*$query = 
+
 				
-				
-				foreach( $users as $id){
-					echo '<li><a href="http://graphs.facebook.com/' . $id . '"><img src="http://graphs.facebook.com/' . $id . '/picture?type=square" /></a></li>';
+				$result=mysql_query("SELECT * FROM users ORDER BY last_login DESC LIMIT 0,12");
+				while($user=mysql_fetch_object($result)){
+					echo '<li><img src="http://graph.facebook.com/'.$user->uid.'/picture?type=square" /><a href="http://www.facebook.com/' . $user->username . '">'.preg_replace("/ .*$/","",$user->name).'</a></li>';
 				}
 				*/
 				?>
