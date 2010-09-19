@@ -10,9 +10,17 @@
 
 			
 			<div class="col-330">
+				<?php
+				getCookie();
+				$user = json_decode(file_get_contents(
+    'https://graph.facebook.com/me?access_token=' .
+    $cookie['access_token']));
 				
-				<img src="img/blank_profile.png" alt="profile" width="200" class="profile"/>
-				<h4>Justin Broglie</h4>
+				
+                
+				echo '<img src="http://graph.facebook.com/'.$user->id.'/picture?type=large" alt="profile" width="200" class="profile"/>';
+				echo '<h4>'.$user->name.'</h4>';
+				?>
 				<a id="privacy-settings-button" href="#privacy-settings" class="button bluebutton small">Edit Privacy Settings</a>
 				<a id="logout-button" href="#logout" class="button bluebutton small">Logout</a>
 				
