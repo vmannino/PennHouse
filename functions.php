@@ -116,6 +116,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 		/* All the events registered */
 	     FB.Event.subscribe('auth.login',function(response){
 			 //
+			 window.location.reload()
 			 });
 	     FB.Event.subscribe('auth.logout', function(response) {
 	         //
