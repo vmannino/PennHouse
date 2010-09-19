@@ -246,7 +246,7 @@
 						else 
 							echo '<tr>';
 							
-							echo '<td><img src="img/houses/thumb/'.$houseImg[0].'" class="house-thumb" /></td>';
+							echo '<td><img width="80" height="40" src="img/houses/thumb/'.$houseImg[0].'" class="house-thumb" /></td>';
 							echo '<td>'.$houseObject->title.'</td>';
 							echo '<td>'.$houseObject->avg_rank.'</td>';
 							echo '<td>$'.$houseObject->avg_rent.'</td>';
