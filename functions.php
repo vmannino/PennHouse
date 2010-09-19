@@ -125,6 +125,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 	     FB.getLoginStatus(function(response) {
          if (response.session) {
 			 FB.api('/me', function(object) {
+				$('#navItemWelcome').show();
 				$('#welcomeSpan').text(object.name.replace(/ .*$/,'')); 
 });
 
@@ -148,7 +149,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 			<div id="nav-bar"> 
 				<div id="nav-left"> 
 					<ul>
-						<li <?php if ($page == 'HOME') echo 'class="current"';?>><a href="index.php" <?php if ($page == 'HOME') echo 'class="current"';?>>Welcome <span id="welcomeSpan">Justin</span>!</a></li>
+						<li id="navItemWelcome" style="display:none;" <?php if ($page == 'HOME') echo 'class="current"';?>><a href="index.php" <?php if ($page == 'HOME') echo 'class="current"';?>>Welcome <span id="welcomeSpan"></span>!</a></li>
 						<li <?php if ($page == 'DASHBOARD') echo 'class="current"';?>><a href="dashboard.php" <?php if ($page == 'DASHBOARD') echo 'class="current"';?>>Dashboard</a></li>
 						<li <?php if ($page == 'LOGOUT') echo 'class="current"';?>><a href="#" <?php if ($page == 'LOGOUT') echo 'class="current"';?>>Logout</a></li>
 					</ul>
