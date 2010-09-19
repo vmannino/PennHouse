@@ -9,13 +9,11 @@ function sanitize($string){
 	return mysql_real_escape_string($string);
 }
 
-<<<<<<< HEAD
 function getHeader($page, $title) {
 
 
-=======
+
 $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
->>>>>>> ee16b9510454586de1d71addee5da6da49efea44
 
 ?>
 
