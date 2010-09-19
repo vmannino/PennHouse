@@ -260,6 +260,7 @@ div.hovering:hover {
 
 .house-favorite:hover {
 	background: #e9f2f5;
+	cursor:pointer;
 }
 
 .house-thumb {
@@ -412,6 +413,7 @@ div.hovering:hover {
 #navItemWelcome {
 	padding-right: 30px;
 	font: italic normal Georgia, serif;
+
 }
 
 .clear {

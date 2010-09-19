@@ -8,6 +8,7 @@ function sanitize($string){
 	$string=stripslashes($string);
 	return mysql_real_escape_string($string);
 }
+
 function get_facebook_cookie($app_id, $application_secret) {
   $args = array();
   parse_str(trim($_COOKIE['fbs_' . $app_id], '\\"'), $args);
@@ -26,6 +27,37 @@ function get_facebook_cookie($app_id, $application_secret) {
 function getCookie(){
 	return get_facebook_cookie('102871766442464', '981fef3ce9d8e664b9277072210dd88b');
 	
+}
+function printFavorites(){
+				$cookie=getCookie();
+				$uid = json_decode(file_get_contents(
+    'https://graph.facebook.com/me?access_token=' .
+    $cookie['access_token']))->id;
+				$favoritesString=mysql_result(mysql_query("SELECT favorites FROM users WHERE uid='".$uid."'"),0);
+				if ($favoritesString){
+				$favoritesArray=explode(',',$favoritesString);
+				
+				$returnArray=array();
+				
+                foreach($favoritesArray as $key=>$favorite){
+					
+                $houseObject=mysql_fetch_object(mysql_query("SELECT * FROM houses WHERE hid='".$favorite."'"));  
+				$houseImg=explode(',',$houseObject->images);
+				
+                echo "<div class='house-favorite'>";
+                 echo "<img width='60' height='40' src='img/houses/thumb/".$houseImg[0]."' class='house-thumb-favorite' />";
+                 echo "<div class='house-favorite-meta'>";
+				 echo "<h2>".$houseObject->title."</h2><div class='house-favorite-ranking'>";
+				 echo "<div class='house-favorite-avg-rent'>".$houseObject->avg_rent."<br/>";
+				 echo "<span>AVG RENT</span></div>";
+				 echo "<div class='house-favorite-rank'>".$houseObject->avg_rank."<br/>";
+				 echo "<span>STARS</span></div>";
+				 echo "<div class='house-favorite-rooms'>".$houseObject->bedrooms."<br/>";
+				 echo "<span>ROOMS</span></div></div></div></div>";
+				 echo "<div class='clear'></div><hr class='custom-rule' />";
+				 }
+				}
+				return $returnArray;
 }
 function register_user($uid,$email,$name,$username){
 	$registered=mysql_num_rows(mysql_query("SELECT * FROM users WHERE uid='".sanitize($uid)."'"));
@@ -52,9 +84,9 @@ $dbname='opennhouse';
 $dbuser='opennhouse';
 $dbpass='7?8$uhM';
 
-//mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
+mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 
-//mysql_select_db($dbname) or die(mysql_error());
+mysql_select_db($dbname) or die(mysql_error());
 
 $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 

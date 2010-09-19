@@ -289,6 +289,7 @@
 				<h1>My Favorites</h1>
 				
 				<?php
+
 				$cookie=getCookie();
 				$uid = json_decode(file_get_contents(
     'https://graph.facebook.com/me?access_token=' .
@@ -315,6 +316,8 @@
 				 echo "<div class='clear'></div><hr class='custom-rule' />";
                 }
 				}
+				printFavorites();
+
 					?>
 		
 		</div>
