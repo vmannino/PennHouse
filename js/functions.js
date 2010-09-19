@@ -225,7 +225,7 @@ $(document).ready(function(){
 function filterResults(){
 $.ajax({
   url: 'search.php',
-  data: ({ avgRentMin : $('input[name=avgRentMin]').val(), avgRentMax : $('input[name=avgRentMax]').val(), ttlRentMin : $('input[name=ttlRentMin]').val(), ttlRentMax : $('input[name=ttlRentMax]').val(),llRtngMin : $('input[name=llRtngMin]').val(), llRtngMax : $('input[name=llRtngMax]').val(), hsRtngMin : $('input[name=hsRtngMin]').val(), hsRtngMax : $('input[name=hsRtngMax]').val(), bdrmMin : $('input[name=bdrmMin]').val(), bdrmMax : $('input[name=bdrmMax]').val()}),
+  data: ({ avgRentMin : $('#avgRentMin').val(), avgRentMax : $('#avgRentMax').val(), ttlRentMin : $('#ttlRentMin').val(), ttlRentMax : $('#ttlRentMax').val(),llRtngMin : $('#llRtngMin').val(), llRtngMax : $('#llRtngMax').val(), hsRtngMin : $('#hsRtngMin').val(), hsRtngMax : $('#hsRtngMax').val(), bdrmMin : $('#bdrmMin').val(), bdrmMax : $('#bdrmMax').val()}),
   success: function(data){
 	  $('#globe').show();
 	  $('#results').html('');
@@ -237,6 +237,7 @@ $.ajax({
 		  summaryDiv.append($('<div>Lots of extra stuff about this house<br/>Can go here<br/>Well leave the images for a nice fancybox<br/></div>'));
 		  resultDiv=$("<div class='house-result hovering' id='result"+result+"'  onclick=\"if(event.target.className=='house-compare'){}else{$('#min"+result+"').show();$('#summary"+result+"').slideDown();$('#result"+result+"').removeClass('hovering');$('#result"+result+"')[0].onclick='';}\"></div>");
 		  resultMin=$("<button onclick=\"$('#summary"+result+"').slideUp();$('#result"+result+"').addClass('hovering');$('#min"+result+"').hide();setTimeout(function(){$('#result"+result+"').click(function(){$('#min"+result+"').show();$('#summary"+result+"').slideDown();$('#result"+result+"').removeClass('hovering');$('#result"+result+"').unbind('click');});},1);\" class='house-min' id='min"+result+"'></button>");//1 ms delay so click events dont conflict
+		  resultFav=$("<button onclick=\"addFavorite("+result+");$('#favorite"+result+"').addClass('');\" class='house-fav' id='favorite"+result+"'></button>");
 		  resultMin.hide();
 		  resultImg=$('<img>',{className:"house-thumb", src:'img/houses/thumb/'+data[result].imgFileName[0]});
 		  resultMetaDiv=$('<div>',{className:"house-result-meta"});
@@ -257,7 +258,7 @@ $.ajax({
 		  resultDiv.append(resultMetaDiv);
 		  resultDiv.append(resultRankDiv);
 		  resultDiv.append(compareBox);
-		  
+		  resultDiv.append(resultFav);
 		  
 		  $('#results').append(resultDiv);
 		  $('#results').append(summaryDiv);
@@ -273,6 +274,24 @@ $.ajax({
 },
 dataType: 'json'
 });
+}
+function addFavorite(index){
+	resultDiv=$('<div>', {class:'house-favorite'});
+	resultImg=$('<img>',{width:'60', height:'40', src:'img/houses/thumb/'+filterResults[index].imgFileName[0], class:'house-thumb-favorite'});
+    resultMetaDiv=$("<div>",{class:'house-favorite-meta'});
+	resultMetaDiv.append($("<h2>", {text:filterResults[index].title}));
+	resultRankDiv=$("<div>",{class:'house-favorite-ranking'});
+	resultRankDiv.append($("<div>",{class:'house-favorite-avg-rent', text:filterResults[index].avg_rent+"<span>AVG RENT</span>"}));
+	resultRankDiv.append($("<div>",{class:'house-favorite-rank', text:filterResults[index].avg_rank+"<span>STARS</span>"}));
+	resultRankDiv.append($("<div>",{class:'house-favorite-rooms', text:filterResults[index].bedrooms+"<span>ROOMS</span>"}));
+	resultDiv.append(resultImg);
+	resultDiv.append(resultMetaDiv);
+	resultDiv.append(resultRankDiv);
+	resultDiv.append($("<div>",{class:'clear'}));
+	resultDiv.append($("<hr>",{class:'custom-rule'}));
+	resultRmv=$("<button onclick=\$('#rmvFav"+index+"').remove();$('#favorite"+index+"').removeClass('');\" class='house-rmv-fav' id='rmvFav"+index+"'></button>");
+	resultDiv.append(resultRmv);
+	$('#favorites').append(resultDiv);
 }
 
 function compareResults(){
@@ -295,7 +314,10 @@ function compareResults(){
 	  tableBody=$('<tbody>');
 	  
 	    for (item in compareArray){
+			if (item%2==1)
 			tableRow=$('<tr>',{className:'odd'});
+			else
+			tableRow=$('<tr>');
 			td=$('<td>');
 			td.append($('<img>',{src:"img/houses/thumb/"+compareArray[item].imgFileName[0], class:"house-thumb"}));
 			tableRow.append(td);
