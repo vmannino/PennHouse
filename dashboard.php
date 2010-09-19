@@ -11,7 +11,7 @@
 			
 			<div class="col-330">
 				<?php
-				getCookie();
+				 $cookie=getCookie();
 				$user = json_decode(file_get_contents(
     'https://graph.facebook.com/me?access_token=' .
     $cookie['access_token']));
@@ -215,128 +215,30 @@
 			
 			<div class="col-330">
 				<h1>My Favorites</h1>
-				
-				<div class="house-favorite">
-					<img src="img/houses/thumb/example_small.jpg" class="house-thumb-favorite" />
-					<div class="house-favorite-meta">
-						<h2>4211 Spruce Street</h2>
-						<div class="house-favorite-ranking">
-							<div class="house-favorite-avg-rent">$540<br/>
-								<span>AVG RENT</span>
-							</div>
-							
-							
-							<div class="house-favorite-rank">4.5 <br/>
-								<span>STARS</span>
-							</div>
-							
-							<div class="house-favorite-rooms">10 <br/>
-								<span>ROOMS</span>
-							</div>
-						
-						</div>
-					</div>
-				</div>
-				<div class="clear"></div>
-				<hr class="custom-rule" />
-				<div class="house-favorite">
-					<img src="img/houses/thumb/example_small.jpg" class="house-thumb-favorite" />
-					<div class="house-favorite-meta">
-						<h2>4211 Spruce Street</h2>
-						<div class="house-favorite-ranking">
-							<div class="house-favorite-avg-rent">$540<br/>
-								<span>AVG RENT</span>
-							</div>
-							
-							
-							<div class="house-favorite-rank">4.5 <br/>
-								<span>STARS</span>
-							</div>
-							
-							<div class="house-favorite-rooms">10 <br/>
-								<span>ROOMS</span>
-							</div>
-						
-						</div>
-					</div>
-				</div>
-				<div class="clear"></div>
-				<hr class="custom-rule" />
-				<div class="house-favorite">
-					<img src="img/houses/thumb/example_small.jpg" class="house-thumb-favorite" />
-					<div class="house-favorite-meta">
-						<h2>4211 Spruce Street</h2>
-						<div class="house-favorite-ranking">
-							<div class="house-favorite-avg-rent">$540<br/>
-								<span>AVG RENT</span>
-							</div>
-							
-							
-							<div class="house-favorite-rank">4.5 <br/>
-								<span>STARS</span>
-							</div>
-							
-							<div class="house-favorite-rooms">10 <br/>
-								<span>ROOMS</span>
-							</div>
-						
-						</div>
-					</div>
-				</div>
-				<div class="clear"></div>
-				<hr class="custom-rule" />
-				<div class="house-favorite">
-					<img src="img/houses/thumb/example_small.jpg" class="house-thumb-favorite" />
-					<div class="house-favorite-meta">
-						<h2>4211 Spruce Street</h2>
-						<div class="house-favorite-ranking">
-							<div class="house-favorite-avg-rent">$540<br/>
-								<span>AVG RENT</span>
-							</div>
-							
-							
-							<div class="house-favorite-rank">4.5 <br/>
-								<span>STARS</span>
-							</div>
-							
-							<div class="house-favorite-rooms">10 <br/>
-								<span>ROOMS</span>
-							</div>
-						
-						</div>
-					</div>
-				</div>
-				<div class="clear"></div>
-				<hr class="custom-rule" />
-				<div class="house-favorite">
-					<img src="img/houses/thumb/example_small.jpg" class="house-thumb-favorite" />
-					<div class="house-favorite-meta">
-						<h2>4211 Spruce Street</h2>
-						<div class="house-favorite-ranking">
-							<div class="house-favorite-avg-rent">$540<br/>
-								<span>AVG RENT</span>
-							</div>
-							
-							
-							<div class="house-favorite-rank">4.5 <br/>
-								<span>STARS</span>
-							</div>
-							
-							<div class="house-favorite-rooms">10 <br/>
-								<span>ROOMS</span>
-							</div>
-						
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="clear"></div>
-				<hr class="custom-rule" />
+				<?php $favoritesArray=printFavorites(); ?>
 			
 			</div>
 			
 			<div class="col-630">
 				<h1>Compare Favorites</h1>
+                <?php 
+					foreach ($favoritesArray as $key=>$favorite){echo $favorite.'     k'.$key;
+						if($key%2==1)
+							echo '<tr class="odd">';
+						else 
+							echo '<tr>';
+							echo '<td><img src="img/houses/thumb/'.$favorite->img[0].'" class="house-thumb" /></td>';
+							echo '<td>'.$favorite->title.'</td>';
+							echo '<td>'.$favorite->avg_rank.'</td>';
+							echo '<td>$'.$favorite->avg_rent.'</td>';
+							echo '<td>'.$favorite->bedrooms.'</td>';
+							echo '<td>$'.$favorite->total_rent.'</td>';
+							echo '<td>'.$favorite->ll_title.'</td>';
+							echo '<td>'.$favorite->ll_avg_rank.'</td>';
+							echo '</tr>';
+					}
+					
+					?>
 				<table id="compare-table" summary="Comparison of Houses">
 					<thead>
 						<tr>
@@ -351,86 +253,9 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr class="odd">
-							<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-							<td>4211 Spruce St.</td>
-							<td>4.5</td>
-							<td>$540</td>
-							<td>12</td>
-							<td>$6500</td>
-							<td>Off-Campus Management</td>
-							<td>4.8</td>
-						</tr>
-						<tr>
-							<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-							<td>4211 Spruce St.</td>
-							<td>4.5</td>
-							<td>$540</td>
-							<td>12</td>
-							<td>$6500</td>
-							<td>Off-Campus Management</td>
-							<td>4.8</td>
-						</tr>
-						<tr class="odd">
-							<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-							<td>4211 Spruce St.</td>
-							<td>4.5</td>
-							<td>$540</td>
-							<td>12</td>
-							<td>$6500</td>
-							<td>Off-Campus Management</td>
-							<td>4.8</td>
-						</tr>
-						<tr>
-							<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-							<td>4211 Spruce St.</td>
-							<td>4.5</td>
-							<td>$540</td>
-							<td>12</td>
-							<td>$6500</td>
-							<td>Off-Campus Management</td>
-							<td>4.8</td>
-						</tr>
-						<tr class="odd">
-							<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-							<td>4211 Spruce St.</td>
-							<td>4.5</td>
-							<td>$540</td>
-							<td>12</td>
-							<td>$6500</td>
-							<td>Off-Campus Management</td>
-							<td>4.8</td>
-						</tr>
-						<tr>
-							<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-							<td>4211 Spruce St.</td>
-							<td>4.5</td>
-							<td>$540</td>
-							<td>12</td>
-							<td>$6500</td>
-							<td>Off-Campus Management</td>
-							<td>4.8</td>
-						</tr>
-						<tr class="odd">
-							<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-							<td>4211 Spruce St.</td>
-							<td>4.5</td>
-							<td>$540</td>
-							<td>12</td>
-							<td>$6500</td>
-							<td>Off-Campus Management</td>
-							<td>4.8</td>
-						</tr>
-						<tr class="last">
-							<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-							<td>4211 Spruce St.</td>
-							<td>4.5</td>
-							<td>$540</td>
-							<td>12</td>
-							<td>$6500</td>
-							<td>Off-Campus Management</td>
-							<td>4.8</td>
-						</tr>
+                    
+						
+						
 					</tbody>
 				</table> 
 				
@@ -487,9 +312,7 @@
 		
 		<!-- End Fancybox Divs -->
 		
-		
-		
-		
+
 		
 		
 		<?php getFooter(); ?>
