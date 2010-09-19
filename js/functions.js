@@ -188,7 +188,7 @@ $(document).ready(function(){
 function filterResults(){
 $.ajax({
   url: 'search.php',
-  data: ({ avgRentMin : $('input[name=avgRentMin]').val(), avgRentMax : $('input[name=avgRentMax]').val(), ttlRentMin : $('input[name=ttlRentMin]').val(), ttlRentMax : $('input[name=ttlRentMax]').val(),llRtngMin : $('input[name=llRtngMin]').val(), llRtngMax : $('input[name=llRtngMax]').val(), hsRtngMin : $('input[name=hsRtngMin]').val(), hsRtngMax : $('input[name=hsRtngMax]').val(), bdrmMin : $('input[name=bdrmMin]').val(), bdrmMax : $('input[name=bdrmMax]').val()}),
+  data: ({ avgRentMin : $('#avgRentMin').val(), avgRentMax : $('#avgRentMax').val(), ttlRentMin : $('#ttlRentMin').val(), ttlRentMax : $('#ttlRentMax').val(),llRtngMin : $('#llRtngMin').val(), llRtngMax : $('#llRtngMax').val(), hsRtngMin : $('#hsRtngMin').val(), hsRtngMax : $('#hsRtngMax').val(), bdrmMin : $('#bdrmMin').val(), bdrmMax : $('#bdrmMax').val()}),
   success: function(data){
 	  $('#globe').show();
 	  $('#results').html('');
@@ -221,7 +221,7 @@ $.ajax({
 		  resultDiv.append(resultMetaDiv);
 		  resultDiv.append(resultRankDiv);
 		  resultDiv.append(compareBox);
-		  
+		  resultDiv.append(resultFav);
 		  
 		  $('#results').append(resultDiv);
 		  $('#results').append(summaryDiv);
@@ -253,7 +253,7 @@ function addFavorite(index){
 	resultDiv.append($("<div>",{class:'clear'}));
 	resultDiv.append($("<hr>",{class:'custom-rule'}));
 	resultRmv=$("<button onclick=\$('#rmvFav"+index+"').remove();$('#favorite"+index+"').removeClass('');\" class='house-rmv-fav' id='rmvFav"+index+"'></button>");
-	resultDiv.append(resultFav);
+	resultDiv.append(resultRmv);
 	$('#favorites').append(resultDiv);
 }
 
@@ -278,7 +278,10 @@ function compareResults(){
 	  tableBody=$('<tbody>');
 	  
 	    for (item in compareArray){
+			if (item%2==1)
 			tableRow=$('<tr>',{className:'odd'});
+			else
+			tableRow=$('<tr>');
 			td=$('<td>');
 			td.append($('<img>',{src:"img/houses/thumb/"+compareArray[item].imgFileName[0], class:"house-thumb"}));
 			tableRow.append(td);
