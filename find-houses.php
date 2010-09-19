@@ -301,7 +301,8 @@
                 foreach($favoritesArray as $favorite){
                 $houseObject=mysql_fetch_object(mysql_query("SELECT * FROM houses WHERE hid='".$favorite."'"));  
 				$houseImg=explode(',',$houseObject->images);              
-                echo "<div class='house-favorite'>";
+                echo "<div class='house-favorite'><div class='house-favorite-options'>";
+				echo "<div class='house-result-meta'><img src='img/fav.png' class='fav' alt='fav' title='Remove this House From Your Favorites'/><span>fav</span></div>";
                  echo "<img width='60' height='40' src='img/houses/thumb/".$houseImg[0]."' class='house-thumb-favorite' />";
                  echo "<div class='house-favorite-meta'>";
 				 echo "<h2>".$houseObject->title."</h2><div class='house-favorite-ranking'>";

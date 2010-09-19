@@ -206,6 +206,14 @@ div.hovering:hover {
 	text-align: center;
 }
 
+.house-favorite-options {
+	float: left;
+	margin-top: 5px;
+	width: 30px;
+	height: 50px;
+	text-align: center;
+}
+
 .house-compare {
 	margin-top: 15px;
 }
@@ -246,7 +254,7 @@ div.hovering:hover {
 }
 
 .house-favorite {
-	padding: 5px 0 0 10px;
+	padding: 5px 0 0 0;
 	height: 50px;
 }
 
@@ -282,6 +290,7 @@ div.hovering:hover {
 
 .house-favorite-meta {
 	float: left;
+	width: 160px;
 }
 
 .house-favorite-ranking {
@@ -342,6 +351,19 @@ div.hovering:hover {
 	-webkit-border-radius: 10px;
 }
 
+.col-630.first {
+	width: 590px;
+	padding: 20px;
+	background: #d8e6ea;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	float: left;
+	border-radius:10px; 
+	-moz-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+}
+
 #dashboard-main {
 	width: 630px;
 	background: #d8e6ea;
@@ -387,6 +409,10 @@ div.hovering:hover {
 	border: 3px solid #4B5F63;
 }
 
+#navItemWelcome {
+	padding-right: 30px;
+	font: italic normal Georgia, serif;
+}
 
 .clear {
 	clear: both;
@@ -468,6 +494,19 @@ li {
 	overflow: visible;
 }
 
+#nav-bar ul li a.welcome{
+	color: #4B5F63;
+	font-style: italic;
+	line-height:normal;
+	font-size: 16px;
+	font-family: Georgia, serif;
+	line-height: 49px;
+	padding: 0 15px;
+	display: block;
+	text-transform: lowercase;
+	overflow: visible;
+}
+
 #nav-bar ul li a.current {
 	background: #4B5F63;
 	color: white;
@@ -500,6 +539,7 @@ h4 {
 	font-size-adjust: 0.52;
 	font-size: 22px;
 	margin: 10px 0 20px;
+	text-align: center;
 
 }
 
@@ -709,7 +749,10 @@ hr.vertical-space-small {
 	line-height: 1.6em;
 	text-align: left;
 	border-collapse: collapse;
-	border: 1px solid #4B5F63;
+	/*border: 1px solid #4B5F63;*/
+	position: relative;
+	left: -20px;
+	width: 630px;
 }
 #compare-table th
 {
@@ -733,7 +776,7 @@ hr.vertical-space-small {
 
 #compare-table tr.last
 {
-	border-bottom: 1px solid #4B5F63;	
+	/*border-bottom: 1px solid #4B5F63;*/
 }
 
 #compare-table .odd
