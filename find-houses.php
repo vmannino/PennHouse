@@ -197,30 +197,45 @@
 				
 				<h1>My Favorites</h1>
 				
+				<?php
+				$cookie=getCookie();
+				$uid = json_decode(file_get_contents(
+    'https://graph.facebook.com/me?access_token=' .
+    $cookie['access_token']))->id;
+				$favoritesString=mysql_result(mysql_query("SELECT favorites FROM users WHERE uid='".$uid."'"));echo $favoritesString;
+				$favoritesArray=explode(',',$favoritesString);
 				
-				<div class="house-favorite">
-					<img src="img/houses/thumb/example_small.jpg" class="house-thumb-favorite" />
-					<div class="house-favorite-meta">
-						<h2>4211 Spruce Street</h2>
-						<div class="house-favorite-ranking">
-							<div class="house-favorite-avg-rent">$540<br/>
-								<span>AVG RENT</span>
-							</div>
-							
-							
-							<div class="house-favorite-rank">4.5 <br/>
-								<span>STARS</span>
-							</div>
-							
-							<div class="house-favorite-rooms">10 <br/>
-								<span>ROOMS</span>
-							</div>
+				
+                foreach($favoritesArray as $favorite){
+                $houseObject=mysql_fetch_object(mysql_query("SELECT * FROM houses WHERE hid=".$favorite));  
+				$houseImg=explode(',',$houseObject->images);              
+                $houseFavorite="";
+                $houseFavorite+="<div class='house-favorite'>";
+                 $houseFavorite+="<img src='img/houses/thumb/".$houseImg[0]."' class='house-thumb-favorite' />";
+                 $houseFavorite+="<div class='house-favorite-meta'>";
+				 $houseFavorite+="<h2>4211 Spruce Street</h2><div class='house-favorite-ranking'>";
+				 $houseFavorite+="<div class='house-favorite-avg-rent'>".$houseObject->avg_rent."<br/>";
+				 $houseFavorite+="<span>AVG RENT</span></div>";
+				 $houseFavorite+="<div class='house-favorite-rank'>".$houseObject->avg_rank."<br/>";
+				 $houseFavorite+="<span>STARS</span></div>";
+				 $houseFavorite+="<div class='house-favorite-rooms'>".$houseObject->bedrooms."<br/>";
+				 $houseFavorite+="<span>ROOMS</span></div></div></div></div>";
+				 $houseFavorite+="<div class='clear'></div><hr class='custom-rule' />";
+				echo $houseFavorite;
+                }
+					?>
+					
 						
-						</div>
-					</div>
-				</div>
-				<div class="clear"></div>
-				<hr class="custom-rule" />
+							
+								
+							
+							
+							
+								
+							<!--
+							
+								
+				
 				<div class="house-favorite">
 					<img src="img/houses/thumb/example_small.jpg" class="house-thumb-favorite" />
 					<div class="house-favorite-meta">
@@ -319,7 +334,7 @@
 		
 			</div>
 			<div class="clear"></div>
-		
+		-->
 		
 		</div>
 		

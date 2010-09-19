@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 18, 2010 at 01:43 PM
+-- Generation Time: Sep 18, 2010 at 07:54 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -62,6 +62,7 @@ CREATE TABLE IF NOT EXISTS `landlords` (
   `houses` text NOT NULL,
   `reviews` text NOT NULL,
   `ll_avg_rating` int(11) NOT NULL,
+  `ll_title` int(11) NOT NULL,
   KEY `lid` (`lid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 

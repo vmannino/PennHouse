@@ -1,6 +1,7 @@
 <?php
 //functions.php
 
+
 function sanitize($string){
 	$string=strip_tags($string);
 	$string=htmlentities($string);
@@ -22,13 +23,37 @@ function get_facebook_cookie($app_id, $application_secret) {
   }
   return $args;
 }
+function getCookie(){
+	return get_facebook_cookie('102871766442464', '981fef3ce9d8e664b9277072210dd88b');
+	
+}
+function register_user($uid,$email,$name){
+	$registered=mysql_num_rows(mysql_query("SELECT * FROM users WHERE uid='".sanitize($uid)."'"));
+	if ($registered>0){
+		echo 'registered';
+	}
+	else{
+		if (!mysql_result(mysql_query("INSERT INTO users (uid,email,name) VALUES('".$uid."','".$email."','".$name."')"))){
+			echo 'error:'.mysql_error();	
+		}
+	}
+	
+}
+
 function getHeader($page, $title) {
 
 
-define('FACEBOOK_APP_ID', '102871766442464');
-define('FACEBOOK_SECRET', '981fef3ce9d8e664b9277072210dd88b');
+$cookie = getCookie();
 
-$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
+$dbhost='localhost';
+$dbname='opennhouse';
+$dbuser='opennhouse';
+$dbpass='7?8$uhM';
+
+mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
+
+mysql_select_db($dbname) or die(mysql_error());
+
 
 ?>
 
@@ -68,10 +93,14 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 	</head>
 	<body onload="initialize()">
 
-    <?php if ($cookie) { ?>
-      Your user ID is <?php echo $cookie['uid']; }
+    <?php if ($cookie) {
+		$user = json_decode(file_get_contents(
+    'https://graph.facebook.com/me?access_token=' .
+    $cookie['access_token']));
+	register_user($user->id,$user->name,$user->email);
+	  }
 	  else{
-		echo 'no cookie!';  
+		// no cookie 
 	  }?>
   
 
@@ -81,8 +110,25 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
     <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
-        FB.init({appId: '102871766442464', status: true, cookie: true,
-                 xfbml: true});
+        FB.init({appId: '102871766442464', status: true, cookie: true,xfbml: true});
+		/* All the events registered */
+	     FB.Event.subscribe('auth.login',function(response){
+			 //
+			 });
+	     FB.Event.subscribe('auth.logout', function(response) {
+	         //
+	     });
+	 
+	     FB.getLoginStatus(function(response) {
+         if (response.session) {
+			 FB.api('/me', function(object) {
+				$('#welcomeSpan').text(object.name.replace(/ .*$/,'')); 
+});
+
+			 
+	            //
+	         }
+	     });
       };
       (function() {
         var e = document.createElement('script');
@@ -99,7 +145,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 			<div id="nav-bar"> 
 				<div id="nav-left"> 
 					<ul>
-						<li <?php if ($page == 'HOME') echo 'class="current"';?>><a href="index.php" <?php if ($page == 'HOME') echo 'class="current"';?>>Welcome Justin!</a></li>
+						<li <?php if ($page == 'HOME') echo 'class="current"';?>><a href="index.php" <?php if ($page == 'HOME') echo 'class="current"';?>>Welcome <span id="welcomeSpan">Justin</span>!</a></li>
 						<li <?php if ($page == 'DASHBOARD') echo 'class="current"';?>><a href="dashboard.php" <?php if ($page == 'DASHBOARD') echo 'class="current"';?>>Dashboard</a></li>
 						<li <?php if ($page == 'LOGOUT') echo 'class="current"';?>><a href="#" <?php if ($page == 'LOGOUT') echo 'class="current"';?>>Logout</a></li>
 					</ul>
