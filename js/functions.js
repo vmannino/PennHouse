@@ -238,7 +238,24 @@ $(document).ready(function(){
 	$('#filter-button').click(function(){$('#search-results').tabs('select', 0);filterResults();});
 	$('#filter-button').click(function(){filterResults();});
 });	
-		
+
+function getAddresses(){
+$.ajax({
+  url: 'search.php',
+  data: ({ avgRentMin : $('#avgRentMin').val(), avgRentMax : $('#avgRentMax').val(), ttlRentMin : $('#ttlRentMin').val(), ttlRentMax : $('#ttlRentMax').val(),llRtngMin : $('#llRtngMin').val(), llRtngMax : $('#llRtngMax').val(), hsRtngMin : $('#hsRtngMin').val(), hsRtngMax : $('#hsRtngMax').val(), bdrmMin : $('#bdrmMin').val(), bdrmMax : $('#bdrmMax').val()}),
+  success: function(data){},
+  error:function(xhr,err){
+	
+    alert("readyState: "+xhr.readyState+"\nstatus: "+xhr.status);
+    alert("responseText: "+xhr.responseText);
+	
+},
+dataType: 'json'
+});	
+	
+	
+}
+
 function filterResults(){
 $.ajax({
   url: 'search.php',
@@ -246,37 +263,33 @@ $.ajax({
   success: function(data){
 	  $('#globe').show();
 	  $('#results').html('');
-	  $('#results').append($('<hr>',{className:"custom-rule"}));
 	  filterResults=data;
 	  for (result in data){
+		  //result=getLatLng(data[result].address);
+		  //placeHouse(result[0],result[1],data[result].title);
+		  
 		  summaryDiv=$('<div>',{className:'house-summary', id:'summary'+result});
 		  summaryDiv.hide();
 		  summaryDiv.append($('<div>Lots of extra stuff about this house<br/>Can go here<br/>Well leave the images for a nice fancybox<br/></div>'));
-		  resultDiv=$("<div class='house-result hovering' id='result"+result+"'  onclick=\"if(event.target.className=='house-compare'){}else{$('#min"+result+"').show();$('#summary"+result+"').slideDown();$('#result"+result+"').removeClass('hovering');$('#result"+result+"')[0].onclick='';}\"></div>");
-		  resultMin=$("<button onclick=\"$('#summary"+result+"').slideUp();$('#result"+result+"').addClass('hovering');$('#min"+result+"').hide();setTimeout(function(){$('#result"+result+"').click(function(){$('#min"+result+"').show();$('#summary"+result+"').slideDown();$('#result"+result+"').removeClass('hovering');$('#result"+result+"').unbind('click');});},1);\" class='house-min' id='min"+result+"'></button>");//1 ms delay so click events dont conflict
-		  resultFav=$("<button onclick=\"addFavorite("+result+");$('#favorite"+result+"').addClass('');\" class='house-fav' id='favorite"+result+"'></button>");
-		  resultMin.hide();
-		  resultImg=$('<img>',{className:"house-thumb", src:'img/houses/thumb/'+data[result].imgFileName[0]});
-		  resultMetaDiv=$('<div>',{className:"house-result-meta"});
-		  resultMetaDiv.append($('<h2>',{text: data[result].title}));
-		  resultMetaDiv.append($('<h3>',{text: data[result].bedrooms+' bedrooms | '+data[result].total_rent+'/month'}));
-		  resultRankDiv=$('<div>',{className:"house-result-ranking"});
-		  resultRentDiv=$('<div>',{className:"house-result-avg-rent", text:'$'+data[result].avg_rent});
-		  rentSpan=$('<span>', {text:'AVG RENT/PERSON'});
-		  resultRentDiv.append(rentSpan);
-		  resultRankDiv.append(resultRentDiv);
-		  resultRank=$('<div>',{className:"house-result-rank", text:data[result].avg_rating});
-		  rankSpan=$('<span>',{text:'STARS'});
-		  resultRank.append(rankSpan);
-		  resultRankDiv.append(resultRank);
-		  compareBox=$('<input>',{type:'checkbox', className:'house-compare', name:result});
-		  resultDiv.append(resultMin);
-		  resultDiv.append(resultImg);
-		  resultDiv.append(resultMetaDiv);
-		  resultDiv.append(resultRankDiv);
-		  resultDiv.append(compareBox);
-		  resultDiv.append(resultFav);
+		  resultDiv=$("<div class='house-result hovering' id='result"+result+"'  onclick=\"if(event.target.className=='house-compare' || event.target.className=='fav'){}else{$('#min"+result+"').show();$('#summary"+result+"').slideDown();$('#result"+result+"').removeClass('hovering');$('#result"+result+"')[0].onclick='';}\"></div>");
 		  
+		  resultImg=$('<img>',{className:"house-thumb", src:'img/houses/thumb/'+data[result].imgFileName[0]});
+		  resultOptions=$('<div>',{className:"house-result-options"});
+		  resultOptions.append($("<div class='house-result-meta'><a href='javascript:void(0)' id='min"+result+"' style='display:none;' class='button bluebutton shrink'>&ndash;</a></div>"));
+		  resultOptions.append($("<div class='house-result-meta'><input type='checkbox' onclick=\"$('#summary"+result+"').slideUp();$('#result"+result+"').addClass('hovering');$('#min"+result+"').hide();setTimeout(function(){$('#result"+result+"').click(function(){$('#min"+result+"').show();$('#summary"+result+"').slideDown();$('#result"+result+"').removeClass('hovering');$('#result"+result+"').unbind('click');});},1);\" class='house-compare' value='0' title='Compare this House with Other Checked Ones' /><span>compare</span></div>"));
+		  resultOptions.append($("<div class='house-result-meta'><img src='img/fav-blank.png' onclick=\"addFavorite("+result+");$('#favorite"+result+"').attr('src',''img/fav.png'');\" class='fav' alt='fav' title='Save this House to Your Favorites'/><span>fav</span></div>"));
+		  resultDetails=$('<div>',{className:"house-result-details"});
+		  resultDetails.append($("<div class='house-result-meta'><h2>"+data[result].title+"</h2><span>address</span></div><div class='clear'></div>"));
+		  resultDetails.append($("<div class='house-result-meta'>$"+data[result].total_rent+"<br/><span>TOTAL RENT</span></div>"));
+		  resultDetails.append($("<div class='house-result-meta'>"+data[result].bedrooms+"<br/><span>rooms</span></div>"));
+		  resultRankDiv=$('<div>',{className:"house-result-ranking"});
+		  resultRankDiv.append($("<div class='house-result-meta'>$"+data[result].avg_rent+"<br/><span>AVG RENT/ROOM</span></div>"));
+		  resultRankDiv.append($("<div class='house-result-meta'><div id='rank-house'><img src='img/star.png' class='star' alt='star'/><div id='rank-house-slider' style='width:65px'></div></div><span>RANK</span></div>"));	  
+	
+		  resultDiv.append(resultOptions);
+		  resultDiv.append(resultImg);
+		 resultDiv.append( resultDetails);
+		  resultDiv.append(resultRankDiv);
 		  $('#results').append(resultDiv);
 		  $('#results').append(summaryDiv);
 		  $('#results').append($('<hr>',{className:"custom-rule"}));

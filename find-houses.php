@@ -165,6 +165,7 @@
 										</div>
 										<span>RANK</span>
 									</div>
+                                    
 								</div>
 							</div>
 						
@@ -194,86 +195,6 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr class="odd">
-								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-								<td>4211 Spruce St.</td>
-								<td>4.5</td>
-								<td>$540</td>
-								<td>12</td>
-								<td>$6500</td>
-								<td>Off-Campus Management</td>
-								<td>4.8</td>
-							</tr>
-							<tr>
-								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-								<td>4211 Spruce St.</td>
-								<td>4.5</td>
-								<td>$540</td>
-								<td>12</td>
-								<td>$6500</td>
-								<td>Off-Campus Management</td>
-								<td>4.8</td>
-							</tr>
-							<tr class="odd">
-								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-								<td>4211 Spruce St.</td>
-								<td>4.5</td>
-								<td>$540</td>
-								<td>12</td>
-								<td>$6500</td>
-								<td>Off-Campus Management</td>
-								<td>4.8</td>
-							</tr>
-							<tr>
-								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-								<td>4211 Spruce St.</td>
-								<td>4.5</td>
-								<td>$540</td>
-								<td>12</td>
-								<td>$6500</td>
-								<td>Off-Campus Management</td>
-								<td>4.8</td>
-							</tr>
-							<tr class="odd">
-								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-								<td>4211 Spruce St.</td>
-								<td>4.5</td>
-								<td>$540</td>
-								<td>12</td>
-								<td>$6500</td>
-								<td>Off-Campus Management</td>
-								<td>4.8</td>
-							</tr>
-							<tr>
-								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-								<td>4211 Spruce St.</td>
-								<td>4.5</td>
-								<td>$540</td>
-								<td>12</td>
-								<td>$6500</td>
-								<td>Off-Campus Management</td>
-								<td>4.8</td>
-							</tr>
-							<tr class="odd">
-								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-								<td>4211 Spruce St.</td>
-								<td>4.5</td>
-								<td>$540</td>
-								<td>12</td>
-								<td>$6500</td>
-								<td>Off-Campus Management</td>
-								<td>4.8</td>
-							</tr>
-							<tr class="last">
-								<td><img src="img/houses/thumb/example_small.jpg" class="house-thumb" /></td>
-								<td>4211 Spruce St.</td>
-								<td>4.5</td>
-								<td>$540</td>
-								<td>12</td>
-								<td>$6500</td>
-								<td>Off-Campus Management</td>
-								<td>4.8</td>
-							</tr>
 						</tbody>
 					</table> 
 					
@@ -290,32 +211,6 @@
 				
 				<?php
 
-				$cookie=getCookie();
-				$uid = json_decode(file_get_contents(
-    'https://graph.facebook.com/me?access_token=' .
-    $cookie['access_token']))->id;
-				$favoritesString=mysql_result(mysql_query("SELECT favorites FROM users WHERE uid='".$uid."'"),0);
-				if ($favoritesString){
-				$favoritesArray=explode(',',$favoritesString);
-				
-				
-                foreach($favoritesArray as $favorite){
-                $houseObject=mysql_fetch_object(mysql_query("SELECT * FROM houses WHERE hid='".$favorite."'"));  
-				$houseImg=explode(',',$houseObject->images);              
-                echo "<div class='house-favorite'><div class='house-favorite-options'>";
-				echo "<div class='house-result-meta'><img src='img/fav.png' class='fav' alt='fav' title='Remove this House From Your Favorites'/><span>fav</span></div>";
-                 echo "<img width='60' height='40' src='img/houses/thumb/".$houseImg[0]."' class='house-thumb-favorite' />";
-                 echo "<div class='house-favorite-meta'>";
-				 echo "<h2>".$houseObject->title."</h2><div class='house-favorite-ranking'>";
-				 echo "<div class='house-favorite-avg-rent'>".$houseObject->avg_rent."<br/>";
-				 echo "<span>AVG RENT</span></div>";
-				 echo "<div class='house-favorite-rank'>".$houseObject->avg_rank."<br/>";
-				 echo "<span>STARS</span></div>";
-				 echo "<div class='house-favorite-rooms'>".$houseObject->bedrooms."<br/>";
-				 echo "<span>ROOMS</span></div></div></div></div>";
-				 echo "<div class='clear'></div><hr class='custom-rule' />";
-                }
-				}
 				printFavorites();
 
 					?>

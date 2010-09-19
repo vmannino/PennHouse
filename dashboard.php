@@ -10,11 +10,9 @@
 
 			
 			<div class="col-330">
-<<<<<<< HEAD
-				<h1>Welcome Justin!</h1>
-				<img src="img/blank_profile.png" alt="profile" width="200" class="profile"/>
-				<h4>Justin Broglie</h4>
-=======
+				
+		
+
 				<?php
 				 $cookie=getCookie();
 				$user = json_decode(file_get_contents(
@@ -22,11 +20,10 @@
     $cookie['access_token']));
 				
 				
-                
+                echo "<h1>Welcome ".preg_replace("/ .*$/",'',$user->name)."!</h1>";
 				echo '<img src="http://graph.facebook.com/'.$user->id.'/picture?type=large" alt="profile" width="200" class="profile"/>';
 				echo '<h4>'.$user->name.'</h4>';
 				?>
->>>>>>> d49e50ac1b33e6d8bc8ab110595ac53d3316fc2e
 				<a id="privacy-settings-button" href="#privacy-settings" class="button bluebutton small">Edit Privacy Settings</a>
 				<a id="logout-button" href="#logout" class="button bluebutton small">Logout</a>
 				
@@ -269,7 +266,7 @@
 			
 			<div class="col-330">
 				<h1>My Favorites</h1>
-<<<<<<< HEAD
+
 				
 				<div class="house-favorite">
 					<div class="house-favorite-options">
@@ -397,12 +394,8 @@
 					</div>
 				</div>
 				<div class="clear"></div>
-=======
 				<?php $favoritesArray=printFavorites(); ?>
-			
->>>>>>> d49e50ac1b33e6d8bc8ab110595ac53d3316fc2e
-			</div>
-			
+				</div>
 			<div class="col-630">
 				<h1>Compare Favorites</h1>
                 

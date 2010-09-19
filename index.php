@@ -19,25 +19,13 @@
 	<div id="easyslider_wrapper">
 		
 		<div id="slider">
-			<ul>				
-				<li>
-					<h1>oPennHouse allows Penn students to find proper housing</h1>
-				</li>
-				
-				<li>
-				
-				</li>
-				
-				<li>
-				
-				</li>
-				
-				<li>
-				
-				</li>
-					
-			</ul>
-		</div>
+<ul>
+<li><img src="img/1.png" alt="slider1" class="slider-img"/></li>
+<li><img src="img/2.png" alt="slider2" class="slider-img"/></li>
+<li><img src="img/3.png" alt="slider3" class="slider-img"/></li>
+<li><img src="img/4.png" alt="slider4" class="slider-img"/></li>
+</ul>
+</div>
 
 	</div>
 	<div id="content">
@@ -67,7 +55,7 @@
 				
 				$result=mysql_query("SELECT * FROM users ORDER BY last_login DESC LIMIT 0,12");
 				while($user=mysql_fetch_object($result)){
-					echo '<li><img src="http://graph.facebook.com/'.$user->uid.'/picture?type=square" /><a href="http://www.facebook.com/' . $user->username . '">'.preg_replace("/ .*$/","",$user->name).'</a></li>';
+					echo '<li><img src="http://graph.facebook.com/'.$user->uid.'/picture?type=square" /><a href="http://www.facebook.com/profile.php/' . $user->uid . '">'.preg_replace("/ .*$/","",$user->name).'</a></li>';
 				}
 				*/
 				?>
