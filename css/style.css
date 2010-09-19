@@ -177,6 +177,7 @@ body {
 .house-result {
 	height: 100px;
 	padding: 10px 0;
+	position: relative;
 }
 
 div.hovering:hover {
@@ -186,9 +187,7 @@ div.hovering:hover {
 .house-min{
 	float:left;
 }
-.house-compare{
-	float:right;
-}
+
 .house-thumb {
 	float: left;
 	margin: 10px;
@@ -199,8 +198,43 @@ div.hovering:hover {
 }
 
 .house-result-ranking {
+	position: absolute;
+	right: 0px;
+	top: 15px;
+	width: 120px;
+}
+
+.house-result-options {
+	float: left;
+	width: 50px;
+	height: 100px;
+	text-align: center;
+}
+
+.house-compare {
+	margin-top: 15px;
+}
+
+.house-dashboard-details {
+	clear: both;
+	margin: 20px 0 30px;
+}
+
+.house-result-details {
+	float: left;
+	width: 280px;
+}
+
+.house-dashboard-images {
+	float: left;
+	width: 280px;
+	margin: 20px 0 30px;
+}
+
+.house-dashboard-residents {
 	float: right;
-	width: 150px;
+	width: 280px;
+	margin: 20px 0 30px;
 }
 
 .house-favorite {
@@ -460,12 +494,44 @@ h4 {
 	text-align: center;
 }
 
+<<<<<<< HEAD
+.fancybox-style h1 {
+	line-height: 49px;
+	position: relative;
+	font-size: 22px;
+	text-align: center;
+}
+
+
+.house-result-meta {
+	font: italic normal 20px Georgia, serif;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+.house-result-options .house-result-meta {
+	margin: 0;
+	float: none;
+}
+
+.house-result-options .house-result-meta span {
+	font: normal 9px 'Lucida Grande', 'Lucida Sans Unicode', serif;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.house-result-meta span {
+	font: normal 10px 'Lucida Grande', 'Lucida Sans Unicode', serif;
+	text-transform: uppercase;
+=======
 .house-result-meta h3 {
 	font: normal 13px 'Lucida Grande', 'Lucida Sans Unicode', serif;
+>>>>>>> 8d4609d328b6aa0f5d8285e53595ecc93a89fd67
 }
 
 .house-result-meta h2 {
-	font: normal 22px Georgia, serif;
+	font: normal 25px Georgia, serif;
 }
 
 .house-dashboard-meta h2 {
@@ -767,6 +833,13 @@ a.redbutton:active, a.redbutton:focus {
 .medium {
 	font-weight: bold;
 	font-size: 15px;
+}
+
+a.button .shrink {
+	font-size: 16px;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .small {

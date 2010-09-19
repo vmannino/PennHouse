@@ -1,6 +1,7 @@
 var map;
 var geocoder;
 var filterResults;
+
 function initialize() {
 	var latlng = new google.maps.LatLng(39.9536322, -75.1988056);
 	var myOptions = {
@@ -91,6 +92,9 @@ function initialize() {
   map.setMapTypeId('greys');
 }
 
+
+
+
 /* 
    given a string containing an address, returns a 2-element array x, such that
    x[0] = lattitude
@@ -140,6 +144,22 @@ $(document).ready(function(){
 	});
 	
 	$("#logout-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
+	$("#edit-residence-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
+	$("#edit-review-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
+	$("#edit-images-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
+	$("#edit-landlord-button").fancybox({
 		'hideOnContentClick': false
 	});
 	
