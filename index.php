@@ -42,7 +42,7 @@
 	
 	
 		<div class="widget space">
-			<h1>Find Houses</h1>
+			<h1>Houses Available</h1>
 			<a id="various1" href="#inline1" title="Lorem ipsum dolor sit amet">Inline</a>
 			<div style="display: none;">
 				<div id="inline1" style="width:400px;height:100px;overflow:auto;">
@@ -52,12 +52,12 @@
 		</div>
 		
 		<div class="widget space">
-			<h1>Find Landlords</h1>
+			<h1>Landlords Reviewed</h1>
 		
 		</div>
 		
 		<div class="widget">
-			<h1>Students on opennhouse</h1>
+			<h1>Students Using oPennHouse</h1>
 		
 		</div>
 	

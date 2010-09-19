@@ -54,6 +54,8 @@ mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 
 mysql_select_db($dbname) or die(mysql_error());
 
+$cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
+
 
 ?>
 
@@ -69,7 +71,7 @@ mysql_select_db($dbname) or die(mysql_error());
 		<!-- Begin Stylesheets -->
 			<link href="css/style.css" rel="stylesheet" type="text/css" />
 			<link href="css/easyslider.css" rel="stylesheet" type="text/css" />
-			<link href="css/cupertino/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css" />
+			<link href="css/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
 			<link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.1.css" type="text/css" media="screen" />
 		<!-- End Stylesheets -->
 		
@@ -77,7 +79,7 @@ mysql_select_db($dbname) or die(mysql_error());
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" ></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js" ></script>
 		<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.1.pack.js"></script>
-		<script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
+		<!--<script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.2.pack.js"></script>-->
 		
 		<script type="text/javascript" src="js/functions.js"></script>
 		

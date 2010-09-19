@@ -18,6 +18,12 @@
 				
 				
 				<div style="display: none;">
+					<div id="logout" class="fancybox-style" style="">
+						<h1>Are you sure you want to logout?</h1>
+					</div>
+				</div>
+				
+				<div style="display: none;">
 					<div id="privacy-settings" class="fancybox-style" style="">
 						<h1>Privacy Settings</h1>
 					</div>
@@ -32,10 +38,10 @@
 				
 				<div id="current-residence">
 				
-					<a id="filter-button" class="button bluebutton small">Edit Current Residence</a>
-					<a id="filter-button" class="button bluebutton small">Edit My Review</a>
-					<a id="filter-button" class="button bluebutton small">Add Images</a>
-					<a id="filter-button" class="button bluebutton small">Edit My Landlord Review</a>
+					<a class="button bluebutton small">Edit Current Residence</a>
+					<a class="button bluebutton small">Edit My Review</a>
+					<a class="button bluebutton small">Add Images</a>
+					<a class="button bluebutton small">Edit My Landlord Review</a>
 					
 					<hr class="custom-rule vertical-space"/>
 					<div class="house-dashboard">
@@ -51,6 +57,9 @@
 							Off-Campus Management<br/>
 							<span>My Landlord</span>
 						</div>
+						
+						
+						
 						<div class="house-dashboard-meta">4.5 <br/>
 							<span>MY LANDLORD RANK</span>
 						</div>
