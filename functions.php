@@ -27,13 +27,15 @@ function getCookie(){
 	return get_facebook_cookie('102871766442464', '981fef3ce9d8e664b9277072210dd88b');
 	
 }
-function register_user($uid,$email,$name){
+function register_user($uid,$email,$name,$username){
 	$registered=mysql_num_rows(mysql_query("SELECT * FROM users WHERE uid='".sanitize($uid)."'"));
 	if ($registered>0){
 		echo 'registered';
+		$date = date("Y-m-d"); 
+		mysql_query("INSERT INTO users (last_login) VALUES ($date)");
 	}
 	else{
-		if (!mysql_result(mysql_query("INSERT INTO users (uid,email,name) VALUES('".$uid."','".$email."','".$name."')"))){
+		if (!mysql_result(mysql_query("INSERT INTO users (uid,email,name,username) VALUES('".$uid."','".$email."','".$name."','".$username."')"))){
 			echo 'error:'.mysql_error();	
 		}
 	}
@@ -102,7 +104,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 		$user = json_decode(file_get_contents(
     'https://graph.facebook.com/me?access_token=' .
     $cookie['access_token']));
-	register_user($user->id,$user->name,$user->email);
+	register_user($user->id,$user->name,$user->email, $user->username);
 	  }
 	  else{
 		// no cookie 
