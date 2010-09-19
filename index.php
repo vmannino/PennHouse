@@ -54,7 +54,16 @@
 		
 		<div class="widget">
 			<h1>Students Using oPennHouse</h1>
-		
+			<ul>
+			<?php
+				$query = 
+				
+				
+				foreach( $users as $id){
+					echo '<li><a href="http://graphs.facebook.com/' . $id . '"><img src="http://graphs.facebook.com/' . $id . '/picture?type=square" /></a></li>';
+				}
+				?>
+			</ul>
 		</div>
 	
 		<div class="clear"></div>
