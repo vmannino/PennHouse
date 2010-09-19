@@ -107,6 +107,63 @@ $(document).ready(function(){
 	
 	/* End the Dashboard initializations */
 
+	
+	/* Filter Initializations */
+	$("#avg-rent-slider").slider({
+		range: true,
+		min: 0,
+		max: 1500,
+		values: [400, 700],
+		slide: function(event, ui) {
+			$("#avgRentMin").text('$' + ui.values[0]);
+			$("#avgRentMax").text('$' + ui.values[1]);
+		}
+	});
+	
+	$("#total-rent-slider").slider({
+		range: true,
+		min: 0,
+		max: 8000,
+		values: [1000, 5000],
+		slide: function(event, ui) {
+			$("#ttlRentMin").text('$' + ui.values[0]);
+			$("#ttlRentMax").text('$' + ui.values[1]);
+		}
+	});
+	
+	$("#rooms-slider").slider({
+		range: true,
+		min: 1,
+		max: 14,
+		values: [1, 6],
+		slide: function(event, ui) {
+			$("#bdrmMin").text(ui.values[0]);
+			$("#bdrmMax").text(ui.values[1]);
+		}
+	});
+	
+	$("#rank-house").click(function(e){
+		var offset = $("#rank-house").offset();
+		var offsetL = offset.left;
+		var x = e.pageX - offsetL;
+		$('#hsRtngMax').text((x/115)*5);
+		$('#rank-house-slider').css('width', x);
+   });
+   
+   $("#rank-landlord").click(function(e){
+		var offset = $("#rank-landlord").offset();
+		var offsetL = offset.left;
+		var x = e.pageX - offsetL;
+		$('#llRtngMax').text((x/115)*5);
+		$('#rank-landlord-slider').css('width', x);
+   });
+	
+	
+	
+	//$("#amount").val('$' + $("#slider-range").slider("values", 0) + ' - $' + $("#slider-range").slider("values", 1));
+	
+	/* End the Filter initializations */
+	
 	// Tabs
 	$('#search-results').tabs({
 		select: function(event, ui) {

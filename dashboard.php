@@ -32,10 +32,10 @@
 				
 				<div id="current-residence">
 				
-					<a id="filter-button" class="button bluebutton small">Edit Current Residence</a>
-					<a id="filter-button" class="button bluebutton small">Edit My Review</a>
-					<a id="filter-button" class="button bluebutton small">Add Images</a>
-					<a id="filter-button" class="button bluebutton small">Edit My Landlord Review</a>
+					<a class="button bluebutton small">Edit Current Residence</a>
+					<a class="button bluebutton small">Edit My Review</a>
+					<a class="button bluebutton small">Add Images</a>
+					<a class="button bluebutton small">Edit My Landlord Review</a>
 					
 					<hr class="custom-rule vertical-space"/>
 					<div class="house-dashboard">
@@ -51,6 +51,15 @@
 							Off-Campus Management<br/>
 							<span>My Landlord</span>
 						</div>
+						
+						<ul class='star-rating'>
+						  <li><a href='#' title='Rate this 1 star out of 5' class='one-star'>1</a></li>
+						  <li><a href='#' title='Rate this 2 stars out of 5' class='two-stars'>2</a></li>
+						  <li><a href='#' title='Rate this 3 stars out of 5' class='three-stars'>3</a></li>
+						  <li><a href='#' title='Rate this 4 stars out of 5' class='four-stars'>4</a></li>
+						  <li><a href='#' title='Rate this 5 stars out of 5' class='five-stars'>5</a></li>
+						</ul>
+						
 						<div class="house-dashboard-meta">4.5 <br/>
 							<span>MY LANDLORD RANK</span>
 						</div>
