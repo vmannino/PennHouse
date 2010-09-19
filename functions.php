@@ -71,8 +71,10 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 		<!-- Begin Stylesheets -->
 			<link href="css/style.css" rel="stylesheet" type="text/css" />
 			<link href="css/easyslider.css" rel="stylesheet" type="text/css" />
+			
 			<link href="css/jquery-ui-1.8.5.custom.css" rel="stylesheet" type="text/css" />
 			<link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.1.css" type="text/css" media="screen" />
+
 		<!-- End Stylesheets -->
 		
 		<!-- Begin JavaScript -->
@@ -94,6 +96,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 			 
 	</head>
 	<body onload="initialize()">
+	
 
     <?php if ($cookie) {
 		$user = json_decode(file_get_contents(
@@ -144,7 +147,6 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
       }());
     </script>
 
-
 		<div id="header"> 
 			<div id="nav-bar"> 
 				<div id="nav-left"> 
@@ -170,13 +172,23 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 
 		
 <?php
+
+
 }
+
 function getFooter() {
+
 ?>
+
 		<div id="footer"> </div>
+		
+
 	</body>
 </html>
+
 <?php
+
+
 }
 
 ?>

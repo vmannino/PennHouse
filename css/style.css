@@ -203,23 +203,6 @@ div.hovering:hover {
 	width: 150px;
 }
 
-.house-dashboard-details {
-	clear: both;
-	margin: 20px 0 30px;
-}
-
-.house-dashboard-images {
-	float: left;
-	width: 280px;
-	margin: 20px 0 30px;
-}
-
-.house-dashboard-residents {
-	float: right;
-	width: 280px;
-	margin: 20px 0 30px;
-}
-
 .house-favorite {
 	padding: 5px 0 0 10px;
 	height: 50px;
@@ -239,19 +222,8 @@ div.hovering:hover {
 	margin: 5px 10px 5px 0;
 }
 
-.house-thumb-small{
-	float: left;
-	margin: 5px 10px 5px 0;
-}
-
-.house-thumb-large{
-	float: left;
-	margin: 5px 10px 5px 0;
-}
-
 .house-favorite-meta {
 	float: left;
-	
 }
 
 .house-favorite-ranking {
@@ -305,10 +277,6 @@ div.hovering:hover {
 	-webkit-border-radius: 10px;
 }
 
-.fancybox-style {
-	padding: 20px;
-}
-
 #dashboard-main {
 	width: 630px;
 	background: #d8e6ea;
@@ -349,7 +317,6 @@ div.hovering:hover {
 
 .profile {
 	margin-left: 30px;
-	margin-top: 20px;
 	border: 3px solid #4B5F63;
 }
 
@@ -459,13 +426,12 @@ h1 {
 
 h4 {
 	color: #4B5F63;
-	text-align: center;
 	font-style: normal;
 	line-height:normal;
-	font-weight: normal;
-	font-family: 'Georgia', sans-serif;
-	font-size: 20px;
-	margin: 10px 0 20px 20px;
+	font-family: 'AdelleBasicBold', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+	font-size-adjust: 0.52;
+	font-size: 22px;
+	margin: 10px 0 20px;
 
 }
 
@@ -482,6 +448,7 @@ h4 {
 }
 
 .col-330 h1, .col-630 h1, #favorites h1, #filters h1, #results h1, #compare h1, #saved-searches h1{
+
 	line-height: 49px;
 	background: url(../img/nav.png) repeat-x;
 	position: relative;
@@ -489,13 +456,6 @@ h4 {
 	margin-bottom: 15px;
 	width: 100%;
 	padding: 0 20px;
-	font-size: 22px;
-	text-align: center;
-}
-
-.fancybox-style h1 {
-	line-height: 49px;
-	position: relative;
 	font-size: 22px;
 	text-align: center;
 }
@@ -604,7 +564,6 @@ h4 {
 
 
 
-
 .numInput{
 		
 	background-color: #abc4cc;
@@ -641,7 +600,6 @@ hr.vertical-space-small {
 	text-align: center;
 
 }
-
 /* End Typography */
  
 

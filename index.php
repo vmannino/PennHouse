@@ -13,12 +13,6 @@
 				continuous: true,
 				numeric: true
 			});
-			
-			$("#various1").fancybox({
-				'titlePosition'		: 'inside',
-				'transitionIn'		: 'none',
-				'transitionOut'		: 'none'
-			});
 		});	
 	</script>
 	
@@ -42,6 +36,7 @@
 	
 	
 		<div class="widget space">
+
 			<h1>Houses Available</h1>
 			<a id="various1" href="#inline1" title="Lorem ipsum dolor sit amet">Inline</a>
 			<div style="display: none;">
@@ -58,7 +53,16 @@
 		
 		<div class="widget">
 			<h1>Students Using oPennHouse</h1>
-		
+			<ul>
+			<?php
+				$query = 
+				
+				
+				foreach( $users as $id){
+					echo '<li><a href="http://graphs.facebook.com/' . $id . '"><img src="http://graphs.facebook.com/' . $id . '/picture?type=square" /></a></li>';
+				}
+				?>
+			</ul>
 		</div>
 	
 		<div class="clear"></div>
