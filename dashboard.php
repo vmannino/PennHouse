@@ -14,20 +14,9 @@
 				<img src="img/blank_profile.png" alt="profile" width="200" class="profile"/>
 				<h4>Justin Broglie</h4>
 				<a id="privacy-settings-button" href="#privacy-settings" class="button bluebutton small">Edit Privacy Settings</a>
-				<a id="logout-button" class="button bluebutton small">Logout</a>
+				<a id="logout-button" href="#logout" class="button bluebutton small">Logout</a>
 				
 				
-				<div style="display: none;">
-					<div id="logout" class="fancybox-style" style="">
-						<h1>Are you sure you want to logout?</h1>
-					</div>
-				</div>
-				
-				<div style="display: none;">
-					<div id="privacy-settings" class="fancybox-style" style="">
-						<h1>Privacy Settings</h1>
-					</div>
-				</div>
 			</div>
 			
 			<div id="dashboard-main">
@@ -38,10 +27,10 @@
 				
 				<div id="current-residence">
 				
-					<a class="button bluebutton small">Edit Current Residence</a>
-					<a class="button bluebutton small">Edit My Review</a>
-					<a class="button bluebutton small">Add Images</a>
-					<a class="button bluebutton small">Edit My Landlord Review</a>
+					<a id="edit-residence-button" href="#edit-residence" class="button bluebutton small">Edit Current Residence</a>
+					<a id="edit-review-button" href="#edit-review" class="button bluebutton small">Edit My Review</a>
+					<a id="edit-images-button" href="#edit-images" class="button bluebutton small">Edit Images</a>
+					<a id="edit-landlord-button" href="#edit-landlord" class="button bluebutton small">Edit My Landlord Review</a>
 					
 					<hr class="custom-rule vertical-space"/>
 					<div class="house-dashboard">
@@ -396,6 +385,54 @@
 		
 			<div class="clear"></div>
 		</div>
+		
+		
+		
+		<!-- Fancybox Divs -->
+		
+		<div style="display: none;">
+			<div id="logout" class="fancybox-style" style="">
+				<h1>Are you sure you want to logout?</h1>
+			</div>
+		</div>
+		
+		<div style="display: none;">
+			<div id="privacy-settings" class="fancybox-style" style="">
+				<h1>Privacy Settings</h1>
+			</div>
+		</div>
+		
+		<div style="display: none;">
+			<div id="edit-residence" class="fancybox-style" style="">
+				<h1>Edit Current Residence</h1>
+			</div>
+		</div>
+		
+		<div style="display: none;">
+			<div id="edit-review" class="fancybox-style" style="">
+				<h1>Edit Current Residence Review</h1>
+			</div>
+		</div>
+		
+		<div style="display: none;">
+			<div id="edit-images" class="fancybox-style" style="">
+				<h1>Edit Images for Current Residence</h1>
+			</div>
+		</div>
+		
+		<div style="display: none;">
+			<div id="edit-landlord" class="fancybox-style" style="">
+				<h1>Edit Landlord Review</h1>
+			</div>
+		</div>
+		
+		
+		
+		<!-- End Fancybox Divs -->
+		
+		
+		
+		
 		
 		
 		<?php getFooter(); ?>

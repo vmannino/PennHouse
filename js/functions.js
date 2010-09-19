@@ -1,6 +1,7 @@
 var map;
 var geocoder;
 var filterResults;
+
 function initialize() {
 	var latlng = new google.maps.LatLng(39.9536322, -75.1988056);
 	var myOptions = {
@@ -9,8 +10,9 @@ function initialize() {
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 		mapTypeControl: true,
 		mapTypeControlOptions: {
-			style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-			position: google.maps.ControlPosition.BOTTOM_LEFT
+			style: google.maps.MapTypeControlStyle.DEFAULT,
+			position: google.maps.ControlPosition.BOTTOM_LEFT,
+			mapTypeIds: [ google.maps.MapTypeId.SATELLITE, google.maps.MapTypeId.HYBRID, 'greys' ]
 		},
 		navigationControl: true,
 		navigationControlOptions: {
@@ -26,33 +28,72 @@ function initialize() {
 	
 	var mapStyles = [
     {
-      featureType: "road.highway",
-      elementType: "all",
-      stylers: [
-        { visibility: "on" }
-      ]
+		featureType: "road",
+		elementType: "geometry",
+		stylers: [
+			{ gamma: 1 },
+			{ hue: '#ffffff' },
+			{ lightness: -5 },
+			{ saturation: -100 }
+		]
     },
 	{
-      featureType: "road.arterial",
-      elementType: "labels",
-      stylers: [
-        { visibility: "on" }
-      ]
-    }
-  ];
+		featureType: "road.local",
+		elementType: "geometry",
+		stylers: [
+			{ gamma: 1 },
+			{ hue: '#ffffff' },
+			{ lightness: -23 },
+			{ saturation: -100 }
+		]
+    },
+	{
+		featureType: "road",
+		elementType: "labels",
+		stylers: [
+			{ gamma: 1 },
+			{ hue: '#ffffff' },
+			{ lightness: 30 },
+			{ saturation: -100 }
+		]
+    },
+    {
+		featureType: "administrative",
+		elementType: "all",
+		stylers: [
+			{ gamma: 1 },
+			{ hue: '#cccccc' },
+			{ lightness: 40 },
+			{ saturation: -100 }
+		]
+    },
+	{
+		featureType: "poi",
+		elementType: "all",
+		stylers: [
+			{ gamma: 1 },
+			{ hue: '#ffffff' },
+			{ lightness: 25 },
+			{ saturation: -100 }
+		]
+    },
+	];
 	
 	map = new google.maps.Map(document.getElementById("map-canvas"),myOptions);
 	
 	var styledMapOptions = {
-      name: "Clean-Neighborhood"
+      name: "Map"
   }
 
   var pennMapType = new google.maps.StyledMapType(
       mapStyles, styledMapOptions);
 
-  map.mapTypes.set('cleanMap', pennMapType);
-  map.setMapTypeId('cleanMap');
+  map.mapTypes.set('greys', pennMapType);
+  map.setMapTypeId('greys');
 }
+
+
+
 
 /* 
    given a string containing an address, returns a 2-element array x, such that
@@ -103,6 +144,22 @@ $(document).ready(function(){
 	});
 	
 	$("#logout-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
+	$("#edit-residence-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
+	$("#edit-review-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
+	$("#edit-images-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
+	$("#edit-landlord-button").fancybox({
 		'hideOnContentClick': false
 	});
 	
