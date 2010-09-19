@@ -221,24 +221,7 @@
 			
 			<div class="col-630">
 				<h1>Compare Favorites</h1>
-                <?php 
-					foreach ($favoritesArray as $key=>$favorite){echo $favorite.'     k'.$key;
-						if($key%2==1)
-							echo '<tr class="odd">';
-						else 
-							echo '<tr>';
-							echo '<td><img src="img/houses/thumb/'.$favorite->img[0].'" class="house-thumb" /></td>';
-							echo '<td>'.$favorite->title.'</td>';
-							echo '<td>'.$favorite->avg_rank.'</td>';
-							echo '<td>$'.$favorite->avg_rent.'</td>';
-							echo '<td>'.$favorite->bedrooms.'</td>';
-							echo '<td>$'.$favorite->total_rent.'</td>';
-							echo '<td>'.$favorite->ll_title.'</td>';
-							echo '<td>'.$favorite->ll_avg_rank.'</td>';
-							echo '</tr>';
-					}
-					
-					?>
+                
 				<table id="compare-table" summary="Comparison of Houses">
 					<thead>
 						<tr>
@@ -253,7 +236,28 @@
 						</tr>
 					</thead>
 					<tbody>
-                    
+                    <?php 
+					foreach ($favoritesArray as $favorite){
+						$houseObject=mysql_fetch_object(mysql_query("SELECT * FROM houses WHERE hid='".$favorite."'"));  
+				$houseImg=explode(',',$houseObject->images);
+				
+						if($key%2==1)
+							echo '<tr class="odd">';
+						else 
+							echo '<tr>';
+							
+							echo '<td><img src="img/houses/thumb/'.$houseImg[0].'" class="house-thumb" /></td>';
+							echo '<td>'.$houseObject->title.'</td>';
+							echo '<td>'.$houseObject->avg_rank.'</td>';
+							echo '<td>$'.$houseObject->avg_rent.'</td>';
+							echo '<td>'.$houseObject->bedrooms.'</td>';
+							echo '<td>$'.$houseObject->total_rent.'</td>';
+							echo '<td>'.$houseObject->ll_title.'</td>';
+							echo '<td>'.$houseObject->ll_avg_rank.'</td>';
+							echo '</tr>';
+					}
+					
+					?>
 						
 						
 					</tbody>

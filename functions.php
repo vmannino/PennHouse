@@ -37,13 +37,10 @@ function printFavorites(){
 				if ($favoritesString){
 				$favoritesArray=explode(',',$favoritesString);
 				
-				$returnArray=array();
-				
                 foreach($favoritesArray as $key=>$favorite){
 					
                 $houseObject=mysql_fetch_object(mysql_query("SELECT * FROM houses WHERE hid='".$favorite."'"));  
 				$houseImg=explode(',',$houseObject->images);
-				
                 echo "<div class='house-favorite'>";
                  echo "<img width='60' height='40' src='img/houses/thumb/".$houseImg[0]."' class='house-thumb-favorite' />";
                  echo "<div class='house-favorite-meta'>";
@@ -57,7 +54,7 @@ function printFavorites(){
 				 echo "<div class='clear'></div><hr class='custom-rule' />";
 				 }
 				}
-				return $returnArray;
+				return $favoritesArray;
 }
 function register_user($uid,$email,$name,$username){
 	$registered=mysql_num_rows(mysql_query("SELECT * FROM users WHERE uid='".sanitize($uid)."'"));
