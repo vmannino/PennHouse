@@ -20,10 +20,21 @@
 		
 		<div id="slider">
 			<ul>				
-				<li><img src="img/slider1.png" alt="slider1" class="slider-img"/></li>
-				<li><img src="img/slider2.png" alt="slider2" class="slider-img"/></li>
-				<li><img src="img/slider3.png" alt="slider3" class="slider-img"/></li>
-				<li><img src="img/slider4.png" alt="slider4" class="slider-img"/></li>
+				<li>
+					<h1>oPennHouse allows Penn students to find proper housing</h1>
+				</li>
+				
+				<li>
+				
+				</li>
+				
+				<li>
+				
+				</li>
+				
+				<li>
+				
+				</li>
 					
 			</ul>
 		</div>

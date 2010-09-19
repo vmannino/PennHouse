@@ -182,7 +182,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 			<div id="nav-bar"> 
 				<div id="nav-left"> 
 					<ul>
-						<li id="navItemWelcome" style="display:none;" <?php if ($page == 'HOME') echo 'class="current"';?>><a href="index.php" <?php if ($page == 'HOME') echo 'class="current"';?>>Welcome <span id="welcomeSpan"></span>!</a></li>
+						<li id="navItemWelcome" <?php if ($page == 'HOME') echo 'class="current"';?>><a class="welcome">Welcome Justin<span id="welcomeSpan"></span>!</a></li>
 						<li <?php if ($page == 'DASHBOARD') echo 'class="current"';?>><a href="dashboard.php" <?php if ($page == 'DASHBOARD') echo 'class="current"';?>>Dashboard</a></li>
 						<li <?php if ($page == 'LOGOUT') echo 'class="current"';?>><a href="#" <?php if ($page == 'LOGOUT') echo 'class="current"';?>>Logout</a></li>
 					</ul>
@@ -193,7 +193,6 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 					<ul>
 						<li <?php if ($page == 'FIND-HOUSES') echo 'class="current"';?>><a href="find-houses.php" <?php if ($page == 'FIND-HOUSES') echo 'class="current"';?>>Find Houses</a></li>
 						<li <?php if ($page == 'BROWSE-HOUSES') echo 'class="current"';?>><a href="browse.php" <?php if ($page == 'BROWSE-HOUSES') echo 'class="current"';?>>Browse Houses</a></li>
-						<li <?php if ($page == 'FIND-LANDLORDS') echo 'class="current"';?>><a href="#" <?php if ($page == 'FIND-LANDLORDS') echo 'class="current"';?>>Find Landlords</a></li>
 					</ul>
 				</div>
 			</div>

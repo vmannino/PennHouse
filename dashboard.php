@@ -10,6 +10,11 @@
 
 			
 			<div class="col-330">
+<<<<<<< HEAD
+				<h1>Welcome Justin!</h1>
+				<img src="img/blank_profile.png" alt="profile" width="200" class="profile"/>
+				<h4>Justin Broglie</h4>
+=======
 				<?php
 				 $cookie=getCookie();
 				$user = json_decode(file_get_contents(
@@ -21,6 +26,7 @@
 				echo '<img src="http://graph.facebook.com/'.$user->id.'/picture?type=large" alt="profile" width="200" class="profile"/>';
 				echo '<h4>'.$user->name.'</h4>';
 				?>
+>>>>>>> d49e50ac1b33e6d8bc8ab110595ac53d3316fc2e
 				<a id="privacy-settings-button" href="#privacy-settings" class="button bluebutton small">Edit Privacy Settings</a>
 				<a id="logout-button" href="#logout" class="button bluebutton small">Logout</a>
 				
@@ -127,6 +133,8 @@
 				
 				<div id="past-residences">
 					<div class="house-result hovering">
+<<<<<<< HEAD
+=======
 						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
 						<div class="house-result-meta">
 							<h2>4211 Spruce Street</h2>
@@ -147,65 +155,111 @@
 
 							<span>MY LANDLORD RANK</span>
 						</div>
+>>>>>>> d49e50ac1b33e6d8bc8ab110595ac53d3316fc2e
 						
-						<div class="house-result-ranking">
-							<div class="house-result-avg-rent">$540<br/>
-								<span>AVG RENT/ROOM</span>
+							<div class="house-result-options">
+								
+								
+								<div class="house-result-meta">
+									<input type="checkbox" class="house-compare" value="0" title="Compare this House with Other Checked Ones" />
+									<span>compare</span>
+								</div>
+								
+								<div class="house-result-meta">
+									<img src="img/fav-blank.png" class="fav" alt="fav" title="Save this House to Your Favorites"/>
+									<span>fav</span>
+								</div>
 							</div>
+						
+							<img src="img/houses/thumb/example.jpg" class="house-thumb" />
 							
+							<div class="house-result-details">
 							
-							<div class="house-result-rank">4.5 <br/>
-								<span>STARS</span>
+							<div class="house-result-meta">
+								<h2>4211 Spruce Street</h2>
+								<span>address</span>
 							</div>
+							<div class="clear"></div>
+							
+									<div class="house-result-meta">$5000<br/>
+										<span>TOTAL RENT</span>
+									</div>
+									<div class="house-result-meta">10<br/>
+										<span>rooms</span>
+									</div>
+									
+								
+								
+								
+								<div class="house-result-ranking">
+									<div class="house-result-meta">$540<br/>
+										<span>AVG RENT/ROOM</span>
+									</div>
+									<div class="house-result-meta">
+										<div id="rank-house">
+											<img src="img/star.png" class="star" alt="star"/>
+											<div id="rank-house-slider" style="width:65px"></div>
+										</div>
+										<span>RANK</span>
+									</div>
+								</div>
+							</div>
+						
 						</div>
-					
-					
-					</div>
-					<hr class="custom-rule" />
-					<div class="house-result hovering">
-						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
-						<div class="house-result-meta">
-							<h2>4211 Spruce Street</h2>
-							<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
+						<hr class="custom-rule" />
+						<div class="house-result hovering">
+						
+							<div class="house-result-options">
+								
+								
+								<div class="house-result-meta">
+									<input type="checkbox" class="house-compare" value="0" title="Compare this House with Other Checked Ones" />
+									<span>compare</span>
+								</div>
+								
+								<div class="house-result-meta">
+									<img src="img/fav-blank.png" class="fav" alt="fav" title="Save this House to Your Favorites"/>
+									<span>fav</span>
+								</div>
+							</div>
+						
+							<img src="img/houses/thumb/example.jpg" class="house-thumb" />
+							
+							<div class="house-result-details">
+							
+							<div class="house-result-meta">
+								<h2>4211 Spruce Street</h2>
+								<span>address</span>
+							</div>
+							<div class="clear"></div>
+							
+									<div class="house-result-meta">$5000<br/>
+										<span>TOTAL RENT</span>
+									</div>
+									<div class="house-result-meta">10<br/>
+										<span>rooms</span>
+									</div>
+									
+								
+								
+								
+								<div class="house-result-ranking">
+									<div class="house-result-meta">$540<br/>
+										<span>AVG RENT/ROOM</span>
+									</div>
+									<div class="house-result-meta">
+										<div id="rank-house">
+											<img src="img/star.png" class="star" alt="star"/>
+											<div id="rank-house-slider" style="width:65px"></div>
+										</div>
+										<span>RANK</span>
+									</div>
+								</div>
+							</div>
+						
 						</div>
 						
-						<div class="house-result-ranking">
-							<div class="house-result-avg-rent">$540<br/>
-								<span>AVG RENT/ROOM</span>
-							</div>
-							
-							
-							<div class="house-result-rank">4.5 <br/>
-								<span>STARS</span>
-							</div>
-						</div>
-					
-					
-					</div>
-					<hr class="custom-rule" />
-					<div class="house-result hovering">
-						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
-						<div class="house-result-meta">
-							<h2>4211 Spruce Street</h2>
-							<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
-						</div>
-						
-						<div class="house-result-ranking">
-							<div class="house-result-avg-rent">$540<br/>
-								<span>AVG RENT/ROOM</span>
-							</div>
-							
-							
-							<div class="house-result-rank">4.5 <br/>
-								<span>STARS</span>
-							</div>
-						</div>
-					
-					
-					</div>
-					<hr class="custom-rule" />
-				
-				
+										
 				</div>
 			
 			
@@ -215,8 +269,138 @@
 			
 			<div class="col-330">
 				<h1>My Favorites</h1>
+<<<<<<< HEAD
+				
+				<div class="house-favorite">
+					<div class="house-favorite-options">
+						<div class="house-result-meta">
+							<img src="img/fav.png" class="fav" alt="fav" title="Remove this House From Your Favorites"/>
+							<span>fav</span>
+						</div>
+					
+					</div>
+					
+					<img src="img/houses/thumb/example_small.jpg" class="house-thumb-favorite" />
+					<div class="house-favorite-meta">
+						<h2>4211 Spruce Street</h2>
+						<div class="house-favorite-ranking">
+							<div class="house-favorite-avg-rent">$540<br/>
+								<span>AVG RENT</span>
+							</div>
+							
+							
+							<div class="house-favorite-rank">4.5 <br/>
+								<span>STARS</span>
+							</div>
+							
+							<div class="house-favorite-rooms">10 <br/>
+								<span>ROOMS</span>
+							</div>
+						
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<hr class="custom-rule" />
+				
+				<div class="house-favorite">
+					<div class="house-favorite-options">
+						<div class="house-result-meta">
+							<img src="img/fav.png" class="fav" alt="fav" title="Remove this House From Your Favorites"/>
+							<span>fav</span>
+						</div>
+					
+					</div>
+					
+					<img src="img/houses/thumb/example_small.jpg" class="house-thumb-favorite" />
+					<div class="house-favorite-meta">
+						<h2>4211 Spruce Street</h2>
+						<div class="house-favorite-ranking">
+							<div class="house-favorite-avg-rent">$540<br/>
+								<span>AVG RENT</span>
+							</div>
+							
+							
+							<div class="house-favorite-rank">4.5 <br/>
+								<span>STARS</span>
+							</div>
+							
+							<div class="house-favorite-rooms">10 <br/>
+								<span>ROOMS</span>
+							</div>
+						
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<hr class="custom-rule" />
+				
+				<div class="house-favorite">
+					<div class="house-favorite-options">
+						<div class="house-result-meta">
+							<img src="img/fav.png" class="fav" alt="fav" title="Remove this House From Your Favorites"/>
+							<span>fav</span>
+						</div>
+					
+					</div>
+					
+					<img src="img/houses/thumb/example_small.jpg" class="house-thumb-favorite" />
+					<div class="house-favorite-meta">
+						<h2>4211 Spruce Street</h2>
+						<div class="house-favorite-ranking">
+							<div class="house-favorite-avg-rent">$540<br/>
+								<span>AVG RENT</span>
+							</div>
+							
+							
+							<div class="house-favorite-rank">4.5 <br/>
+								<span>STARS</span>
+							</div>
+							
+							<div class="house-favorite-rooms">10 <br/>
+								<span>ROOMS</span>
+							</div>
+						
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<hr class="custom-rule" />
+				
+				<div class="house-favorite">
+					<div class="house-favorite-options">
+						<div class="house-result-meta">
+							<img src="img/fav.png" class="fav" alt="fav" title="Remove this House From Your Favorites"/>
+							<span>fav</span>
+						</div>
+					
+					</div>
+					
+					<img src="img/houses/thumb/example_small.jpg" class="house-thumb-favorite" />
+					<div class="house-favorite-meta">
+						<h2>4211 Spruce Street</h2>
+						<div class="house-favorite-ranking">
+							<div class="house-favorite-avg-rent">$540<br/>
+								<span>AVG RENT</span>
+							</div>
+							
+							
+							<div class="house-favorite-rank">4.5 <br/>
+								<span>STARS</span>
+							</div>
+							
+							<div class="house-favorite-rooms">10 <br/>
+								<span>ROOMS</span>
+							</div>
+						
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+=======
 				<?php $favoritesArray=printFavorites(); ?>
 			
+>>>>>>> d49e50ac1b33e6d8bc8ab110595ac53d3316fc2e
 			</div>
 			
 			<div class="col-630">
