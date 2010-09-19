@@ -130,6 +130,23 @@ $(document).ready(function(){
 	$("#inline1").fancybox({
 		'hideOnContentClick': false
 	});
+	
+	
+	
+	/* Dashboard Initializations */
+	
+	$("#privacy-settings-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
+	$("#logout-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
+	$('#dashboard-main').tabs();
+	
+	
+	/* End the Dashboard initializations */
 
 	
 	/* Filter Initializations */

@@ -13,7 +13,21 @@
 				
 				<img src="img/blank_profile.png" alt="profile" width="200" class="profile"/>
 				<h4>Justin Broglie</h4>
-				<a id="filter-button" class="button bluebutton small">Edit Privacy Settings</a>
+				<a id="privacy-settings-button" href="#privacy-settings" class="button bluebutton small">Edit Privacy Settings</a>
+				<a id="logout-button" class="button bluebutton small">Logout</a>
+				
+				
+				<div style="display: none;">
+					<div id="logout" class="fancybox-style" style="">
+						<h1>Are you sure you want to logout?</h1>
+					</div>
+				</div>
+				
+				<div style="display: none;">
+					<div id="privacy-settings" class="fancybox-style" style="">
+						<h1>Privacy Settings</h1>
+					</div>
+				</div>
 			</div>
 			
 			<div id="dashboard-main">
@@ -39,7 +53,24 @@
 						<img src="img/houses/thumb/example.jpg" class="house-thumb" />
 						<div class="house-result-meta">
 							<h2>4211 Spruce Street</h2>
+<<<<<<< HEAD
 							<h3><span>10</span> Bedrooms | <span>$6,500</span>/month</h3>
+=======
+							<span>Address</span>
+						</div>
+						<div class="house-dashboard-meta">4.5 <br/>
+							<span>MY RANK</span>
+						</div>
+						<div class="house-dashboard-meta">
+							Off-Campus Management<br/>
+							<span>My Landlord</span>
+						</div>
+						
+						
+						
+						<div class="house-dashboard-meta">4.5 <br/>
+							<span>MY LANDLORD RANK</span>
+>>>>>>> 161826410f99473a3edd346ff5c6f8886f36c9fe
 						</div>
 						
 						<div class="house-result-ranking">
