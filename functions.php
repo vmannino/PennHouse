@@ -52,9 +52,9 @@ $dbname='opennhouse';
 $dbuser='opennhouse';
 $dbpass='7?8$uhM';
 
-mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
+//mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 
-mysql_select_db($dbname) or die(mysql_error());
+//mysql_select_db($dbname) or die(mysql_error());
 
 $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 
@@ -163,7 +163,7 @@ $cookie = get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 				<div id="nav-right"> 
 					<ul>
 						<li <?php if ($page == 'FIND-HOUSES') echo 'class="current"';?>><a href="find-houses.php" <?php if ($page == 'FIND-HOUSES') echo 'class="current"';?>>Find Houses</a></li>
-						<li <?php if ($page == 'BROWSE') echo 'class="current"';?>><a href="#" <?php if ($page == 'BROWSE') echo 'class="current"';?>>Browse</a></li>
+						<li <?php if ($page == 'BROWSE-HOUSES') echo 'class="current"';?>><a href="browse.php" <?php if ($page == 'BROWSE-HOUSES') echo 'class="current"';?>>Browse Houses</a></li>
 						<li <?php if ($page == 'FIND-LANDLORDS') echo 'class="current"';?>><a href="#" <?php if ($page == 'FIND-LANDLORDS') echo 'class="current"';?>>Find Landlords</a></li>
 					</ul>
 				</div>

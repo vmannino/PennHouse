@@ -131,9 +131,6 @@ function placeHouse(lat,lng,name) {
 $(document).ready(function(){
 	/* Using custom settings */
 	
-	$("#inline1").fancybox({
-		'hideOnContentClick': false
-	});
 	
 	
 	
