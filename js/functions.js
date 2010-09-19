@@ -102,6 +102,10 @@ $(document).ready(function(){
 		'hideOnContentClick': false
 	});
 	
+	$("#logout-button").fancybox({
+		'hideOnContentClick': false
+	});
+	
 	$('#dashboard-main').tabs();
 	
 	
